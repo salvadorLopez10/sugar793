@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:adaeb6ae-f2d4-6674-0b96-59f2a76793f4
+ORGANIZER;CN=Stephanie Martinez Aguilar:smartinez@unifin.com.mx
+DTSTART:20171026T130000Z
+DTEND:20171026T230000Z
+DTSTAMP:20171027T032700Z
+SUMMARY:Presentación formal
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

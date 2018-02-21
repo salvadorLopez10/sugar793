@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:51495683-06a0-6de3-1091-58f69d67eccc
+ORGANIZER;CN=Zulma Hortensia Sanchez Herrera:zsanchez@unifin.com.mx
+DTSTART:20170419T150000Z
+DTEND:20170419T163000Z
+DTSTAMP:20170418T231300Z
+SUMMARY:QFSN
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

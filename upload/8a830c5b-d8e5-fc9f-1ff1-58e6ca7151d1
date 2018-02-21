@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:8a830c5b-d8e5-fc9f-1ff1-58e6ca7151d1
+ORGANIZER;CN=Diana Patricia Yazmín Hernandez Martinez:diana.hernandez@unifin.com.mx
+DTSTART:20170406T160000Z
+DTEND:20170406T164500Z
+DTSTAMP:20170406T231000Z
+SUMMARY:GRUPO QUIMISOR
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

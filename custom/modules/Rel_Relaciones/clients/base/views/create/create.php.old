@@ -1,0 +1,39 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Jorge
+ * Date: 6/13/2015
+ * Time: 4:08 PM
+ */
+if (!defined('sugarEntry') || !sugarEntry) {
+    die('Not A Valid Entry Point');
+}
+
+$viewdefs['Rel_Relaciones']['base']['view']['create'] = array(
+    'template' => 'record',
+    'buttons' => array(
+        array(
+            'name'      => 'cancel_button',
+            'type'      => 'button',
+            'label'     => 'LBL_CANCEL_BUTTON_LABEL',
+            'css_class' => 'btn-invisible btn-link',
+        ),
+        array(
+            'name'      => 'restore_button',
+            'type'      => 'button',
+            'label'     => 'LBL_RESTORE',
+            'css_class' => 'btn-invisible btn-link',
+            'showOn'    => 'select',
+        ),
+        array(
+            'name'    => 'save_button',
+            'type'    => 'button',
+            'label'   => 'LBL_SAVE_BUTTON_LABEL',
+            'primary' => true,
+        ),
+        array(
+            'name' => 'sidebar_toggle',
+            'type' => 'sidebartoggle',
+        ),
+    ),
+);

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:d1ca9112-788f-f1a6-289b-58cbe91b75ab
+ORGANIZER;CN=Guillermo Chavez Sanchez:guillermo.chavez@unifin.com.mx
+DTSTART:20170316T160000Z
+DTEND:20170316T170000Z
+DTSTAMP:20170317T134900Z
+SUMMARY:CITA PROSPECTO
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

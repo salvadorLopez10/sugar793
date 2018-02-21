@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:ea0989f6-b745-778b-ccf1-58e4f557bd37
+ORGANIZER;CN=Guillermo Gonzalez Gallo y Ferriz:guillermo.gonzalez@unifin.com.mx
+DTSTART:20170404T193000Z
+DTEND:20170404T214500Z
+DTSTAMP:20170405T134900Z
+SUMMARY:cierre de negocio
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

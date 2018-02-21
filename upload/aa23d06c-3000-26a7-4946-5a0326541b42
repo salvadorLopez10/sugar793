@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:aa23d06c-3000-26a7-4946-5a0326541b42
+ORGANIZER;CN=Alejandra Briones Castillo:abriones@unifin.com.mx
+DTSTART:20171108T213000Z
+DTEND:20171108T214500Z
+DTSTAMP:20171108T154400Z
+SUMMARY:Cita Expo Plastimagen
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

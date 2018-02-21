@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:1e72c1d9-bb49-8287-743d-5a0a01c63679
+ORGANIZER;CN=Jaime Rene Chable Hernández:jchable@unifin.com.mx
+DTSTART:20171114T170000Z
+DTEND:20171114T180000Z
+DTSTAMP:20171113T203000Z
+SUMMARY:cita programada
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

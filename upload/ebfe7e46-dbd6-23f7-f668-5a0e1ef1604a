@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:ebfe7e46-dbd6-23f7-f668-5a0e1ef1604a
+ORGANIZER;CN=Israel Miranda López:imiranda@unifin.com.mx
+DTSTART:20171116T173000Z
+DTEND:20171116T183000Z
+DTSTAMP:20171116T232500Z
+SUMMARY:VISITA OCULAR IPP
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

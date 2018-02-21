@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:813e1329-9b64-4f8e-0e1b-58de6d95567b
+ORGANIZER;CN=Ana Laura Nolasco Vazquez:anolasco@unifin.com.mx
+DTSTART:20170330T183000Z
+DTEND:20170330T184500Z
+DTSTAMP:20170331T145200Z
+SUMMARY:FOPSA
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

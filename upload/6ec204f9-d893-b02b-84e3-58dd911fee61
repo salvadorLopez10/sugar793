@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:6ec204f9-d893-b02b-84e3-58dd911fee61
+ORGANIZER;CN=Marisela Janeth Mandujano Gandarilla:mmandujano@unifin.com.mx
+DTSTART:20170404T200000Z
+DTEND:20170404T210000Z
+DTSTAMP:20170330T231500Z
+SUMMARY:COMIDA CON MADISA
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

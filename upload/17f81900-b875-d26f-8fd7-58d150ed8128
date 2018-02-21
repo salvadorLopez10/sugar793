@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:17f81900-b875-d26f-8fd7-58d150ed8128
+ORGANIZER;CN=Carlos Albicker Gomez:calbicker@unifin.com.mx
+DTSTART:20170324T144500Z
+DTEND:20170324T234500Z
+DTSTAMP:20170321T161000Z
+SUMMARY:ECSICO Villahermosa
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

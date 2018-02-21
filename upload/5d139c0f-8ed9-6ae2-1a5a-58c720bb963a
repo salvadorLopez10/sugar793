@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:5d139c0f-8ed9-6ae2-1a5a-58c720bb963a
+ORGANIZER;CN=Ingrid Iñigo Plascencia:iinigo@unifin.com.mx
+DTSTART:20170314T150000Z
+DTEND:20170314T161500Z
+DTSTAMP:20170313T224100Z
+SUMMARY:Presentacion
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

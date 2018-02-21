@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:45a0bebe-c57e-e576-30c1-590127283cfe
+ORGANIZER;CN=Ana Laura Nolasco Vazquez:anolasco@unifin.com.mx
+DTSTART:20170426T163000Z
+DTEND:20170426T170000Z
+DTSTAMP:20170426T230600Z
+SUMMARY:nutritivos del campo
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

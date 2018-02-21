@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:1d90c0e2-2e75-adad-b0b2-58fa232a1f24
+ORGANIZER;CN=Alberto Zamora Ruiz:azamora@unifin.com.mx
+DTSTART:20170427T140000Z
+DTEND:20170427T150000Z
+DTSTAMP:20170421T152100Z
+SUMMARY:Presentación Factoraje y Expediente
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:3d0d8f77-efbd-44a4-7f79-5a01ddd184d7
+ORGANIZER;CN=Oscar Fabian Castro Gonzalez:oscar.castro@unifin.com.mx
+DTSTART:20171115T160000Z
+DTEND:20171115T164500Z
+DTSTAMP:20171107T162000Z
+SUMMARY:Presentación
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

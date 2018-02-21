@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:4fd006fe-62ed-49a4-4f1d-5a0ef8ae65c2
+ORGANIZER;CN=Israel Miranda López:imiranda@unifin.com.mx
+DTSTART:20171122T160000Z
+DTEND:20171122T170000Z
+DTSTAMP:20171117T145400Z
+SUMMARY:REUNION TOYOTA
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

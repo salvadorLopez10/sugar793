@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:b18a4b4d-deee-abab-c044-58f62866e4f9
+ORGANIZER;CN=Leonardo Jesus Amador Zendejas:lamador@unifin.com.mx
+DTSTART:20170417T143000Z
+DTEND:20170417T191500Z
+DTSTAMP:20170418T145200Z
+SUMMARY:PRESENTACION
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

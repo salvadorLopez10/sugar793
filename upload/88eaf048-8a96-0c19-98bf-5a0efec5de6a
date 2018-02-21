@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:88eaf048-8a96-0c19-98bf-5a0efec5de6a
+ORGANIZER;CN=Ana Laura Nolasco Vazquez:anolasco@unifin.com.mx
+DTSTART:20171117T180000Z
+DTEND:20171117T183000Z
+DTSTAMP:20171117T152000Z
+SUMMARY:agrosilicium
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

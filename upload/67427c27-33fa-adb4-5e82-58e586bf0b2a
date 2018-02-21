@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:67427c27-33fa-adb4-5e82-58e586bf0b2a
+ORGANIZER;CN=Guillermo Gonzalez Gallo y Ferriz:guillermo.gonzalez@unifin.com.mx
+DTSTART:20170406T130000Z
+DTEND:20170407T011500Z
+DTSTAMP:20170406T000700Z
+SUMMARY:torneo de golf
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

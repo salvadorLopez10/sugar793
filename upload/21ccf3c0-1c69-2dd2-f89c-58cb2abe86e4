@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:21ccf3c0-1c69-2dd2-f89c-58cb2abe86e4
+ORGANIZER;CN=Sandra Elena González López:sgonzalez@unifin.com.mx
+DTSTART:20170322T230000Z
+DTEND:20170322T231500Z
+DTSTAMP:20170317T001400Z
+SUMMARY:SSJJ-PRESENTACION
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

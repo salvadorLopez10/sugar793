@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:2b19ccb6-8056-c48c-f3cd-58de6b27793e
+ORGANIZER;CN=Ana Laura Nolasco Vazquez:anolasco@unifin.com.mx
+DTSTART:20170330T171500Z
+DTEND:20170330T173000Z
+DTSTAMP:20170331T144700Z
+SUMMARY:ELISEO CANO
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

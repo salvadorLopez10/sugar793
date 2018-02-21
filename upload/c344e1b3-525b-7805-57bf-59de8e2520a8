@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:c344e1b3-525b-7805-57bf-59de8e2520a8
+ORGANIZER;CN=Deyanira Imelda Ramos Vazquez:dramos@unifin.com.mx
+DTSTART:20171017T213000Z
+DTEND:20171017T214500Z
+DTSTAMP:20171011T213300Z
+SUMMARY:Jerome Laiter
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

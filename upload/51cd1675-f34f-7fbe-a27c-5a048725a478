@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:51cd1675-f34f-7fbe-a27c-5a048725a478
+ORGANIZER;CN=Miguel Angel Zavala Franco:mzavala@unifin.com.mx
+DTSTART:20171108T173000Z
+DTEND:20171109T000000Z
+DTSTAMP:20171109T165100Z
+SUMMARY:Cita Expo Plastimagen
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

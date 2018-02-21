@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:f3d60c64-7fbc-38ad-2de9-591089d7d5d5
+ORGANIZER;CN=Cecilia Del Valle Castro:cdelvalle@unifin.com.mx
+DTSTART:20170510T160000Z
+DTEND:20170510T181500Z
+DTSTAMP:20170508T150700Z
+SUMMARY:CITA BENNETS
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:7576dc63-1805-5617-97dc-5a0b4111dbd0
+ORGANIZER;CN=Jeanette Lucelia Orozco Moreno:jorozco@unifin.com.mx
+DTSTART:20171025T151500Z
+DTEND:20171025T154500Z
+DTSTAMP:20171114T191600Z
+SUMMARY:(P) PRESENTACIÓN
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

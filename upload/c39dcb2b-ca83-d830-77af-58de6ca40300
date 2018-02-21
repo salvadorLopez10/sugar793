@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:c39dcb2b-ca83-d830-77af-58de6ca40300
+ORGANIZER;CN=Ana Laura Nolasco Vazquez:anolasco@unifin.com.mx
+DTSTART:20170330T183000Z
+DTEND:20170330T184500Z
+DTSTAMP:20170331T144900Z
+SUMMARY:GRANJA EL SUEÑO
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

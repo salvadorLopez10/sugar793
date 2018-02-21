@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:ad81db76-a832-2eef-5aa9-58caf3300d9d
+ORGANIZER;CN=Eugenio Suarez Rodriguez:esuarez@unifin.com.mx
+DTSTART:20170316T200000Z
+DTEND:20170316T210000Z
+DTSTAMP:20170316T202000Z
+SUMMARY:CITA GREEN
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:95da05dc-785d-de98-71a7-59dec326255d
+ORGANIZER;CN=Alejandra Briones Castillo:abriones@unifin.com.mx
+DTSTART:20171011T190000Z
+DTEND:20171011T191500Z
+DTSTAMP:20171012T012100Z
+SUMMARY:Cita Maagart
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

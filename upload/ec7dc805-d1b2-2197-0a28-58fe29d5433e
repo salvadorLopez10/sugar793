@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:ec7dc805-d1b2-2197-0a28-58fe29d5433e
+ORGANIZER;CN=Ileana Zesati Klein:izesati@unifin.com.mx
+DTSTART:20170425T200000Z
+DTEND:20170425T220000Z
+DTSTAMP:20170424T163400Z
+SUMMARY:Comida Ernesto Ofarrill
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.legosoft.com.mx/">
+  <collaboration id="Collaboration">
+    <participant id="pool1" name="AUTORIZAR POR FACULTADES" processRef="autorizarPorFacultades"></participant>
+  </collaboration>
+  <process id="autorizarPorFacultades" name="Autorizar por facultades" isExecutable="true">
+    <laneSet id="laneSet_autorizarPorFacultades">
+      <lane id="lane1">
+        <flowNodeRef>startevent1</flowNodeRef>
+        <flowNodeRef>servicetask1</flowNodeRef>
+        <flowNodeRef>exclusivegateway1</flowNodeRef>
+        <flowNodeRef>servicetask2</flowNodeRef>
+        <flowNodeRef>servicetask3</flowNodeRef>
+        <flowNodeRef>endevent1</flowNodeRef>
+        <flowNodeRef>servicetask4</flowNodeRef>
+        <flowNodeRef>subprocess1</flowNodeRef>
+        <flowNodeRef>businessruletask1</flowNodeRef>
+        <flowNodeRef>apfPantallaFacultades</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <serviceTask id="servicetask1" name="ESTABLECER PARÁMETROS INICIALES" activiti:expression="${BPMAutorizarPorFacultadesComponent.establecerParametrosIniciales(execution)}"></serviceTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="servicetask1"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow2" sourceRef="servicetask1" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="flow3" name="SI" sourceRef="exclusivegateway1" targetRef="apfPantallaFacultades">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${execution.getVariable('parametros').requiereVentana == true}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="apfPantallaFacultades" name="PANTALLA DE FACULTADES" activiti:assignee="kermit">
+      <extensionElements>
+        <activiti:formProperty id="listaAutorizadores" name="Lista de autorizadores" type="string" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow4" sourceRef="apfPantallaFacultades" targetRef="servicetask2"></sequenceFlow>
+    <serviceTask id="servicetask2" name="ASIGNAR AUTORIZADORES" activiti:expression="${BPMAutorizarPorFacultadesComponent.asignarAutorizadores(execution)}"></serviceTask>
+    <sequenceFlow id="flow5" sourceRef="servicetask2" targetRef="subprocess1"></sequenceFlow>
+    <serviceTask id="servicetask3" name="GENERAR OBJETO DE RESPUESTA" activiti:expression="${BPMAutorizarPorFacultadesComponent.generarObjetoRespuesta(execution)}"></serviceTask>
+    <sequenceFlow id="flow7" sourceRef="servicetask3" targetRef="servicetask4"></sequenceFlow>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow8" sourceRef="servicetask4" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow9" name="NO" sourceRef="exclusivegateway1" targetRef="subprocess1">
+      <documentation>NO</documentation>
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${execution.getVariable('parametros').requiereVentana != true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow10" sourceRef="subprocess1" targetRef="businessruletask1"></sequenceFlow>
+    <sequenceFlow id="flow11" sourceRef="businessruletask1" targetRef="servicetask3"></sequenceFlow>
+    <serviceTask id="servicetask4" name="ENVIAR NOTIFICACIÓN" activiti:expression="${BPMAutorizarPorFacultadesComponent.enviarNotificacion(correoCliente,execution)}"></serviceTask>
+    <subProcess id="subprocess1" name="Subproceso autorización">
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="${parametros.candidatos}" activiti:elementVariable="actual"></multiInstanceLoopCharacteristics>
+      <userTask id="apfRegistrarVotos" name="REGISTRAR VOTO DE AUTORIZACION" activiti:assignee="${actual}">
+        <extensionElements>
+          <activiti:formProperty id="decision" name="Autorizar por facultades" type="enum" required="true">
+            <activiti:value id="true" name="Autorizar"></activiti:value>
+            <activiti:value id="false" name="Rechazar"></activiti:value>
+          </activiti:formProperty>
+        </extensionElements>
+      </userTask>
+      <startEvent id="startevent2" name="Start"></startEvent>
+      <sequenceFlow id="flow12" sourceRef="startevent2" targetRef="apfRegistrarVotos"></sequenceFlow>
+      <sequenceFlow id="flow13" sourceRef="apfRegistrarVotos" targetRef="servicetask5"></sequenceFlow>
+      <serviceTask id="servicetask5" name="REGISTRAR VOTO" activiti:expression="${BPMAutorizarPorFacultadesComponent.registrarVoto(execution)}"></serviceTask>
+      <endEvent id="endevent2" name="End"></endEvent>
+      <sequenceFlow id="flow14" sourceRef="servicetask5" targetRef="endevent2"></sequenceFlow>
+    </subProcess>
+    <businessRuleTask id="businessruletask1" name="APLICAR REGLA DE AUTORIZACIÓN" activiti:ruleVariablesInput="${execution.getVariable('registroDeVotos')}" activiti:rules="${execution.getVariable('parametros').nombreRegla}"></businessRuleTask>
+    <textAnnotation id="textannotation1">
+      <text>¿REQUIERE PANTALLA?</text>
+    </textAnnotation>
+    <association id="association1" sourceRef="exclusivegateway1" targetRef="textannotation1"></association>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
+    <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
+      <bpmndi:BPMNShape bpmnElement="pool1" id="BPMNShape_pool1">
+        <omgdc:Bounds height="481.0" width="1161.0" x="20.0" y="9.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane1" id="BPMNShape_lane1">
+        <omgdc:Bounds height="481.0" width="1141.0" x="40.0" y="9.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="50.0" y="201.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="91.0" width="125.0" x="130.0" y="173.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="320.0" y="198.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="apfPantallaFacultades" id="BPMNShape_apfPantallaFacultades">
+        <omgdc:Bounds height="81.0" width="112.0" x="285.0" y="21.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask2" id="BPMNShape_servicetask2">
+        <omgdc:Bounds height="81.0" width="105.0" x="450.0" y="21.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask3" id="BPMNShape_servicetask3">
+        <omgdc:Bounds height="71.0" width="141.0" x="790.0" y="381.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="1130.0" y="399.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask4" id="BPMNShape_servicetask4">
+        <omgdc:Bounds height="73.0" width="111.0" x="970.0" y="380.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="subprocess1" id="BPMNShape_subprocess1">
+        <omgdc:Bounds height="159.0" width="461.0" x="450.0" y="139.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="apfRegistrarVotos" id="BPMNShape_apfRegistrarVotos">
+        <omgdc:Bounds height="98.0" width="131.0" x="540.0" y="188.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent2" id="BPMNShape_startevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="470.0" y="219.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask5" id="BPMNShape_servicetask5">
+        <omgdc:Bounds height="55.0" width="105.0" x="720.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent2" id="BPMNShape_endevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="860.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="businessruletask1" id="BPMNShape_businessruletask1">
+        <omgdc:Bounds height="81.0" width="141.0" x="610.0" y="376.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
+        <omgdc:Bounds height="50.0" width="100.0" x="291.0" y="263.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="85.0" y="218.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="218.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="255.0" y="218.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="218.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="340.0" y="198.0"></omgdi:waypoint>
+        <omgdi:waypoint x="341.0" y="102.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="9.0" x="351.0" y="187.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="397.0" y="61.0"></omgdi:waypoint>
+        <omgdi:waypoint x="450.0" y="61.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="555.0" y="61.0"></omgdi:waypoint>
+        <omgdi:waypoint x="681.0" y="61.0"></omgdi:waypoint>
+        <omgdi:waypoint x="680.0" y="139.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="931.0" y="416.0"></omgdi:waypoint>
+        <omgdi:waypoint x="970.0" y="416.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="1081.0" y="416.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1130.0" y="416.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="360.0" y="218.0"></omgdi:waypoint>
+        <omgdi:waypoint x="450.0" y="218.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="15.0" x="422.0" y="209.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="680.0" y="298.0"></omgdi:waypoint>
+        <omgdi:waypoint x="680.0" y="376.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="751.0" y="416.0"></omgdi:waypoint>
+        <omgdi:waypoint x="790.0" y="416.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="505.0" y="236.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
+        <omgdi:waypoint x="671.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow14" id="BPMNEdge_flow14">
+        <omgdi:waypoint x="825.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="860.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="association1" id="BPMNEdge_association1">
+        <omgdi:waypoint x="340.0" y="238.0"></omgdi:waypoint>
+        <omgdi:waypoint x="341.0" y="263.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

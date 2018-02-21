@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:9b5af00a-4c9c-d5c3-45ef-58f4d02c196f
+ORGANIZER;CN=Paloma Cespedes Martinez del Campo:pcespedes@unifin.com.mx
+DTSTART:20170418T150000Z
+DTEND:20170418T153000Z
+DTSTAMP:20170417T142600Z
+SUMMARY:DEFINIR ACTIVOS
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:ea939b99-4cfc-ed9d-d519-58e586be0111
+ORGANIZER;CN=Marisela Janeth Mandujano Gandarilla:mmandujano@unifin.com.mx
+DTSTART:20170406T223000Z
+DTEND:20170406T230000Z
+DTSTAMP:20170406T000500Z
+SUMMARY:INTERCERAMIC
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

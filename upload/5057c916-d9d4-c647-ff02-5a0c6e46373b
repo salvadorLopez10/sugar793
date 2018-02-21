@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:5057c916-d9d4-c647-ff02-5a0c6e46373b
+ORGANIZER;CN=Moises Levy Michan:mlevy@unifin.com.mx
+DTSTART:20171123T220000Z
+DTEND:20171123T224500Z
+DTSTAMP:20171115T164400Z
+SUMMARY:Cita Consorcio Nova
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

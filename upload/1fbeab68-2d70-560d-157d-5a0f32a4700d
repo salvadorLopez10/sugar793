@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:1fbeab68-2d70-560d-157d-5a0f32a4700d
+ORGANIZER;CN=Ignacio Garcia Plaisant:igarcia@unifin.com.mx
+DTSTART:20171121T130000Z
+DTEND:20171122T000000Z
+DTSTAMP:20171117T190300Z
+SUMMARY:Firma de Contrato Nueva Era Radio
+DESCRIPTION:Viaje a Ciudad Juarez para la firma de contrato de la empresa Nueva Era Radio de Occidente 
+END:VEVENT
+END:VCALENDAR

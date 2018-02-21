@@ -1,0 +1,185 @@
+id,user_name,first_name,last_name,is_admin,status,reports_to_id,empresa_c,region_c,sucursal_c,equipo_c,puesto_c,aut_caratulariesgo_c,tipodeproducto_c,email_address
+1015cefe-d85f-7151-4456-5628f6ae9ac8,mvazquez,Rebeca Monserrat,Vazquez Palacios,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,BACKOFFICE LEASING,0,1,rvazquez@unifin.com.mx
+10a9ac56-9b40-c577-1353-5626cd705f7c,smunguia,Sandra,Munguia Galvez,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,PROMOTOR LEASING,0,1,smunguia@unifin.com.mx
+11880204-eb1c-5a97-025e-5628f663db4a,cnavarro,Carlos,Navarro Hernandez,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Norte,Monterrey,MTY,DIRECTOR LEASING,1,1,cnavarro@unifin.com.mx
+11d19178-bd79-073a-39cf-562a6055742f,preyes,Patricia Elena,Reyes Peña,0,Active,bd5693b9-7d57-0101-87ec-562a60d0be9c,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,preyes@unifin.com.mx
+1295f60c-58c2-3050-8fbe-562a60bc7b4a,ereyes,Elizabeth,Reyes Bravo,0,Active,3f232cae-4ee1-c9b0-266d-562a600fa9d7,UnifinFinanciera,Centro,DF,F1,SUBDIRECTOR DE FACTORAJE,0,4,ereyes@unifin.com.mx
+16ff1b17-a063-6fff-970f-5628f6e851a4,jchavez,Juan Manuel,Chavez Gomez,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,Queretaro,QRO,SUBDIRECTOR LEASING,0,1,jchavez@unifin.com.mx
+1741e15f-94bc-2ebd-306f-5626cd75bf02,javendano,Jorge Ernesto,Avendaño Ruiz,0,Active,25fb82fa-05a7-16d7-f1dd-5628f6945fc7,UnifinFinanciera,Centro,Queretaro,QRO,GERENTE LEASING,0,1,javendano@unifin.com.mx
+1851c8d1-85d0-cf35-12cc-562905f54c7d,jchable,Jaime Rene,Chable Hernández,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,jchable@unifin.com.mx
+18f40e3d-e9a1-cc7d-967e-5628f6e613bc,mquiros,Miguel,Quiros Ruiz,0,Active,27b014b8-5c85-bbd9-7c3b-5628f6a9ffa2,UnifinFinanciera,Norte,Hermosillo,HER,DIRECTOR LEASING,1,1,mquiroz@unifin.com.mx
+1a9e0506-04a6-93a4-e401-56290563c74d,glagunes,Gabriel,Lagunes Chávez,0,Active,82d36556-944a-95a4-014e-5628f653307f,UnifinFinanciera,Centro,DF,JCJ,PROMOTOR LEASING,0,1,glagunes@unifin.com.mx
+1e57d5ea-88f6-f065-7946-5626cd038aae,bdiaz,Yolanda Berenice,Díaz García,0,Active,16ff1b17-a063-6fff-970f-5628f6e851a4,UnifinFinanciera,Centro,Queretaro,QRO,PROMOTOR LEASING,0,1,bdiaz@unifin.com.mx
+1fb6f5ea-9bd3-5894-b038-5626cd930208,ocasas,Overlín,Casas González,0,Active,11880204-eb1c-5a97-025e-5628f663db4a,UnifinFinanciera,Norte,Monterrey,MTY,GERENTE LEASING,0,1,ocasas@unifin.com.mx
+204e2890-b67d-9e64-8547-562a608d35c5,avillasenor,Adriana Lucia,Villaseñor Jiménez,0,Active,d3545903-e182-6cc9-8c9e-562a6056bff1,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,avillasenor@unifin.com.mx
+20730eb1-ca00-17e9-5c6a-5628f6266f13,rbenitez,Rosario Guadalupe,Benitez Contreras,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,BACKOFFICE LEASING,0,1,rbenitez@unifin.com.mx
+2218215b-9745-622f-6aff-562a6071fc7e,daspe,Diego Tomas,Aspe Poniatowski,0,Active,2218215b-9745-622f-6aff-562a6071fc7e,UnifinFinanciera,Centro,DF,Sinequipo,DIRECTOR FACTORAJE,0,4,daspe@unifin.com.mx
+23acb1c6-1840-023b-7e30-5626cd6b7e0f,njuarez,Nicol,Juarez Osnaya,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,GERENTE LEASING,0,1,njuarez@unifin.com.mx
+25fb82fa-05a7-16d7-f1dd-5628f6945fc7,aromerodet,Alberto,Romero de Terrenos Escalante,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,Queretaro,QRO,DIRECTOR LEASING,1,1,aromerodet@unifin.com.mx
+26fe1bb7-134e-531f-96c6-5626cd53bd2b,alberto.rodriguez,Horacio Alberto,Rodríguez Ornelas,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,GERENTE LEASING,0,1,alberto.rodriguez@unifin.com.mx
+27b014b8-5c85-bbd9-7c3b-5628f6a9ffa2,mestrada,Mario Alberto,Estrada Cardenas,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Norte,Monterrey,MTY,DIRECTOR LEASING,1,1,mestrada@unifin.com.mx
+284cfa87-d765-8a90-f2fb-562a60c54bcd,hcastillo,Hector,Castillo Landarte,0,Active,d3545903-e182-6cc9-8c9e-562a6056bff1,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,hcastillo@unifin.com.mx
+28f5b8b8-ab06-6bfd-dc85-5628f6e9f411,ClientePerdido,9 -,Cliente Perdido,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR,0,1,wendy.reyes@unifin.com.mx
+2996eac8-7b99-d4a7-115e-5626cda82873,inavarro,Ileana,Navarro Salazar,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,PROMOTOR LEASING,0,1,inavarro@unifin.com.mx
+299b5f5b-8fda-8f46-4e7a-5626cdbdb826,aduran,Alan,Duran Monroy,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,PROMOTOR LEASING,0,1,aduran@unifin.com.mx
+29ab4bd0-75a4-cc6f-b563-562a60f3309c,gabriela.zetina,Gabriela Guadalupe,Zetina Hernandez,0,Active,3f232cae-4ee1-c9b0-266d-562a600fa9d7,UnifinFinanciera,Centro,DF,F2,SUBDIRECTOR DE FACTORAJE,0,4,gabriela.zetina@unifin.com.mx
+2c174b51-4bb1-2e19-809c-562a5a6e9a79,SinPromotor,Sin,Promotor,0,Active,NULL,UnifinFinanciera,Norte,DF,Sinequipo,PROMOTOR,0,1,gcordova@unifin.com.mx
+2d4554c0-0697-1883-b6ac-5628f62edbed,kflores,Karla,Flores de la Fuente,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,Puebla,PUE,DIRECTOR LEASING,1,1,kflores@unifin.com.mx
+2e039709-01e5-27df-bc74-5626cdf0e4cd,aguzman,Alfredo,Guzmán Retolaza,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,GERENTE LEASING,0,1,aguzman@unifin.com.mx
+2e6ff465-3c56-b7ce-494d-562905f3a0ae,juan.gomez,Juan Pablo,Gómez Lecumberri,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,juan.gomez@unifin.com.mx
+338197c2-1857-57b8-a0cd-5626cdc8b860,mcienfuegos,Mariana,Cienfuegos Domínguez,0,Active,c291d7ab-aedb-dae0-6d4a-5628f67dcdf0,UnifinFinanciera,Centro,DF,FEC,PROMOTOR LEASING,0,1,mcienfuegos@unifin.com.mx
+36cc9505-3dff-a586-72c2-562a60e9a601,omartinez,Omar Oscar,Martinez Arenas,0,Active,ea645c59-b8d4-4ac6-c0dd-562a607c96f4,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,omartinez@unifin.com.mx
+375cbf59-64ad-537d-7325-562a6006ab16,jlelodelarrea,Jaime,Lelo de Larrea González,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,F1,PROMOTOR FACTORAJE,0,4,jlelodelarrea@unifin.com.mx
+37cff140-7e44-42e6-538f-5628f68b4363,johana.perez,Johana,Perez Perez,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,BACKOFFICE LEASING,0,1,johana.perez@unifin.com.mx
+37ff010e-d695-aeb4-5f24-5626cd3dc827,oordaz,Oscar Humberto,Ordaz Acuña,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,oordaz@unifin.com.mx
+38106181-8ed3-1811-c479-5626c992fc86,aacosta,Azalia,Acosta,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,aacosta@unifin.com.mx
+38453973-257f-033e-1cb3-5626cd753d46,silia.garcia,Silia,García López,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,PROMOTOR LEASING,0,1,silia.garcia@unifin.com.mx
+387254fa-f7a3-eae9-cf24-562a42a839be,migracion,Migracion,etl,1,Active,NULL,UnifinFinanciera,Norte,DF,Sinequipo,PROCESO AUTOMATIZADO,0,1,gcordova@unifin.com.mx
+3927f2dd-c366-89b7-9dc3-5626cd21a8e0,pserna,Patricia Berenice,Serna Paz,0,Active,1fb6f5ea-9bd3-5894-b038-5626cd930208,UnifinFinanciera,Norte,Monterrey,MTY,PROMOTOR LEASING,0,1,pserna@unifin.com.mx
+39b44c75-fbff-aa7e-d246-5629671efaa2,ssanchez,Sonia,Sanchez Sanchez,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Norte,DF,Sinequipo,BACKOFFICE LEASING,0,1,ssanchez@unifin.com.mx
+3c80fe54-9201-1d75-a877-5626cd68dea6,tania.hernandez,Tania,Hernández Rojas,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,tania.hernandez@unifin.com.mx
+3d1dbd88-decc-6907-b923-5628f6c77249,egutierrez,Erika Noemi,Gutierrez Bernal,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,BACKOFFICE LEASING,0,1,egutierrez@unifin.com.mx
+3d3a2de3-cef9-8181-7035-5628f69bb030,jriba,Joaquin,Riba Fernandez Del Valle,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,JRD,DIRECTOR LEASING,1,1,jriba@unifin.com.mx
+3e12d389-f4b1-af27-22df-562a607e8c7c,vrosas,Veronica,Rosas Vera,0,Active,bd5693b9-7d57-0101-87ec-562a60d0be9c,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,vrosas@unifin.com.mx
+3f232cae-4ee1-c9b0-266d-562a600fa9d7,angel.tamariz,Angel Octavio,Tamariz Galindo,0,Active,2218215b-9745-622f-6aff-562a6071fc7e,UnifinFinanciera,Centro,DF,Sinequipo,DIRECTOR FACTORAJE,0,4,angel.tamariz@unifin.com.mx
+405cc6b7-fc4a-7cae-552f-5628f61fd849,Moroso,9 -,Moroso,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR,0,1,wendy.reyes@unifin.com.mx
+41bd8962-5a5e-1d9d-9d63-562a42171199,migracion1,Migracion,etl,1,Active,NULL,UnifinFinanciera,Norte,DF,Sinequipo,PROCESO AUTOMATIZADO,0,1,gcordova@unifin.com.mx
+42115c3c-3f61-20c2-aeb4-5628f605420a,lmeza,Lizbeth,Meza Gutierrez,0,Active,27b014b8-5c85-bbd9-7c3b-5628f6a9ffa2,UnifinFinanciera,Norte,Monterrey,MTY,BACKOFFICE LEASING,0,1,lmeza@unifin.com.mx
+43f3ce1a-47e8-43bc-00d8-562904e7d544,fgonzalez,Fernando Javier,Gonzalez Briones,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,BACKOFFICE LEASING,0,1,fgonzalez@unifin.com.mx
+4432b798-6740-6ed6-1ac5-562905c38480,oscar.ruiz,Oscar,Ruíz Olvera,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,PROMOTOR LEASING,0,1,oscar.ruiz@unifin.com.mx
+443f5c5b-003e-0f02-7575-5626cd9213f2,jespinosa,Javier,Espinosa Barroso,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,jespinosa@unifin.com.mx
+4541efc5-c80e-ba97-3b17-562a60fc0d20,folvera,Fernando,Olvera Garcia,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,PROMOTOR FACTORAJE,0,4,folvera@unifin.com.mx
+46552f32-b6d0-584f-4fc6-5626cd2c0c04,bsoreque,Berenice,Soreque Tellez,0,Active,ac3cec3a-413e-38a0-dc7c-5628f621858a,UnifinFinanciera,Centro,DF,JLM,PROMOTOR LEASING,0,1,bsoreque@unifin.com.mx
+4843d369-4583-d48b-907e-5626cd3b4fe2,aortega,Andrea Berenice,Ortega Lepe,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,PROMOTOR LEASING,0,1,aortega@unifin.com.mx
+4ab8920e-d292-dbab-3c47-5626cd6b8ea9,pfernandez,Patricia,Fernández Guerrero,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,GERENTE LEASING,0,1,pfernandez@unifin.com.mx
+4c6c588d-cb41-f23a-673c-562a608f212a,mgutierrez,Maria Eugenia,Gutierrez Ramirez,0,Active,d3545903-e182-6cc9-8c9e-562a6056bff1,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,mgutierrez@unifin.com.mx
+4d628b4f-367b-1afb-bc2a-5626cdd02ac6,mespinoza,Maricarmen,Espinoza Hernandez,0,Active,a176939c-543b-90e0-4e20-5626cd010d60,UnifinFinanciera,Centro,DF,FEC,PROMOTOR LEASING,0,1,mespinoza@unifin.com.mx
+4f2762fb-fcd1-b9b0-264d-562a60658b68,mquijano,Mariana,Quijano Portilla,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,F1,PROMOTOR FACTORAJE,0,4,mquijano@unifin.com.mx
+4f90327f-0dc8-8a48-fff3-5628f6393fb7,afarrel,Azyadeth,Farrel Garduño,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE LEASING,0,1,afarrel@unifin.com.mx
+5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,goeters,Michael,Goeters Arbide,0,Active,6cf630b1-b7ef-1776-18ad-5628f685c44e,UnifinFinanciera,Centro,DF,CASA,DGA COMERCIAL LEASING,0,1,goeters@unifin.com.mx
+52754884-c96e-8da4-3a61-5626cd7d19b7,ryanez,Ramón,Yañez Regalado,0,Active,11880204-eb1c-5a97-025e-5628f663db4a,UnifinFinanciera,Norte,Monterrey,MTY,GERENTE LEASING,0,1,ryanez@unifin.com.mx
+54da5a8b-a843-04de-3450-562a6033407b,jessica.hernandez,Alma Jessica,Hernandez Quintero,0,Active,d3545903-e182-6cc9-8c9e-562a6056bff1,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,jessica.hernandez@unifin.com.mx
+55203d1a-ac36-0c08-efc8-5626cd91448f,atovar,Arturo,Tovar Terrazas,0,Active,75f5a2bb-a5e7-6b55-e9f8-5626cd4652ef,UnifinFinanciera,Norte,Chihuahua,CHI,PROMOTOR LEASING,0,1,atovar@unifin.com.mx
+569246c7-da62-4664-ef2a-5628f649537e,SinGestor,9 -,Sin Gestor,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR,0,1,wendy.reyes@unifin.com.mx
+56d88bbf-500b-7539-e61c-562a60c45268,szamudio,Sandra Arabi,Zamudio Machuca,0,Active,29ab4bd0-75a4-cc6f-b563-562a60f3309c,UnifinFinanciera,Centro,DF,F2,BACKOFFICE FACTORAJE,0,4,shurtado@unifin.com.mx
+56eb6154-dfc6-5c0e-de47-562a626e6a44,piloto,Piloto,Credito Automotriz,0,Active,a6f3ee5e-a6e4-27bc-a71d-562a600752cf,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,wendy.reyes@unifin.com.mx
+5781e2cc-f0a9-ba73-e7d9-5628f65cc8c1,ijuarez,Engracia Irene,Juarez Hernandez,0,Active,a176939c-543b-90e0-4e20-5626cd010d60,UnifinFinanciera,Centro,DF,FEC,BACKOFFICE LEASING,0,1,ejuarez@unifin.com.mx
+57f2f5ab-b33f-b373-bcb0-5626cd0a9143,dsubias,Darinka,Subias Rives,0,Active,c5e96cc3-97f9-7178-3edc-5626cdb416d7,UnifinFinanciera,Centro,DF,OOO,PROMOTOR LEASING,0,1,dsubias@unifin.com.mx
+59b8ae45-f940-4d4a-bcb7-562904b614b5,rsedano,Ramon,Sedano Rodriguez,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,Veracruz,VER,DIRECTOR COMERCIAL,1,1,rsedano@unifin.com.mx
+5b317c40-7c06-437e-76a1-5629053489fb,rrodiles,Raul Edgar,Rodiles Romero,0,Active,84ee8bf8-be26-5135-623d-562904421dca,UnifinFinanciera,Centro,Guanajuato,LEO,GERENTE LEASING,0,1,rrodiles@unifin.com.mx
+61d5102b-bb97-4ad6-1bf6-5626cd0f0219,ceydi.ibarra,Ceydi Ariette,Ibarra Trillo,0,Active,ac3cec3a-413e-38a0-dc7c-5628f621858a,UnifinFinanciera,Centro,DF,JLM,GERENTE LEASING,0,1,ceydi.ibarra@unifin.com.mx
+634531bd-b675-88b5-2900-562a60417697,mromo,Maria de Lourdes,Romo Elizalde,0,Active,a6f3ee5e-a6e4-27bc-a71d-562a600752cf,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE CREDITO AUTOMOTRIZ,0,3,mromo@unifin.com.mx
+65af4ed6-9c33-c695-16a3-562a60c78664,jquintana,José Antonio,Quintana Ruiz,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,F1,PROMOTOR FACTORAJE,0,4,jquintana@unifin.com.mx
+6633f075-a84e-a485-5227-5628f6f13619,mosorio,Martha Patricia,Osorio Davila,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE LEASING,0,1,mosorio@unifin.com.mx
+68b37e2a-bc12-303a-066c-5626cdcb6333,ddelmoral,Daniel Francisco,del Moral Mendoza,0,Active,18f40e3d-e9a1-cc7d-967e-5628f6e613bc,UnifinFinanciera,Norte,Hermosillo,HER,PROMOTOR LEASING,0,1,ddelmoral@unifin.com.mx
+693913dc-daa9-6142-5a81-562a42634579,migracion2,Migracion,etl,1,Active,NULL,UnifinFinanciera,Norte,DF,Sinequipo,PROCESO AUTOMATIZADO,0,1,gcordova@unifin.com.mx
+6a9d6b56-c56c-d212-158d-5626cdd90952,sgonzalez,Sandra Elena,González López,0,Active,52754884-c96e-8da4-3a61-5626cd7d19b7,UnifinFinanciera,Norte,Monterrey,MTY,PROMOTOR LEASING,0,1,sgonzalez@unifin.com.mx
+6b64255a-e0d1-0be0-45f7-562a60c060ad,irobles,Isabel,Robles Castro,0,Active,bcc00622-9b16-df36-3d4b-562a600ca276,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,irobles@unifin.com.mx
+6cbe4052-7460-3592-8c63-5628f6f80820,jdemiguel,Juan de,Miguel Gonzalez,0,Active,6cf630b1-b7ef-1776-18ad-5628f685c44e,UnifinFinanciera,Centro,DF,Sinequipo,DIRECTOR LEASING,1,1,jdemiguel@unifin.com.mx
+6cdddcb1-7e8e-3bfd-b39d-5628f6812c39,acortes,Audha Maria,Cortes y Flores Galvan,0,Active,2d4554c0-0697-1883-b6ac-5628f62edbed,UnifinFinanciera,Centro,Puebla,PUE,BACKOFFICE LEASING,0,1,acortes@unifin.com.mx
+6cf630b1-b7ef-1776-18ad-5628f685c44e,Luis,Luis,Barroso Gonzalez,0,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,DIRECTOR CORPORATIVO,1,1,wendy.reyes@unifin.com.mx
+6f2f0296-87de-226d-6d38-5626cd268856,mramirez,Manuel,Ramírez Silva,0,Active,1fb6f5ea-9bd3-5894-b038-5626cd930208,UnifinFinanciera,Norte,Monterrey,MTY,PROMOTOR LEASING,0,1,mramirez@unifin.com.mx
+6f49bec6-0e8f-37cb-55ff-5629041114e8,aaguirre,Alejandra,Aguirre Rosiñol,0,Active,59b8ae45-f940-4d4a-bcb7-562904b614b5,UnifinFinanciera,Centro,Veracruz,VER,DIRECTOR COMERCIAL,1,1,aaguirre@unifin.com.mx
+7155e03d-5c4b-be16-5731-56290553a721,aescorcia,Alejandra,Escorcia Domínguez,0,Active,59b8ae45-f940-4d4a-bcb7-562904b614b5,UnifinFinanciera,Centro,Veracruz,VER,PROMOTOR LEASING,0,1,aescorcia@unifin.com.mx
+716822f6-f2f9-3053-e052-5626c99305ac,carmen.velasco,Carmen,Velasco Vicario,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,carmen.velasco@unifin.com.mx
+73020112-0b4c-dc3b-fedc-562a6279cd84,rramirez,Rocio,Ramirez Diaz,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE FACTORAJE,0,4,rramirez@unifin.com.mx
+75e1438f-95d6-b16c-5781-5626cd497a4d,hruiz,Héctor,Ruíz Sierra,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,hruiz@unifin.com.mx
+75f5a2bb-a5e7-6b55-e9f8-5626cd4652ef,cattolini,Carlos,Attolini Pesqueira,0,Active,11880204-eb1c-5a97-025e-5628f663db4a,UnifinFinanciera,Norte,Chihuahua,CHI,GERENTE LEASING,0,1,cattolini@unifin.com.mx
+7a83c151-6fc3-dc2b-b3a0-562a60aa3b74,agayosso,Adriana,Gayosso Cruz,0,Active,a6f3ee5e-a6e4-27bc-a71d-562a600752cf,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE CREDITO AUTOMOTRIZ,0,3,agayosso@unifin.com.mx
+7b173c56-8d39-24b1-3f33-5626cd6d0263,egodinez,Edgar Tadeo,Godinez Ávila,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,GERENTE LEASING,0,1,egodinez@unifin.com.mx
+7c1258d7-f42d-a1c4-6836-562a60c13509,larce,Luis Miguel,Arce Cuesta,0,Active,29ab4bd0-75a4-cc6f-b563-562a60f3309c,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,larce@unifin.com.mx
+7ccb0c14-18ee-f96c-6834-5626cdf7495b,daniela.nunez,Daniela,Nuñez Solis,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,GERENTE LEASING,0,1,daniela.nunez@unifin.com.mx
+7cd1b2d8-0bfb-4f87-10ad-5628f66e5fbb,mpadilla,Mariana,Padilla Manjarrez,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE LEASING,0,1,mpadilla@unifin.com.mx
+8183bff0-948a-92b2-8be6-5628f6176c6a,fernando.elizundia,Fernando,Elizundia Cisneros,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,FEC,DIRECTOR LEASING,1,1,fernando.elizundia@unifin.com.mx
+82d36556-944a-95a4-014e-5628f653307f,jcjimenez,Juan Carlos,Jimenez Pavon,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,JCJ,DIRECTOR LEASING,1,1,jcjimenez@unifin.com.mx
+82e403b3-de78-172f-465c-5626cd1f82ab,ariel.serrano,Ariel,Serrano Vazquez,0,Active,2d4554c0-0697-1883-b6ac-5628f62edbed,UnifinFinanciera,Centro,Puebla,PUE,GERENTE LEASING,0,1,ariel.serrano@unifin.com.mx
+8482c279-d5cf-f460-10c0-562a606f2409,gerardo.herrera,Gerardo Gonzalo,Herrera Vazquez,0,Active,2d4554c0-0697-1883-b6ac-5628f62edbed,UnifinFinanciera,Centro,Puebla,PUE,GERENTE FACTORAJE,0,4,gerardo.herrera@unifin.com.mx
+849def80-465e-b99e-b12b-5628f6f5bdb2,agil,Angelica Janeth,Gil Jimenez,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,EJECUTIVO ESTRATEGIA COMERCIAL,0,1,agil@unifin.com.mx
+84ee8bf8-be26-5135-623d-562904421dca,crenteria,Carlos Mauricio,Renteria Lopez,0,Active,25fb82fa-05a7-16d7-f1dd-5628f6945fc7,UnifinFinanciera,Centro,Guanajuato,LEO,SUBDIRECTOR LEASING,0,1,crenteria@unifin.com.mx
+8728215e-c010-eff6-b0ff-5626cdc36135,mmadrid,Manuel Juventino,Madrid García,0,Active,18f40e3d-e9a1-cc7d-967e-5628f6e613bc,UnifinFinanciera,Norte,Hermosillo,HER,PROMOTOR LEASING,0,1,mmadrid@unifin.com.mx
+88caca0d-eb52-a20d-870c-5626c941ea15,jorge.sanchez,Jorge,Sanchez,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,jorge.sanchez@unifin.com.mx
+88dd5a3b-9f66-4308-f072-562a6216a5b9,dorly.rabago,Dorly Michelle,Rabago Salazar,0,Active,3f232cae-4ee1-c9b0-266d-562a600fa9d7,UnifinFinanciera,Centro,DF,F3,GERENTE FACTORAJE,0,4,dorly.rabago@unifin.com.mx
+8dbd8edc-fd05-4724-158b-5626cd9c946a,jestudillo,Jorge Manuel,Estudillo Cabrera,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,PROMOTOR LEASING,0,1,jestudillo@unifin.com.mx
+905d0020-1c27-664a-5826-5626cd3d4bf8,jdelatorre,José Juan,de la Torre Velasco,0,Active,75f5a2bb-a5e7-6b55-e9f8-5626cd4652ef,UnifinFinanciera,Norte,Chihuahua,CHI,PROMOTOR LEASING,0,1,jdelatorre@unifin.com.mx
+905db8e2-a855-6560-b137-562a6060e518,dcampos,Daniela,Campos Soriano,0,Active,a6f3ee5e-a6e4-27bc-a71d-562a600752cf,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE CREDITO AUTOMOTRIZ,0,3,dcampos@unifin.com.mx
+923601be-ea15-164d-61c8-562a604bd27c,ffernandez,Federico,Fernández de la Regata Torres,0,Active,29ab4bd0-75a4-cc6f-b563-562a60f3309c,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,ffernandez@unifin.com.mx
+932c8582-eba5-ffaf-69e5-5628f69d71e3,nrodriguez,Nayeli Yanine,Rodriguez Arrioja,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE LEASING,0,1,nrodriguez@unifin.com.mx
+96702256-711b-80d8-7a4e-5626cdc7a445,carlos.garcia,Jorge Carlos,Garcia Garcia,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,GERENTE LEASING,0,1,carlos.garcia@unifin.com.mx
+96aafe1d-dc33-2a30-3f03-5628f601f748,jose.madariaga,Jose Luis,Madariaga Cervantes,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,JLM,DIRECTOR LEASING,1,1,jose.madariaga@unifin.com.mx
+97d1ef48-caa5-4825-2565-5628f6ca7431,oortiz,Oscar,Ortiz Ortega,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,OOO,DIRECTOR LEASING,1,1,oortiz@unifin.com.mx
+9806172b-6732-2b9f-b57c-5628f6a536e4,jalbarran,Jesus Manuel,Albarran de la Maza,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Oeste,Guadalajara,GDL,DIRECTOR LEASING,1,1,jalbarran@unifin.com.mx
+9b13fe2e-1d8f-033d-9019-5626cd2acb91,crabago,Cristina Alejandra,Rábago Gómez,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,PROMOTOR LEASING,0,1,crabago@unifin.com.mx
+9bd3a25f-bbc9-a94a-e14e-5628f6fd5e36,bflores,Bernardo,Flores Pacheco,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,EJECUTIVO ESTRATEGIA COMERCIAL,0,1,bflores@unifin.com.mx
+9d360c55-8095-93f8-018d-5628f6d9bf1c,acano,Ana Rosa,Cano Flores,0,Active,c291d7ab-aedb-dae0-6d4a-5628f67dcdf0,UnifinFinanciera,Centro,DF,FEC,BACKOFFICE LEASING,0,1,acano@unifin.com.mx
+a04540fc-e608-56a7-ad47-562a6078519d,lcampos,Maria de Lourdes,Campos Toca,0,Active,a04540fc-e608-56a7-ad47-562a6078519d,UnifinFinanciera,Centro,DF,Sinequipo,DGA FACTORAJE,0,4,lcampos@unifin.com.mx
+a176939c-543b-90e0-4e20-5626cd010d60,sgarcia,Shantell,García Rodríguez,0,Active,8183bff0-948a-92b2-8be6-5628f6176c6a,UnifinFinanciera,Centro,DF,FEC,GERENTE LEASING,0,1,sgarcia@unifin.com.mx
+a39206fe-a3b8-0b7b-abe4-5626cd957b3d,mboehm,Maria Teresa,Boehm Calero,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Merida,MER,PROMOTOR LEASING,0,1,mboehm@unifin.com.mx
+a6f3ee5e-a6e4-27bc-a71d-562a600752cf,malonso,Maria José,Alonso Rodriguez,0,Active,bcc00622-9b16-df36-3d4b-562a600ca276,UnifinFinanciera,Centro,DF,Sinequipo,DIRECTOR CREDITO AUTOMOTRIZ,0,3,malonso@unifin.com.mx
+a77025dd-3e64-a873-e79a-562a6028257f,miguel.anguiano,Miguel Angel,Anguiano Cortez,0,Active,a6f3ee5e-a6e4-27bc-a71d-562a600752cf,UnifinFinanciera,Centro,DF,Sinequipo,GERENTE CREDIT,0,3,miguel.anguiano@unifin.com.mx
+a78b24e6-16ef-c277-5341-5626cda2d7e5,ntamariz,Marilyn Naxiieli,Tamariz Morett,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,ntamariz@unifin.com.mx
+a91f3b25-984d-03e9-4aaa-562a608bacb9,esuarez,Eugenio,Suarez Rodriguez,0,Active,29ab4bd0-75a4-cc6f-b563-562a60f3309c,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,esuarez@unifin.com.mx
+a92e9a31-fc3d-2e7f-c13a-5628f66d36ae,rmarin,Rogelio,Marin Capdevila,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,Sinequipo,BACKOFFICE LEASING,0,1,rmarin@unifin.com.mx
+a9d81b93-96f7-365f-a07f-5626c9d452ea,ehernandez,Enrique,Hernandez,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,ehernandez@unifin.com.mx
+ab3f0c3a-7fd9-b0d2-b7a2-562a60ce0a99,frabago,Francisco,Fernando Rábago Rábago,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,F1,PROMOTOR FACTORAJE,0,4,frabago@unifin.com.mx
+ab7c9f8b-f07c-809c-3159-5626cd691b31,tlopez,Tamara,López López,0,Active,75f5a2bb-a5e7-6b55-e9f8-5626cd4652ef,UnifinFinanciera,Norte,Chihuahua,CHI,PROMOTOR LEASING,0,1,tlopez@unifin.com.mx
+ac3cec3a-413e-38a0-dc7c-5628f621858a,lourdes.natera,Lourdes,Natera Curiel,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,SUBDIRECTOR LEASING,0,1,lourdes.natera@unifin.com.mx
+aca7302a-642f-4f3f-73c9-5626cd1daa1f,dramos,Deyanira Imelda,Ramos Vazquez,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,PROMOTOR LEASING,0,1,dramos@unifin.com.mx
+ad4b40dd-15ee-5508-afb0-5628f66b0b33,lresendiz,Laura Angelica,Resendiz Barragan,0,Active,82d36556-944a-95a4-014e-5628f653307f,UnifinFinanciera,Centro,DF,JCJ,BACKOFFICE LEASING,0,1,lresendiz@unifin.com.mx
+aebe503b-c10c-9960-0f16-5626cdfba70a,jose.garcia,José Alfredo,García Cruz,0,Active,96aafe1d-dc33-2a30-3f03-5628f601f748,UnifinFinanciera,Centro,DF,JLM,PROMOTOR LEASING,0,1,jose.garcia@unifin.com.mx
+afc50a79-f3d2-397f-18ab-562a60e5e69b,mmontero,María Fernanda,Montero Mendoza,0,Active,a77025dd-3e64-a873-e79a-562a6028257f,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,mmontero@unifin.com.mx
+b4619fca-1177-c93e-c131-5626cdff0db8,jnunez,Juan Alfonso,Nuñez Escalona,0,Active,2d4554c0-0697-1883-b6ac-5628f62edbed,UnifinFinanciera,Centro,Puebla,PUE,PROMOTOR LEASING,0,1,jnunez@unifin.com.mx
+b495fe11-f47a-a866-7df3-5628f6510634,bmondragon,Brenda Elizabeth,Mondragon Borilla,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,EJECUTIVO ESTRATEGIA COMERCIAL,0,1,bmondragon@unifin.com.mx
+b8ac552e-bfd9-4ecf-470d-5628f6532459,aflores,Jesus Andres,Flores Noriega,0,Active,ac3cec3a-413e-38a0-dc7c-5628f621858a,UnifinFinanciera,Centro,DF,JLM,BACKOFFICE LEASING,0,1,aflores@unifin.com.mx
+b8b4082a-f193-5ed0-8e81-5626cdc30005,mvizcaino,María Teresa,Vizcaíno Moreno,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,mvizcaino@unifin.com.mx
+bba01357-20f7-68a0-7a3e-5626cd851faa,chidalgo,César Eduardo,Hidalgo Rodríguez,0,Active,82d36556-944a-95a4-014e-5628f653307f,UnifinFinanciera,Centro,DF,JCJ,GERENTE LEASING,0,1,chidalgo@unifin.com.mx
+bcc00622-9b16-df36-3d4b-562a600ca276,ecastillo,Eduardo,Castillo Sánchez Mejorada,0,Active,bcc00622-9b16-df36-3d4b-562a600ca276,UnifinFinanciera,Centro,DF,Sinequipo,DGA CREDITO AUTOMOTRIZ,0,3,ecastillo@unifin.com.mx
+bd5693b9-7d57-0101-87ec-562a60d0be9c,gsoto,Guillermo Luis,Soto Medina,0,Active,a77025dd-3e64-a873-e79a-562a6028257f,UnifinFinanciera,Centro,DF,Sinequipo,GERENTE CREDIT,0,3,gsoto@unifin.com.mx
+be880bb3-3760-e49f-6ff1-5626cda496f7,ctovar,Carolina,Tovar Lemus,0,Active,d5e1164f-2774-b337-30bd-5626cd17817f,UnifinFinanciera,Oeste,Guadalajara,GDL,PROMOTOR LEASING,0,1,ctovar@unifin.com.mx
+bf323702-7127-b6ff-fd00-5626cd45ba0f,rherrera,Román Benito,Herrera Franco,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Merida,MER,GERENTE LEASING,0,1,rherrera@unifin.com.mx
+bf51077a-e2d8-5f5a-5ddf-5626cdbe9c37,lmendoza,Luz Adriana,Mendoza Cisneros,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,lmendoza@unifin.com.mx
+bffbf796-354e-aa02-062a-562a60dad420,fbouffier,Fátima Clarisse,Bouffier Cano,0,Active,1295f60c-58c2-3050-8fbe-562a60bc7b4a,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,fbouffier@unifin.com.mx
+c009d23e-0437-ff7d-050c-5628f65267c4,vgomez,Veronica,Gomez Segura,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,CASA,BACKOFFICE LEASING,0,1,vgomez@unifin.com.mx
+c291d7ab-aedb-dae0-6d4a-5628f67dcdf0,marcela.banuelos,Marcela,Bañuelos Berlanga,0,Active,8183bff0-948a-92b2-8be6-5628f6176c6a,UnifinFinanciera,Centro,DF,FEC,SUBDIRECTOR LEASING,0,1,marcela.banuelos@unifin.com.mx
+c2a90da4-b9bc-3cd0-70e2-5626c97bd1d0,alan.garcia,Alan Yuneski,Garcia,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,alan.garcia@unifin.com.mx
+c2f39761-6220-5fc5-d8bc-5628f644efd9,aecheverria,Anne Guadalupe,Echeverria Reyes,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,SUBDIRECTOR LEASING,0,1,aecheverria@unifin.com.mx
+c4930d22-b85c-2a59-4038-562a602bac76,vcamargo,Victor Manuel,Camargo Vargas,0,Active,ea645c59-b8d4-4ac6-c0dd-562a607c96f4,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,vcamargo@unifin.com.mx
+c57e811e-b81a-cde4-d6b4-5626c9961772,wendy.reyes,Wendy Amairini,Reyes Peralta,1,Active,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,wendy.reyes@unifin.com.mx
+c5d21348-5966-a76f-6da5-5628f626240d,srodriguez,Sofia,Rodriguez Garza,0,Active,11880204-eb1c-5a97-025e-5628f663db4a,UnifinFinanciera,Norte,Monterrey,MTY,BACKOFFICE LEASING,0,1,srodriguez@unifin.com.mx
+c5e96cc3-97f9-7178-3edc-5626cdb416d7,mfusco,Martha Lucia,Fusco Garza,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,mfusco@unifin.com.mx
+c94f5eb1-1ff3-ae88-44f1-5626db4d819c,mmanzano,Mario,Manzano,1,Inactive,NULL,UnifinFinanciera,Centro,DF,Sinequipo,SISTEMAS,1,1,mmanzano@unifin.com.mx
+ca6c035d-0de1-deee-9e79-5626cd977267,rortega,Rafael,Ortega Garcia,0,Active,7b173c56-8d39-24b1-3f33-5626cd6d0263,UnifinFinanciera,Centro,DF,JLM,PROMOTOR LEASING,0,1,rortega@unifin.com.mx
+cad00547-eb50-0aab-fdab-5626cda04402,amacin,Luis Alejandro,Macín Sánchez,0,Active,8183bff0-948a-92b2-8be6-5628f6176c6a,UnifinFinanciera,Centro,DF,FEC,PROMOTOR LEASING,0,1,amacin@unifin.com.mx
+cc144605-67c6-1498-9164-5626cd979a93,snunez,Sol,Nuñez Maldonado,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,CASA,GERENTE LEASING,0,1,snunez@unifin.com.mx
+cde64f52-c3d3-bd13-088c-5628f6ddad66,jbuenrostro,Jose Maria,Buenrostro Leñero,0,Active,6cbe4052-7460-3592-8c63-5628f6f80820,UnifinFinanciera,Centro,DF,Sinequipo,EJECUTIVO ESTRATEGIA COMERCIAL,0,1,jbuenrostro@unifin.com.mx
+d064c508-3b12-fa97-13ca-5628f6c67ef4,gapodaca,Guadalupe,Apodaca Miranda,0,Active,18f40e3d-e9a1-cc7d-967e-5628f6e613bc,UnifinFinanciera,Norte,Hermosillo,HER,BACKOFFICE LEASING,0,1,gapodaca@unifin.com.mx
+d24f31a6-c559-5dac-321d-5626cd1bb440,dolavarrieta,Diego,Olavarrieta Roman,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,PROMOTOR LEASING,0,1,dolavarrieta@unifin.com.mx
+d3545903-e182-6cc9-8c9e-562a6056bff1,jguzman,Jorge,Guzman Gil,0,Active,a77025dd-3e64-a873-e79a-562a6028257f,UnifinFinanciera,Centro,DF,Sinequipo,GERENTE CREDIT,0,3,jguzman@unifin.com.mx
+d5e1164f-2774-b337-30bd-5626cd17817f,fgarcia,Francisco Emilio,García Preciado Jáuregui,0,Active,9806172b-6732-2b9f-b57c-5628f6a536e4,UnifinFinanciera,Oeste,Guadalajara,GDL,GERENTE LEASING,0,1,fgarcia@unifin.com.mx
+d5f2ef7d-7637-f1d8-2e57-5628f69e6713,BIbanez,Teresa Berenice,Ibañez Araiza,0,Active,c009d23e-0437-ff7d-050c-5628f65267c4,UnifinFinanciera,Centro,DF,CASA,BACKOFFICE LEASING,0,1,bibanez@unifin.com.mx
+d73ef8ee-dfb4-1de4-0f64-562a60a74afb,aguerrero,Andrés,Guerrero González,0,Active,16ff1b17-a063-6fff-970f-5628f6e851a4,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,aguerrero@unifin.com.mx
+d8821709-b6a9-3176-fa43-5628f6644dbc,jnadal,Judith Guadalupe,Nadal Alvarez,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,BACKOFFICE LEASING,0,1,jnadal@unifin.com.mx
+d924a019-d565-28ea-b852-5628f6227bb4,patricia.ochoa,Patricia,Ochoa Altamirano,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Sur,Cancun,CNC,SUBDIRECTOR LEASING,0,1,patricia.ochoa@unifin.com.mx
+d9651c25-2e5f-39a9-79f7-5626cd125326,jbadillo,Jonathan Israel,Badillo Alvarado,0,Active,82d36556-944a-95a4-014e-5628f653307f,UnifinFinanciera,Centro,DF,JCJ,PROMOTOR LEASING,0,1,jbadillo@unifin.com.mx
+d9e8af1d-b88a-9c9e-c011-5626cd665244,jaqueline.garcia,Jaqueline,García Mata,0,Active,52754884-c96e-8da4-3a61-5626cd7d19b7,UnifinFinanciera,Norte,Monterrey,MTY,PROMOTOR LEASING,0,1,jaqueline.garcia@unifin.com.mx
+da7cb02a-5abd-ee6c-6147-562a6077b9ca,jherrera,Jorge Manuel,Herrera Gomez,0,Active,ea645c59-b8d4-4ac6-c0dd-562a607c96f4,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,jherrera@unifin.com.mx
+db109629-b585-940c-4d8e-5628f6bb96aa,dmartinez,Denise,Martinez Najera,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,BACKOFFICE LEASING,0,1,dmartinez@unifin.com.mx
+db6cdb55-edb3-4b5a-4fd6-5626cda65c59,miglesias,Myrna Luz del Carmen,Iglesias Martinez,0,Active,2d4554c0-0697-1883-b6ac-5628f62edbed,UnifinFinanciera,Centro,Puebla,PUE,PROMOTOR LEASING,0,1,miglesias@unifin.com.mx
+db9cdece-2212-a483-1c6f-5628f639429f,khernandez,Karina Liliana,Hernandez Dominguez,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,BACKOFFICE LEASING,0,1,khernandez@unifin.com.mx
+dee2a973-9277-d6a7-2c3f-5626cd498cd9,mmontoya,Mauricio,Montoya Rivero,0,Active,97d1ef48-caa5-4825-2565-5628f6ca7431,UnifinFinanciera,Centro,DF,OOO,GERENTE LEASING,0,1,mmontoya@unifin.com.mx
+df5200cf-e02b-2e55-0af7-5626cd74a6c8,igarcia,Ignacio,García Plaisant,0,Active,d5e1164f-2774-b337-30bd-5626cd17817f,UnifinFinanciera,Oeste,Guadalajara,GDL,GERENTE LEASING,0,1,igarcia@unifin.com.mx
+e33b00c0-7709-3bb4-a79d-5626cda71227,abriones,Alejandra,Briones Castillo,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,PROMOTOR LEASING,0,1,abriones@unifin.com.mx
+e4d98269-82a4-fb8b-47fe-5626cd287b48,ahernandez,Maria Adriana,Hernandez Garcia,0,Active,3d3a2de3-cef9-8181-7035-5628f69bb030,UnifinFinanciera,Centro,DF,JRD,GERENTE LEASING,0,1,ahernandez@unifin.com.mx
+e695976a-368a-b16e-a128-5628f6cf71ca,ielizalde,Ivonne,Elizalde Leyva,0,Active,5082a4cd-cfba-c7b9-cc7d-5628f6b31dd6,UnifinFinanciera,Centro,DF,CASA,ASISTENTE,0,1,ielizalde@unifin.com.mx
+e69c6ced-147a-73ab-0c69-5626cd353c84,aaldana,Alejandro,Aldana Torres,0,Active,8183bff0-948a-92b2-8be6-5628f6176c6a,UnifinFinanciera,Centro,DF,FEC,GERENTE LEASING,0,1,aaldana@unifin.com.mx
+e8c130cf-1043-206d-92e7-562a60e9199d,aromero,Alejandro,Romero Cruz,0,Active,ea645c59-b8d4-4ac6-c0dd-562a607c96f4,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,aromero@unifin.com.mx
+ea645c59-b8d4-4ac6-c0dd-562a607c96f4,eromero,Emilio,Romero Figueroa,0,Active,a77025dd-3e64-a873-e79a-562a6028257f,UnifinFinanciera,Centro,DF,Sinequipo,GERENTE CREDIT,0,3,eromero@unifin.com.mx
+ec83e4c8-edb9-e736-6711-5626cd8aff4a,gfernandez,Gonzalo Alfredo,Fernandez de Córdova Aguilar,0,Active,d924a019-d565-28ea-b852-5628f6227bb4,UnifinFinanciera,Sur,Cancun,CNC,GERENTE LEASING,0,1,gcordova@unifin.com.mx
+ee087638-d5af-02e2-4b09-562a60684234,jcastanon,Jorge Alberto,Castañon Coronado,0,Active,29ab4bd0-75a4-cc6f-b563-562a60f3309c,UnifinFinanciera,Centro,DF,F2,PROMOTOR FACTORAJE,0,4,jcastanon@unifin.com.mx
+eecc9881-ee31-f7e7-05b2-5628f6fc001a,ifranco,Iris Guadalupe,Franco Navarro,0,Active,c291d7ab-aedb-dae0-6d4a-5628f67dcdf0,UnifinFinanciera,Centro,DF,FEC,BACKOFFICE LEASING,0,1,ifranco@unifin.com.mx
+ef0ecded-3bb2-46ac-8021-5628f6c78fe7,rbravo,Rosa Maria,Bravo Soto,0,Active,25fb82fa-05a7-16d7-f1dd-5628f6945fc7,UnifinFinanciera,Centro,Queretaro,QRO,BACKOFFICE LEASING,0,1,rbravo@unifin.com.mx
+f0467602-0baf-896f-3a29-562a42cf2e7e,migracion3,Migracion,etl,1,Active,NULL,UnifinFinanciera,Norte,DF,Sinequipo,PROCESO AUTOMATIZADO,0,1,gcordova@unifin.com.mx
+f071ccba-45ea-4ccb-9827-562a6090a815,nparra,Nallely Sarai,Parra Zavala,0,Active,d3545903-e182-6cc9-8c9e-562a6056bff1,UnifinFinanciera,Centro,DF,Sinequipo,PROMOTOR CREDITO AUTOMOTRIZ,0,3,nparra@unifin.com.mx
+f0fc946d-bb58-db2e-3785-5628f6721aac,obafidis,Olga Teresa,Bafidis Ochoa,0,Active,75f5a2bb-a5e7-6b55-e9f8-5626cd4652ef,UnifinFinanciera,Norte,Chihuahua,CHI,BACKOFFICE LEASING,0,1,obafidis@unifin.com.mx
+f1c7a48a-282a-eda3-af60-5626cd4c877d,rvallejo,Rodrigo Alejandro,Vallejo Piñera,0,Active,82d36556-944a-95a4-014e-5628f653307f,UnifinFinanciera,Centro,DF,JCJ,GERENTE LEASING,0,1,rvallejo@unifin.com.mx
+f33d865c-6dc9-978c-5414-5626cd5533f9,jbocanegra,Juan Francisco,Bocanegra Bobadilla,0,Active,16ff1b17-a063-6fff-970f-5628f6e851a4,UnifinFinanciera,Centro,Queretaro,QRO,GERENTE LEASING,0,1,jbocanegra@unifin.com.mx
+f342850a-560d-c0c1-659c-5626cd192f8c,imiranda,Israel,Miranda López,0,Active,25fb82fa-05a7-16d7-f1dd-5628f6945fc7,UnifinFinanciera,Centro,Queretaro,QRO,PROMOTOR LEASING,0,1,imiranda@unifin.com.mx

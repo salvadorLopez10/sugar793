@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:7ef2e23b-7ef0-0b09-c60d-59e7929e00e0
+ORGANIZER;CN=Carlos Albicker Gomez:calbicker@unifin.com.mx
+DTSTART:20171019T150000Z
+DTEND:20171019T161500Z
+DTSTAMP:20171018T174200Z
+SUMMARY:Plastimobel
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

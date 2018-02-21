@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:90d3b30b-d5f2-9f7b-21dd-58d970ece546
+ORGANIZER;CN=Jorge Gerardo Villalon Rocha:jvillalon@unifin.com.mx
+DTSTART:20170330T170000Z
+DTEND:20170330T181500Z
+DTSTAMP:20170327T200600Z
+SUMMARY:ECOSYNTEX
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

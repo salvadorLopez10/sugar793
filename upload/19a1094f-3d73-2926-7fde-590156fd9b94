@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:19a1094f-3d73-2926-7fde-590156fd9b94
+ORGANIZER;CN=Diana Patricia Yazmín Hernandez Martinez:diana.hernandez@unifin.com.mx
+DTSTART:20170426T150000Z
+DTEND:20170426T160000Z
+DTSTAMP:20170427T022600Z
+SUMMARY:BARBOSA
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:3173baae-4f5d-d442-24ab-59ea0f5dedb4
+ORGANIZER;CN=Emilio Lezama Belman:elezama@unifin.com.mx
+DTSTART:20171023T150000Z
+DTEND:20171023T161500Z
+DTSTAMP:20171020T145800Z
+SUMMARY:PRESENTACION
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

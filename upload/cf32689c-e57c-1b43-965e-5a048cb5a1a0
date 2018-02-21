@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:cf32689c-e57c-1b43-965e-5a048cb5a1a0
+ORGANIZER;CN=Moises Levy Michan:mlevy@unifin.com.mx
+DTSTART:20171117T210000Z
+DTEND:20171117T214500Z
+DTSTAMP:20171109T171200Z
+SUMMARY:MR TIPS
+DESCRIPTION:Asi quedo confirmada, pero voy a re agendar para mas temprano, 
+
+Cita de accesorios para hombres, proveedor de grandes cadenas. 
+END:VEVENT
+END:VCALENDAR

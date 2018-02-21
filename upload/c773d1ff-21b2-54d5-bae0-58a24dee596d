@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20170217T135000Z
+DTEND:20170217T145000Z
+DTSTAMP:20170214T002105Z
+ORGANIZER;CN=Cynthia Gissele Rodriguez Ruiz:mailto:crr@unifinseguros.com.mx
+UID:kv3s1l8drlhvvesbrilcj3a28c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=aguerrero@unifin.com.mx;X-NUM-GUESTS=0:mailto:aguerrero@unifin.com.
+ mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=jrobledo@unifin.com.mx;X-NUM-GUESTS=0:mailto:jrobledo@unifin.com.mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=imiranda@unifin.com.mx;X-NUM-GUESTS=0:mailto:imiranda@unifin.com.mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=Cynthia Gissele Rodriguez Ruiz;X-NUM-GUESTS=0:mailto:crr@unifinseguros.
+ com.mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=jchavez@unifin.com.mx;X-NUM-GUESTS=0:mailto:jchavez@unifin.com.mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=javendano@unifin.com.mx;X-NUM-GUESTS=0:mailto:javendano@unifin.com.
+ mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=fvillegas@unifin.com.mx;X-NUM-GUESTS=0:mailto:fvillegas@unifin.com.
+ mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=jriba@unifin.com.mx;X-NUM-GUESTS=0:mailto:jriba@unifin.com.mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=cceballos@unifin.com.mx;X-NUM-GUESTS=0:mailto:cceballos@unifin.com.
+ mx
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=ediaz@unifin.com.mx;X-NUM-GUESTS=0:mailto:ediaz@unifin.com.mx
+CREATED:20170214T002103Z
+DESCRIPTION:This event has a Google Hangouts video call.\nJoin: https://plu
+ s.google.com/hangouts/_/inter.mx/reuni-n-seguro?hceid=Y3JyQHVuaWZpbnNlZ3Vyb
+ 3MuY29tLm14.kv3s1l8drlhvvesbrilcj3a28c&hs=121\n\nView your event at https:/
+ /www.google.com/calendar/event?action=VIEW&eid=a3YzczFsOGRybGh2dmVzYnJpbGNq
+ M2EyOGMgZWRpYXpAdW5pZmluLmNvbS5teA&tok=MjQjY3JyQHVuaWZpbnNlZ3Vyb3MuY29tLm14
+ ZmYzYmZiYzNmY2VjYzk5YjEyYzVmMmU3NWQ0YzAwNDZhYTkxMDI4Yw&ctz=America/Mexico_C
+ ity&hl=en.
+LAST-MODIFIED:20170214T002103Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Reunión Seguro Listo
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

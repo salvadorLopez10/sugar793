@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:bc1e0d28-26ab-af45-09aa-59de2f905ca5
+ORGANIZER;CN=Miguel Angel Zavala Franco:mzavala@unifin.com.mx
+DTSTART:20171011T213000Z
+DTEND:20171011T224500Z
+DTSTAMP:20171011T145000Z
+SUMMARY:Cita
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:9333a13a-16db-3add-eefc-5a0dcb1a7a0f
+ORGANIZER;CN=Avendaño Ruiz:javendano@unifin.com.mx
+DTSTART:20171116T180000Z
+DTEND:20171116T190000Z
+DTSTAMP:20171116T173200Z
+SUMMARY:AUDER
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

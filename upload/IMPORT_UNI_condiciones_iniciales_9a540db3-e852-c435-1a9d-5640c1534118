@@ -1,0 +1,379 @@
+Nombre,Activo,Rango Minimo,Rango Maximo,Campo Destino (Minimo),Campo Destino (Maximo)
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,60,70,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,1_12,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,55,65,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,40,50,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,13_24,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,30,40,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,20,30,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,25_36,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,10,20,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,15,20,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,37_48,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,5,10,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,15,20,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,49_60,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,5,10,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Autos - Comision,AUTOS,3,3,new_comision_minima,new_comision_maxima
+Autos - Tasa,AUTOS,22,25,new_tasa_minima,new_tasa_maxima
+Autos - VRI,AUTOS,15,20,new_vri_minimo,new_vri_maximo
+Autos - Plazo,AUTOS,61_72,,new_plazo,
+Autos - Renta Inicial,AUTOS,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Autos - VRC,AUTOS,5,10,new_vrc_minimo,new_vrc_maximo
+Autos - Deposito,AUTOS,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,50,50,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,1_12,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,45,45,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,35,35,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,13_24,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,25,25,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,25,25,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,25_36,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,15,15,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,15,15,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,36_48,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,5,5,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,15,15,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,49_60,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,5,5,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Camiones - Comision,CAMIONES,3,3,new_comision_minima,new_comision_maxima
+Camiones - Tasa,CAMIONES,22,25,new_tasa_minima,new_tasa_maxima
+Camiones - VRI,CAMIONES,15,15,new_vri_minimo,new_vri_maximo
+Camiones - Plazo,CAMIONES,61_72,,new_plazo,
+Camiones - Renta Inicial,CAMIONES,10,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Camiones - VRC,CAMIONES,5,5,new_vrc_minimo,new_vrc_maximo
+Camiones - Deposito,CAMIONES,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,60,60,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,1_12,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,55,55,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,40,40,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,13_24,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,30,30,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,20,20,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,25_36,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,15,15,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,37_48,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,5,5,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,15,15,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,49_60,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,5,5,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Equipo de Transporte - Comision,EQUIPO DE TRANSPORTE,3,3,new_comision_minima,new_comision_maxima
+Equipo de Transporte - Tasa,EQUIPO DE TRANSPORTE,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de Transporte - VRI,EQUIPO DE TRANSPORTE,15,15,new_vri_minimo,new_vri_maximo
+Equipo de Transporte - Plazo,EQUIPO DE TRANSPORTE,61_72,,new_plazo,
+Equipo de Transporte - Renta Inicial,EQUIPO DE TRANSPORTE,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de Transporte - VRC,EQUIPO DE TRANSPORTE,5,5,new_vrc_minimo,new_vrc_maximo
+Equipo de Transporte - Deposito,EQUIPO DE TRANSPORTE,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,50,50,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,1_12,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,40,40,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,40,40,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,13_24,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,30,30,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,20,20,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,25_36,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,10,10,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,10,10,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,37_48,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,0,0,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,10,10,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,49_60,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,0,0,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Otros - Comision,OTROS,3,3,new_comision_minima,new_comision_maxima
+Otros - Tasa,OTROS,22,25,new_tasa_minima,new_tasa_maxima
+Otros - VRI,OTROS,10,10,new_vri_minimo,new_vri_maximo
+Otros - Plazo,OTROS,61_72,,new_plazo,
+Otros - Renta Inicial,OTROS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Otros - VRC,OTROS,0,0,new_vrc_minimo,new_vrc_maximo
+Otros - Deposito,OTROS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,50,50,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,1_12,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,40,40,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,40,40,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,13_24,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,30,30,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,20,20,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,25_36,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,10,10,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,10,10,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,37_48,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,0,0,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,10,10,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,49_60,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,0,0,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Barcos - Comision,BARCOS,3,3,new_comision_minima,new_comision_maxima
+Barcos - Tasa,BARCOS,22,25,new_tasa_minima,new_tasa_maxima
+Barcos - VRI,BARCOS,10,10,new_vri_minimo,new_vri_maximo
+Barcos - Plazo,BARCOS,61_72,,new_plazo,
+Barcos - Renta Inicial,BARCOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Barcos - VRC,BARCOS,0,0,new_vrc_minimo,new_vrc_maximo
+Barcos - Deposito,BARCOS,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,50,50,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,1_12,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,40,40,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,40,40,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,13_24,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,30,30,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,20,20,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,25_36,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,10,10,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,10,10,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,37_48,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,0,0,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,10,10,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,49_60,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,0,0,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Maquinarias - Comision,MAQUINARIA,3,3,new_comision_minima,new_comision_maxima
+Maquinarias - Tasa,MAQUINARIA,22,25,new_tasa_minima,new_tasa_maxima
+Maquinarias - VRI,MAQUINARIA,10,10,new_vri_minimo,new_vri_maximo
+Maquinarias - Plazo,MAQUINARIA,61_72,,new_plazo,
+Maquinarias - Renta Inicial,MAQUINARIA,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Maquinarias - VRC,MAQUINARIA,0,0,new_vrc_minimo,new_vrc_maximo
+Maquinarias - Deposito,MAQUINARIA,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,50,50,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,1_12,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,40,40,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,40,40,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,13_24,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,30,30,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,20,20,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,25_36,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,10,10,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,10,10,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,37_48,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,0,0,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,10,10,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,49_60,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,0,0,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Aviones - Comision,AVIONES,3,3,new_comision_minima,new_comision_maxima
+Aviones - Tasa,AVIONES,22,25,new_tasa_minima,new_tasa_maxima
+Aviones - VRI,AVIONES,10,10,new_vri_minimo,new_vri_maximo
+Aviones - Plazo,AVIONES,61_72,,new_plazo,
+Aviones - Renta Inicial,AVIONES,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Aviones - VRC,AVIONES,0,0,new_vrc_minimo,new_vrc_maximo
+Aviones - Deposito,AVIONES,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,60,60,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,1_12,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,55,55,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,40,40,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,13_24,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,30,30,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,20,20,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,25_36,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,10,10,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,15,15,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,37_48,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,5,5,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,15,15,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,49_60,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,5,5,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Motos - Comision,MOTOS,3,3,new_comision_minima,new_comision_maxima
+Motos - Tasa,MOTOS,22,25,new_tasa_minima,new_tasa_maxima
+Motos - VRI,MOTOS,15,15,new_vri_minimo,new_vri_maximo
+Motos - Plazo,MOTOS,61_72,,new_plazo,
+Motos - Renta Inicial,MOTOS,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Motos - VRC,MOTOS,5,5,new_vrc_minimo,new_vrc_maximo
+Motos - Deposito,MOTOS,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,30,30,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,1_12,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,25,25,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,20,20,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,13_24,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,20,20,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,25_36,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,20,20,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,37_48,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,20,20,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,49_60,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,
+Equipo de computo - Comision,EQUIPO DE COMPUTO,3,3,new_comision_minima,new_comision_maxima
+Equipo de computo - Tasa,EQUIPO DE COMPUTO,22,25,new_tasa_minima,new_tasa_maxima
+Equipo de computo - VRI,EQUIPO DE COMPUTO,20,20,new_vri_minimo,new_vri_maximo
+Equipo de computo - Plazo,EQUIPO DE COMPUTO,61_72,,new_plazo,
+Equipo de computo - Renta Inicial,EQUIPO DE COMPUTO,20,25,new_renta_inicial_minima,new_renta_inicial_maxima
+Equipo de computo - VRC,EQUIPO DE COMPUTO,10,10,new_vrc_minimo,new_vrc_maximo
+Equipo de computo - Deposito,EQUIPO DE COMPUTO,TRUE,,new_deposito_en_garantia,

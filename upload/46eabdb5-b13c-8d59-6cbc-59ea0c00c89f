@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:46eabdb5-b13c-8d59-6cbc-59ea0c00c89f
+ORGANIZER;CN=Mario Alejandro Gomez Fonseca:mgomez@unifin.com.mx
+DTSTART:20171020T150000Z
+DTEND:20171020T160000Z
+DTSTAMP:20171020T144800Z
+SUMMARY:PRESENTACION
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

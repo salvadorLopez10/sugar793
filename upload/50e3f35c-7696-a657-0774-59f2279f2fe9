@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:50e3f35c-7696-a657-0774-59f2279f2fe9
+ORGANIZER;CN=Alejandra Restrepo Duque:arestrepo@unifin.com.mx
+DTSTART:20171026T164500Z
+DTEND:20171026T180000Z
+DTSTAMP:20171026T182100Z
+SUMMARY:cita
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

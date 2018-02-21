@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:a1ea9400-3d8b-2d6d-d4bd-5a01dcfbb07c
+ORGANIZER;CN=Oscar Fabian Castro Gonzalez:oscar.castro@unifin.com.mx
+DTSTART:20171114T170000Z
+DTEND:20171114T174500Z
+DTSTAMP:20171107T164700Z
+SUMMARY:Reunión Gigante Grupo Inmobiliario
+DESCRIPTION:Presentación con Rodolfo Silva, CFO del grupo. Recomendado por Jaime Alverde Director General del Grupo.
+La empresa es un grupo construtor de Office Depot, Toks, etc y desarrollos inmobiliarios como Miyana.
+END:VEVENT
+END:VCALENDAR

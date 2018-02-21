@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:243fe12b-4880-adfb-fd22-5a01e65db720
+ORGANIZER;CN=Oscar Fabian Castro Gonzalez:oscar.castro@unifin.com.mx
+DTSTART:20171109T170000Z
+DTEND:20171109T174500Z
+DTSTAMP:20171107T165700Z
+SUMMARY:Reunión con AGILSA
+DESCRIPTION:Presentación con José María Basagoiti. VIP de Agro Loyola. (Producen y exportan productos agrícolas). 
+La empresa arrienda tractores, equipo de riego, maquinaria, etc.
+
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:d7c96216-629d-56c8-1aa1-5a09c0f8d729
+ORGANIZER;CN=Carlos Damian Quintero alfeiran:cquintero@unifin.com.mx
+DTSTART:20171108T154500Z
+DTEND:20171108T160000Z
+DTSTAMP:20171113T155300Z
+SUMMARY:experiencia única /  definir  activos
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

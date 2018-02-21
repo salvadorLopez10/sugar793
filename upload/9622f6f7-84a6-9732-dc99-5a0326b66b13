@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:9622f6f7-84a6-9732-dc99-5a0326b66b13
+ORGANIZER;CN=Deyanira Imelda Ramos Vazquez:dramos@unifin.com.mx
+DTSTART:20171108T183000Z
+DTEND:20171108T184500Z
+DTSTAMP:20171108T154300Z
+SUMMARY:experiencia única /  definir  activos
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:4a4009b3-df11-0a10-2341-59e537cfe0b8
+ORGANIZER;CN=Ceydi Ariette Ibarra Trillo:ceydi.ibarra@unifin.com.mx
+DTSTART:20171016T140000Z
+DTEND:20171016T150000Z
+DTSTAMP:20171016T225000Z
+SUMMARY:DEGORTS CHEMICAL / expediente
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

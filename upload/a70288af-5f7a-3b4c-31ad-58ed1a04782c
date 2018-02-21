@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:a70288af-5f7a-3b4c-31ad-58ed1a04782c
+ORGANIZER;CN=Ingrid Delgado Alvarez:idelgado@unifin.com.mx
+DTSTART:20170411T170000Z
+DTEND:20170411T180000Z
+DTSTAMP:20170411T180400Z
+SUMMARY:CITA DIRECTOR
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

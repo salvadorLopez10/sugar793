@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:59a7a3be-b886-e33d-f28f-58caa72f94a3
+ORGANIZER;CN=Rene Ruiz Meza:rruiz@unifin.com.mx
+DTSTART:20170315T230000Z
+DTEND:20170315T233000Z
+DTSTAMP:20170316T145500Z
+SUMMARY:Cita Via Immagina
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

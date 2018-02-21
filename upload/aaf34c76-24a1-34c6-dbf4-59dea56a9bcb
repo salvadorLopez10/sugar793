@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:aaf34c76-24a1-34c6-dbf4-59dea56a9bcb
+ORGANIZER;CN=Israel Miranda López:imiranda@unifin.com.mx
+DTSTART:20171011T160000Z
+DTEND:20171011T170000Z
+DTSTAMP:20171011T231300Z
+SUMMARY:REUNION MOTOS Y MAS  MOTOS
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,3 @@
+<?php
+// WARNING: The contents of this file are auto-generated.
+$mod_strings['LBL_HELP_CONFIG_OPPS'] = 'After you initiate this change, the Revenue Line Items summarization notes will be built in the background. When the notes are complete and available, a notification will be sent to the email address on your user profile. If your instance is set up for {{forecasts_module}}, Sugar will also send you a notification when your {{module_name}} records are synced to the {{forecasts_module}} module and available for new {{forecasts_module}}. Please note that your instance must be configured to send email via Admin &gt; Email Settings in order for the notifications to be sent.';

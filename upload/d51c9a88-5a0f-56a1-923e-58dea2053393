@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:d51c9a88-5a0f-56a1-923e-58dea2053393
+ORGANIZER;CN=Overlín Casas González:ocasas@unifin.com.mx
+DTSTART:20170405T141500Z
+DTEND:20170405T211500Z
+DTSTAMP:20170331T184000Z
+SUMMARY:Visita Planta y Comida / Peycha
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

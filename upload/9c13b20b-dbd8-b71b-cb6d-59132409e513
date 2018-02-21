@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:9c13b20b-dbd8-b71b-cb6d-59132409e513
+ORGANIZER;CN=Leonardo Jesus Amador Zendejas:lamador@unifin.com.mx
+DTSTART:20170509T170000Z
+DTEND:20170509T184500Z
+DTSTAMP:20170510T143200Z
+SUMMARY:PRESENTACION DGA
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

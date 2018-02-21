@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:3f040b2f-c028-519d-e411-58dd48794ef4
+ORGANIZER;CN=Ileana Zesati Klein:izesati@unifin.com.mx
+DTSTART:20170331T043000Z
+DTEND:20170331T060000Z
+DTSTAMP:20170330T180200Z
+SUMMARY:Aclaracion dudas crédito
+DESCRIPTION:Se reviso con crédito el analisis de la información financiera y expediente para linea de arrendamiento
+END:VEVENT
+END:VCALENDAR

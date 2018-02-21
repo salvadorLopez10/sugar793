@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:1cd31d62-76f0-f3b8-eb6f-5a032a78cd46
+ORGANIZER;CN=Deyanira Imelda Ramos Vazquez:dramos@unifin.com.mx
+DTSTART:20171108T193000Z
+DTEND:20171108T201500Z
+DTSTAMP:20171108T160200Z
+SUMMARY:Experiencehotelsresorts / presentacion
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:9f83a243-b4ba-0ef6-4ce5-58caae0d379f
+ORGANIZER;CN=Andrés Guerrero González:aguerrero@unifin.com.mx
+DTSTART:20170315T223000Z
+DTEND:20170316T020000Z
+DTSTAMP:20170316T152400Z
+SUMMARY:EXPO
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR

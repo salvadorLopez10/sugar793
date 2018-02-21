@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SugarCRM//SugarCRM Calendar//EN
+BEGIN:VEVENT
+UID:d5e318bc-12b9-9b1f-c7a9-58fa5d23ec62
+ORGANIZER;CN=Miguel Angel Zavala Franco:mzavala@unifin.com.mx
+DTSTART:20170426T160000Z
+DTEND:20170426T170000Z
+DTSTAMP:20170421T192900Z
+SUMMARY:Presentación factoraje MOVIMIENTOS TERRESTRES MEGS
+DESCRIPTION:Cita registrada automaticamente por CRM ya que ha sido asignado como acompaniante.
+END:VEVENT
+END:VCALENDAR
