@@ -8,7 +8,7 @@
      *
      * @override
      */
-     
+
     initialize: function (options) {
         self = this;
         self.hasContratosActivos = false;
@@ -30,23 +30,27 @@
         this.model.addValidationTask('tipo_proveedor_requerido', _.bind(this.validaProveedorRequerido, this));
         this.model.addValidationTask('check_info', _.bind(this.doValidateInfoReq, this));
 
+        /*
+         Salvador Lopez
+         Se añaden eventos change para mostrar telefonos y direcciones al vincular o desvincular algún registro relacionado
+         */
         this.model.on('change:account_telefonos', this.refresca, this);
-        this.model.on('change:account_direcciones', this.refresca, this);
+
         this.model.on('change:tipodepersona_c', this._ActualizaEtiquetas, this);
         this.model.on('change:profesion_c',this._doValidateProfesionRisk, this);
         this.model.on('change:pais_nacimiento_c',this._doValidateProfesionRisk, this);
         this.model.on('change:origendelprospecto_c', this.changeLabelMarketing, this);
         /*
-            AF - 26/12/17
-            Ajuste: Ocultar campo dependiente de multiselect "¿Instrumento monetario con el que espera realizar los pagos?"
-        */
+         AF - 26/12/17
+         Ajuste: Ocultar campo dependiente de multiselect "¿Instrumento monetario con el que espera realizar los pagos?"
+         */
         //this.changeInstMonetario();
         this.model.on('change:tct_inst_monetario_c', this.changeInstMonetario, this);
 
         /*
-        Salvador Lopez
-        Se añaden eventos change para mostrar u ocultar paneles
-        */
+         Salvador Lopez
+         Se añaden eventos change para mostrar u ocultar paneles
+         */
         this.model.on('change:tct_fedeicomiso_chk_c', this._hideFideicomiso, this);
         this.model.on('change:tipodepersona_c', this._hidePeps, this);
 
@@ -54,41 +58,41 @@
         this.events['keydown input[name=primernombre_c]'] = 'checkTextOnly';
         this.events['keydown input[name=segundonombre_c]'] = 'checkTextOnly';
         this.events['keydown input[name=apellidomaterno_c]'] = 'checkTextOnly';
-        this.events['keydown input[name=apellidopaterno_c]'] = 'checkTextOnly'; 
+        this.events['keydown input[name=apellidopaterno_c]'] = 'checkTextOnly';
         this.events['keydown input[name=ifepasaporte_c]'] = 'checkTextAndNum';
         this.events['keydown input[name=rfc_c]'] = 'checkTextAndNumRFC';
-        
+
         this.events['click a[name=generar_rfc_c]'] = '_doGenera_RFC_CURP';
         this.events['click a[name=generar_curp_c]'] = '_doGeneraCURP';
 
-    /* LEV INICIO */
-    /** BEGIN CUSTOMIZATION: jgarcia@levementum.com 7/14/2015 Description: Cuando estamos en el modulo de Personas, no queremos que se muestre la opcion Persona para el tipo de registro */
+        /* LEV INICIO */
+        /** BEGIN CUSTOMIZATION: jgarcia@levementum.com 7/14/2015 Description: Cuando estamos en el modulo de Personas, no queremos que se muestre la opcion Persona para el tipo de registro */
 
-/*
-        self.model.on("change", function() {
-            if (self.model.get('tipo_registro_c') != null){
-                if(self.model.get('tipo_registro_c') != 'Persona') {
-                    var new_options = app.lang.getAppListStrings('tipo_registro_list');
-                    Object.keys(new_options).forEach(function (key) {
-                        if (key == "Persona") {
-                            delete new_options[key];
-                        }
-                    });
+        /*
+         self.model.on("change", function() {
+         if (self.model.get('tipo_registro_c') != null){
+         if(self.model.get('tipo_registro_c') != 'Persona') {
+         var new_options = app.lang.getAppListStrings('tipo_registro_list');
+         Object.keys(new_options).forEach(function (key) {
+         if (key == "Persona") {
+         delete new_options[key];
+         }
+         });
 
-                        self.model.fields['tipo_registro_c'].options = new_options; 
-                }
-                    
-            }
-        });
-        */
-    /* LEV FIN */
+         self.model.fields['tipo_registro_c'].options = new_options;
+         }
+
+         }
+         });
+         */
+        /* LEV FIN */
 
         this.model.on('change:name', this.cleanName, this);
 
         /*
-            AF. 12-02-2018
-            Ajuste para mostrar direcciones y teléfonos
-        */
+         AF. 12-02-2018
+         Ajuste para mostrar direcciones y teléfonos
+         */
         this.model.on('sync', this._render, this);
     },
 
@@ -105,17 +109,6 @@
             //Oculta
             this.$("li.tab.LBL_RECORDVIEW_PANEL2").hide();
         }
-    },
-
-    /* BEGIN CUSTOMIZATION:
-     * Eduardo Carrasco 19/02/2018
-     * Refresca pantalla para mostrar telefonos y direcciones */
-    refresca : function()
-    {
-      if(this.model.get('account_telefonos') === '' || this.model.get('account_direcciones') === '')
-      {
-        this._render();
-      }
     },
 
     /** BEGIN CUSTOMIZATION:
@@ -144,7 +137,19 @@
             this.$("[data-panelname='LBL_RECORDVIEW_PANEL6']").show();
         }
     },
-    
+
+    /* BEGIN CUSTOMIZATION:
+     * Salvador Lopez 21/02/2018
+     * Refresca pantalla para mostrar telefonos y direcciones */
+    refresca: function()
+    {
+        var telefonos=this.getField('account_telefonos');
+        if(telefonos.action!=="edit"){
+            this.render();
+        }
+
+    },
+
     handleCancel: function() {
         var account_telefonos = this.model._previousAttributes.account_telefonos;
         var account_direcciones = this.model._previousAttributes.account_direcciones;
@@ -178,39 +183,39 @@
             }
         }, this));
     },
-    
+
     _doValidateTieneContactos: function (fields, errors, callback){
         if (this.model.get('tipodepersona_c') == "Persona Moral" && (/*this.model.get('tipo_registro_c') == "Cliente" || this.model.get('estatus_c') == "Interesado" || */this.model.get('tipo_registro_c') == "Prospecto")){
             app.api.call("read", app.api.buildURL("Accounts/" + this.model.get('id') + "/link/rel_relaciones_accounts_1", null, null, {
-                    fields: name,
-                }), null, {
-                    success: _.bind(function (data) {
-                        var ContacFlag = false;
-                        
-                        if (data.records.length > 0) {
-                            $(data.records).each(function (index, value) {
-                                if($.inArray("Contacto",value.relaciones_activas) > -1){
-                                    //YES IS A CONTACT!!!!
-                                    ContacFlag = true;
-                                }
-                            });
-                        }
-                        
-                        if (ContacFlag == false && _.isEmpty(this.model.get('account_contacts'))) {
-                            app.alert.show("Cliente sin contactos registrados", {
-                                level: "error",
-                                title: "Debe registrar al menos un contacto para el cliente.",
-                                autoClose: false
-                            });
-                            errors['account_contacts'] = errors['account_contacts'] || {};
-                            errors['account_contacts'].required = true;
-                        }                        
-                    }, this)
-                });
+                fields: name,
+            }), null, {
+                success: _.bind(function (data) {
+                    var ContacFlag = false;
+
+                    if (data.records.length > 0) {
+                        $(data.records).each(function (index, value) {
+                            if($.inArray("Contacto",value.relaciones_activas) > -1){
+                                //YES IS A CONTACT!!!!
+                                ContacFlag = true;
+                            }
+                        });
+                    }
+
+                    if (ContacFlag == false && _.isEmpty(this.model.get('account_contacts'))) {
+                        app.alert.show("Cliente sin contactos registrados", {
+                            level: "error",
+                            title: "Debe registrar al menos un contacto para el cliente.",
+                            autoClose: false
+                        });
+                        errors['account_contacts'] = errors['account_contacts'] || {};
+                        errors['account_contacts'].required = true;
+                    }
+                }, this)
+            });
         }
-        callback(null, fields, errors); 
+        callback(null, fields, errors);
     },
-    
+
     /** BEGIN CUSTOMIZATION: jgarcia@levementum.com 8/26/2015 Description: When Pais or Profesion field is changed, Recalculate the Riesgo */
     _doValidateProfesionRisk: function () {
         var riskCounter = 0;
@@ -255,22 +260,22 @@
      */
     _renderHtml : function()
 
-    //Establecer todos los campos como solo lectura cuando el registro actual es el contacto genérico
+        //Establecer todos los campos como solo lectura cuando el registro actual es el contacto genérico
     {
-      var id = app.lang.getAppListStrings('tct_persona_generica_list');
+        var id = app.lang.getAppListStrings('tct_persona_generica_list');
         if(this.model.get('id') === id['accid'] && app.user.get('type') !== 'admin')
         {
             var self = this;
-                    _.each(this.model.fields, function(field)
-                    {
-                            self.noEditFields.push(field.name);
-                    });
+            _.each(this.model.fields, function(field)
+            {
+                self.noEditFields.push(field.name);
+            });
         }
 
         /*
-        *
-        * Salvador Lopez <salvador.lopez@tactos.com.mx>
-        */
+         *
+         * Salvador Lopez <salvador.lopez@tactos.com.mx>
+         */
         //Establecer campos de promotores como solo lectura cuando el id_cliente_c ya ha sido llenado
         if(this.model.get('idcliente_c') !== ""){
             var self = this;
@@ -281,14 +286,14 @@
 
         this._super('_renderHtml');
     },
-        
+
     _render: function() {
         this._super("_render");
 
         /*
-           @author Salvador Lopez
-           Se llaman a la funciones para mostrar u ocultar paneles de Fideicomiso y Peps
-        * */
+         @author Salvador Lopez
+         Se llaman a la funciones para mostrar u ocultar paneles de Fideicomiso y Peps
+         * */
         this._hideFideicomiso();
         this._hidePeps();
 
@@ -317,7 +322,7 @@
                 }
                 this.RFC_DuplicateCheck();
             },this));
-            }
+        }
 
         // Validación para no poder inactivar clientes con contratos activos
         if (this.model.dataFetched) {
@@ -340,14 +345,14 @@
                 }
             }, this));
         }
-        
+
         if(!_.isEmpty(this.model.get('idcliente_c'))) {
             app.api.call("read", app.api.buildURL("Accounts/AccountsCustomAPI/" + this.model.get('idcliente_c'), null, null, {}), null, {
                 success: _.bind(function (data) {
                     /*
                      * @author Carlos Zaragoza
                      * Validar campos editables de persona cuando se trata de cliente con contratos activos (falta definición UNIFIN - Deben bloquearse RFC, Razón social /nombres y dirección fiscal)
-                    * */
+                     * */
                     if (data.UNI2_CTE_029_VerificaClienteTieneContratoResult._tieneContratos == true) {
                         self.hasContratosActivos = true;
                         $('.record-edit-link-wrapper[data-name="rfc_c"]').remove();
@@ -364,9 +369,9 @@
     },
 
     /*
-           @author Salvador Lopez
-           Se omite la opción de "Persona" dentro del campo tipo_registro_c
-        * */
+     @author Salvador Lopez
+     Se omite la opción de "Persona" dentro del campo tipo_registro_c
+     * */
     deleteOptionPersona: function() {
         if (this.model.get('tipo_registro_c') != null){
             if(this.model.get('tipo_registro_c') != 'Persona') {
@@ -382,21 +387,21 @@
 
         }
     },
-    
+
     _ActualizaEtiquetas: function(){
         if (this.model.get('tipodepersona_c') != 'Persona Moral' && $("div[data-name='pais_nacimiento_c']").length > 0){
             this.$("div.record-label[data-name='pais_nacimiento_c']").text("Pa\u00EDs de nacimiento");
         }else{
             this.$("div.record-label[data-name='pais_nacimiento_c']").text("Pa\u00EDs de constituci\u00F3n");
         }
-        
+
         if (this.model.get('tipodepersona_c') != 'Persona Moral' && $("div[data-name='estado_nacimiento_c']").length > 0){
             this.$("div.record-label[data-name='estado_nacimiento_c']").text("Estado de nacimiento");
         }else{
             this.$("div.record-label[data-name='estado_nacimiento_c']").text("Estado de constituci\u00F3n");
         }
     },
-    
+
     //No aceptar numeros, solo letras (a-z), puntos(.) y comas(,)
     checkTextOnly:function(evt){
         if($.inArray(evt.keyCode,[9,16,17,110,188,190,45,33,36,46,35,34,8,9,20,16,17,37,40,39,38,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,16,32,192,186]) < 0){
@@ -408,7 +413,7 @@
             return false;
         }
     },
-    
+
     checkTextAndNum:function(evt){
         //console.log(evt.keyCode);
         if($.inArray(evt.keyCode,[110,188,190,45,33,36,46,35,34,8,9,20,16,17,37,40,39,38,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,16,32,192,186,48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105]) < 0){
@@ -432,7 +437,7 @@
             return false;
         }
     },
-  
+
     _doGeneraCURP: function(){
         if(this.model.get('tipodepersona_c') != 'Persona Moral') {
             //Valida que se tenga la información requerida para generar la CURP
@@ -440,37 +445,37 @@
                 && this.model.get('primernombre_c') != null && this.model.get('apellidopaterno_c') != null && this.model.get('apellidomaterno_c') != null
                 && this.model.get('pais_nacimiento_c') != null && this.model.get('estado_nacimiento_c') != null) {
                 var firmoParams = {
-                        'fechadenacimiento': this.model.get('fechadenacimiento_c'),
-                        'primernombre': this.model.get('primernombre_c'),
-                        'apellidoP': this.model.get('apellidopaterno_c'),
-                        'apellidoM': this.model.get('apellidomaterno_c'),
-                        'genero': this.model.get('genero_c'),
-                        'pais': this.model.get('pais_nacimiento_c'),
-                        'estado': this.model.get('estado_nacimiento_c'),
-                        'tipodepersona': this.model.get('tipodepersona_c')
-                    };
-                    var dnbProfileUrl = app.api.buildURL("Accounts/GenerarCURP", '', {}, {});
-                    if (this.model.get('pais_nacimiento_c') == 2) {
-                        app.api.call("create", dnbProfileUrl, {curpdata: firmoParams}, {
-                            success: _.bind(function (data) {
-                                if (data['UNI2_UTL_002_CreaCurpPersonaResult']['resultado']) {
-                                    this.model.set('curp_c', data['UNI2_UTL_002_CreaCurpPersonaResult']['curp']);
-                                }
-                            }, this)
-                        });
-                    }else{
-                        this.model.set('curp_c', '');
-                    }
-                }else{
-                    app.alert.show("Generar CURP", {
-                        level: "error",
-                        title: "Faltan datos para poder generar el CURP",
-                        autoClose: false
+                    'fechadenacimiento': this.model.get('fechadenacimiento_c'),
+                    'primernombre': this.model.get('primernombre_c'),
+                    'apellidoP': this.model.get('apellidopaterno_c'),
+                    'apellidoM': this.model.get('apellidomaterno_c'),
+                    'genero': this.model.get('genero_c'),
+                    'pais': this.model.get('pais_nacimiento_c'),
+                    'estado': this.model.get('estado_nacimiento_c'),
+                    'tipodepersona': this.model.get('tipodepersona_c')
+                };
+                var dnbProfileUrl = app.api.buildURL("Accounts/GenerarCURP", '', {}, {});
+                if (this.model.get('pais_nacimiento_c') == 2) {
+                    app.api.call("create", dnbProfileUrl, {curpdata: firmoParams}, {
+                        success: _.bind(function (data) {
+                            if (data['UNI2_UTL_002_CreaCurpPersonaResult']['resultado']) {
+                                this.model.set('curp_c', data['UNI2_UTL_002_CreaCurpPersonaResult']['curp']);
+                            }
+                        }, this)
                     });
+                }else{
+                    this.model.set('curp_c', '');
                 }
+            }else{
+                app.alert.show("Generar CURP", {
+                    level: "error",
+                    title: "Faltan datos para poder generar el CURP",
+                    autoClose: false
+                });
+            }
         }
     },
-    
+
     _doGenera_RFC_CURP:function () {
         if(this.model.get('pais_nacimiento_c')!=2 && this.model.get('pais_nacimiento_c') != '' && this.model.get('pais_nacimiento_c') != null
             && (this.model.get('tipo_registro_c') != 'Prospecto' || this.model.get('estatus_c') != 'Interesado')){
@@ -481,16 +486,16 @@
             }
         }else{
             if (this.model.get('tipodepersona_c') != 'Persona Moral') {
-                if (this.model.get('fechadenacimiento_c') != null && this.model.get('fechadenacimiento_c') != '' && this.model.get('primernombre_c') != null 
+                if (this.model.get('fechadenacimiento_c') != null && this.model.get('fechadenacimiento_c') != '' && this.model.get('primernombre_c') != null
                     && this.model.get('apellidopaterno_c') != null && this.model.get('apellidomaterno_c') != null ){
-                        this._doValidateWSRFC();
+                    this._doValidateWSRFC();
                 }else{
                     app.alert.show("Generar RFC", {
                         level: "error",
                         title: "Faltan datos para poder generar el RFC",
                         autoClose: true
                     });
-                } 
+                }
             }else{
                 if (this.model.get('razonsocial_c') != null && this.model.get('fechaconstitutiva_c') != null){
                     this._doValidateWSRFC();
@@ -499,7 +504,7 @@
                         level: "error",
                         title: "Faltan datos para poder generar el RFC",
                         autoClose: true
-                    }); 
+                    });
                 }
             }
         }
@@ -523,27 +528,27 @@
             }
         }
 
-        callback(null, fields, errors); 
+        callback(null, fields, errors);
     },
-    
+
     /*_ShowDireccionesTipoRegistro: function(){
-        if(this.model.get('tipo_registro_c') == "Cliente" || this.model.get('estatus_c') == "Interesado")
-        {
-            this.$("div[data-name='account_direcciones']").show();
-        }
-        else
-        {
-            this.$("div[data-name='account_direcciones']").hide();
-        }
-        // Carlos Zaragoza: Se elimina el campo por defaiult de tipo de proveedor del registro pero sies proveedor, se selecciona bienes por default
-        if(this.model.get('tipo_registro_c') == 'Proveedor'){
-            this.model.set('tipo_proveedor_c', '1');
-        }
-    },*/
+     if(this.model.get('tipo_registro_c') == "Cliente" || this.model.get('estatus_c') == "Interesado")
+     {
+     this.$("div[data-name='account_direcciones']").show();
+     }
+     else
+     {
+     this.$("div[data-name='account_direcciones']").hide();
+     }
+     // Carlos Zaragoza: Se elimina el campo por defaiult de tipo de proveedor del registro pero sies proveedor, se selecciona bienes por default
+     if(this.model.get('tipo_registro_c') == 'Proveedor'){
+     this.model.set('tipo_proveedor_c', '1');
+     }
+     },*/
 
     _doValidateDireccion: function (fields, errors, callback) {
         if (this.model.get('tipo_registro_c') == "Cliente" || this.model.get('tipo_registro_c') == "Proveedor" || this.model.get('estatus_c') == "Interesado") {
-        
+
             if (_.isEmpty(this.model.get('account_direcciones'))) {
                 errors[$(".addDireccion")] = errors['account_direcciones'] || {};
                 errors[$(".addDireccion")].required = true;
@@ -558,7 +563,7 @@
                 //Valdación Nacional
                 if(this.model.get('tipodepersona_c') != 'Persona Moral'){
                     var nacional = 0;
-                    console.log('Validacion Dir.Nacional');     
+                    console.log('Validacion Dir.Nacional');
                     var direcciones = this.model.get('account_direcciones');
                     for (i = 0; i < direcciones.length ; i++) {
                         if(direcciones[i].pais == 2){
@@ -567,7 +572,7 @@
                     }
                     //Valida variable nacional
                     if(nacional != 1){
-                        console.log('Dir. Nacional requerida');     
+                        console.log('Dir. Nacional requerida');
                         errors[$(".addDireccion")] = errors['account_direcciones'] || {};
                         errors[$(".addDireccion")].required = true;
 
@@ -579,8 +584,8 @@
                         });
                     }
                 }
-                
-            }   
+
+            }
         }
         callback(null, fields, errors);
     },
@@ -601,7 +606,7 @@
         }
         window.open("#bwc/index.php?entryPoint=OpportunidadVaadin&Accountid=" + Accountid + "&clientId=" + Clientid);
     },
-    
+
     expedienteClicked: function (){
         var Accountid = this.model.get('id');
         window.open("#bwc/index.php?entryPoint=ExpedienteVaadin&Accountid=" + Accountid);
@@ -670,45 +675,45 @@
 
     DuplicateCheck_Name: function(){
         var clean_name = this.model.get('clean_name');
-            app.api.call("read", app.api.buildURL("Accounts/", null, null, {
-                fields: "clean_name",
-                max_num: 5,
-                "filter":[
-                    {
-                        "clean_name":clean_name,
-                        "id":{
-                            $not_equals:this.model.id,
-                        }
+        app.api.call("read", app.api.buildURL("Accounts/", null, null, {
+            fields: "clean_name",
+            max_num: 5,
+            "filter":[
+                {
+                    "clean_name":clean_name,
+                    "id":{
+                        $not_equals:this.model.id,
                     }
-                ]
-            }), null, {
-                success: _.bind(function (data) {
-                    if (data.records.length > 0) {
-                        this.duplicadosName = 1;
-                        console.log('this.duplicadosName SI');
-                        /*app.alert.show("DuplicateCheck", {
-                            level: "error",
-                            title: "Ya existe una persona registrada con el mismo nombre.",
-                            autoClose: false
-                        });
+                }
+            ]
+        }), null, {
+            success: _.bind(function (data) {
+                if (data.records.length > 0) {
+                    this.duplicadosName = 1;
+                    console.log('this.duplicadosName SI');
+                    /*app.alert.show("DuplicateCheck", {
+                     level: "error",
+                     title: "Ya existe una persona registrada con el mismo nombre.",
+                     autoClose: false
+                     });
 
-                        if (this.model.get('tipodepersona_c') != 'Persona Moral'){
-                            errors['primernombre_c'] = errors['primernombre_c'] || {};
-                            errors['primernombre_c'].required = true;
-                            errors['apellidopaterno_c'] = errors['apellidopaterno_c'] || {};
-                            errors['apellidopaterno_c'].required = true;
-                            errors['apellidomaterno_c'] = errors['apellidomaterno_c'] || {};
-                            errors['apellidomaterno_c'].required = true;
-                        }else{
-                            errors['razonsocial_c'] = errors['razonsocial_c'] || {};
-                            errors['razonsocial_c'].required = true;
-                        }*/
-                    }else{
-                        this.duplicadosName = 0;
-                        console.log('this.duplicadosName NO');
-                    }
-                }, this)
-            });
+                     if (this.model.get('tipodepersona_c') != 'Persona Moral'){
+                     errors['primernombre_c'] = errors['primernombre_c'] || {};
+                     errors['primernombre_c'].required = true;
+                     errors['apellidopaterno_c'] = errors['apellidopaterno_c'] || {};
+                     errors['apellidopaterno_c'].required = true;
+                     errors['apellidomaterno_c'] = errors['apellidomaterno_c'] || {};
+                     errors['apellidomaterno_c'].required = true;
+                     }else{
+                     errors['razonsocial_c'] = errors['razonsocial_c'] || {};
+                     errors['razonsocial_c'].required = true;
+                     }*/
+                }else{
+                    this.duplicadosName = 0;
+                    console.log('this.duplicadosName NO');
+                }
+            }, this)
+        });
 
         //callback(null, fields, errors);
     },
@@ -734,13 +739,13 @@
                         this.duplicadosRFC = 1;
                         console.log('duplicadosRFC SI');
                         /*app.alert.show("DuplicateCheck", {
-                            level: "error",
-                            title: "Ya existe una persona registrada con el mismo RFC.",
-                            autoClose: false
-                        });
+                         level: "error",
+                         title: "Ya existe una persona registrada con el mismo RFC.",
+                         autoClose: false
+                         });
 
-                        errors['rfc_c'] = errors['rfc_c'] || {};
-                        errors['rfc_c'].required = true;*/
+                         errors['rfc_c'] = errors['rfc_c'] || {};
+                         errors['rfc_c'].required = true;*/
                     }else{
                         this.duplicadosRFC = 0;
                         console.log('duplicadosRFC NO');
@@ -766,12 +771,12 @@
             }
             if (!RFC.match(expReg)){
                 app.alert.show("RFC incorrecto", {
-                        level: "error",
-                        title: "El RFC no tiene un formato correcto.",
-                        autoClose: false
-                    });
-                    errors['rfc_c'] = errors['rfc_c'] || {};
-                    errors['rfc_c'].required = true;
+                    level: "error",
+                    title: "El RFC no tiene un formato correcto.",
+                    autoClose: false
+                });
+                errors['rfc_c'] = errors['rfc_c'] || {};
+                errors['rfc_c'].required = true;
             }
         }
         callback(null, fields, errors);
@@ -822,7 +827,7 @@
             'tipodepersona': this.model.get("tipodepersona_c"),
             'fechaconstitutiva':this.model.get("fechaconstitutiva_c")
         };
-        
+
         var dnbProfileUrl = app.api.buildURL("Accounts/ValidarRFC", '', {}, {});
         app.api.call("create", dnbProfileUrl, {rfcdata: firmoParams}, {
             success: _.bind(function (data) {
@@ -830,44 +835,44 @@
                     var rfc = this.model.get('rfc_c');
                     //Obtiene el resultado del WS dependiendo del regimen de la persona
                     if (this.model.get('tipodepersona_c') != 'Persona Moral') {
-                        var rfc_SinHomoclave = (data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['resultado'] ? 
-                        data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['rfcGenerado'] :"" );
-                        var rfc_local = (data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['resultado'] ? 
-                        data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['rfcGenerado'] + data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['homoClaveDV'] :"" );
+                        var rfc_SinHomoclave = (data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['resultado'] ?
+                            data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['rfcGenerado'] :"" );
+                        var rfc_local = (data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['resultado'] ?
+                            data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['rfcGenerado'] + data['UNI2_CTE_02_CreaRfcPersonaFisicaResult']['homoClaveDV'] :"" );
                     } else if (this.model.get("tipodepersona_c") == 'Persona Moral') {
-                        var rfc_SinHomoclave = (data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['resultado'] ? 
-                        data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['rfcGenerado'] : "");
-                        var rfc_local = (data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['resultado'] ? 
-                        data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['rfcGenerado'] + data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['homoClaveDV']: "");
+                        var rfc_SinHomoclave = (data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['resultado'] ?
+                            data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['rfcGenerado'] : "");
+                        var rfc_local = (data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['resultado'] ?
+                            data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['rfcGenerado'] + data['UNI2_CTE_03_CreaRfcPersonaMoralResult']['homoClaveDV']: "");
                     }
-                        
-                        if (rfc != "" && rfc != null) {
-                            rfc = (this.model.get("tipodepersona_c") != 'Persona Moral' ? rfc.substring(0, 10) : rfc.substring(0, 9));
-                            if (rfc != rfc_SinHomoclave) {
-                                app.alert.show("Validar RFC", {
-                                            level: "confirmation",
-                                            messages: "El RFC calculado es diferente al escrito, ¿Desea reemplazarlo?",
-                                            autoClose: false,
-                                            
-                                            onConfirm: function(){
-                                                self.model.set("rfc_c",rfc_local);
-                                            },
-                                            onCancel: function(){
-                                                //alert("Cancelled!");
-                                            }
-                                        });
-                            }else{
-                                app.alert.show("RFC correcto", {
-                                    level: "error",
-                                    title: "El RFC capturado actualmente es correcto",
-                                    autoClose: true
-                                });
-                            }                           
+
+                    if (rfc != "" && rfc != null) {
+                        rfc = (this.model.get("tipodepersona_c") != 'Persona Moral' ? rfc.substring(0, 10) : rfc.substring(0, 9));
+                        if (rfc != rfc_SinHomoclave) {
+                            app.alert.show("Validar RFC", {
+                                level: "confirmation",
+                                messages: "El RFC calculado es diferente al escrito, ¿Desea reemplazarlo?",
+                                autoClose: false,
+
+                                onConfirm: function(){
+                                    self.model.set("rfc_c",rfc_local);
+                                },
+                                onCancel: function(){
+                                    //alert("Cancelled!");
+                                }
+                            });
                         }else{
-                            this.model.set("rfc_c",rfc_local);
-                        }                    
-                }                   
-            }, this)            
+                            app.alert.show("RFC correcto", {
+                                level: "error",
+                                title: "El RFC capturado actualmente es correcto",
+                                autoClose: true
+                            });
+                        }
+                    }else{
+                        this.model.set("rfc_c",rfc_local);
+                    }
+                }
+            }, this)
         });
         //callback(null, fields, errors);
     },
@@ -885,39 +890,39 @@
     /* END CUSTOMIZATION */
 
     fechaMenor1900: function (fields, errors, callback) {
-            var nacimiento = new Date(this.model.get("fechadenacimiento_c"));
-            var year = nacimiento.getFullYear();
-            if (year <= 1900) {
-                app.alert.show("fechaDeNacimientoCheck", {
-                    level: "error",
-                    title: "La fecha de nacimiento no puede ser menor a 1900",
-                    autoClose: false
-                });
-                errors['fechadenacimiento_c'] = errors['fechadenacimiento_c'] || {};
-                errors['fechadenacimiento_c'].required = true;
-            }
+        var nacimiento = new Date(this.model.get("fechadenacimiento_c"));
+        var year = nacimiento.getFullYear();
+        if (year <= 1900) {
+            app.alert.show("fechaDeNacimientoCheck", {
+                level: "error",
+                title: "La fecha de nacimiento no puede ser menor a 1900",
+                autoClose: false
+            });
+            errors['fechadenacimiento_c'] = errors['fechadenacimiento_c'] || {};
+            errors['fechadenacimiento_c'].required = true;
+        }
 
 
         callback(null, fields, errors);
     },
-    
+
     doValidateDateCons: function(fields, errors, callback) {
         /* if  date not empty, then check with today date and return error */
         if (!_.isEmpty(this.model.get('fechaconstitutiva_c'))) {
 
-                var feccons_date = new Date(this.model.get('fechaconstitutiva_c'));
-                var today_date = new Date();
+            var feccons_date = new Date(this.model.get('fechaconstitutiva_c'));
+            var today_date = new Date();
 
-                if(feccons_date > today_date){
-                   app.alert.show("fechaDeConsValidate",{
-                      level: "error",
-                      title: "La fecha constitutiva no puede ser mayor al día de hoy",
-                      autoClose : false
-                 });
+            if(feccons_date > today_date){
+                app.alert.show("fechaDeConsValidate",{
+                    level: "error",
+                    title: "La fecha constitutiva no puede ser mayor al día de hoy",
+                    autoClose : false
+                });
 
                 errors['fechaconstitutiva_c'] = errors['fechaconstitutiva_c'] || {};
-               //errors['fechaapertura'] = 'La fecha de apertura no puede ser posterior al día de hoy' || {};
-               errors['fechaconstitutiva_c'].required = true;
+                //errors['fechaapertura'] = 'La fecha de apertura no puede ser posterior al día de hoy' || {};
+                errors['fechaconstitutiva_c'].required = true;
             }
         }
         callback(null, fields, errors);
@@ -927,34 +932,34 @@
         /* if  date not empty, then check with today date and return error */
         if (!_.isEmpty(this.model.get('fechadenacimiento_c'))) {
 
-                var fecnac_date = new Date(this.model.get('fechadenacimiento_c'));
-                var today_date = new Date();
+            var fecnac_date = new Date(this.model.get('fechadenacimiento_c'));
+            var today_date = new Date();
 
-                if(fecnac_date > today_date){
+            if(fecnac_date > today_date){
                 app.alert.show("fechaDeNacimientoValidate",{
-                      level: "error",
-                      title: "La fecha de nacimiento no puede ser mayor al día de hoy",
-                      autoClose : false
-                 });
+                    level: "error",
+                    title: "La fecha de nacimiento no puede ser mayor al día de hoy",
+                    autoClose : false
+                });
                 errors['fechadenacimiento_c'] = errors['fechadenacimiento_c'] || {};
-               //errors['fechaapertura'] = 'La fecha de apertura no puede ser posterior al día de hoy' || {};
-               errors['fechadenacimiento_c'].required = true;
+                //errors['fechaapertura'] = 'La fecha de apertura no puede ser posterior al día de hoy' || {};
+                errors['fechadenacimiento_c'].required = true;
             }
         }
-    callback(null, fields, errors);
+        callback(null, fields, errors);
     },
-    
+
     /*
-    validaExtranjerosRFC: function (){
-        if((this.model.get('pais_nacimiento_c')!=2) && (this.model.get('tipo_registro_c') != 'Prospecto' && this.model.get('tipo_registro_c') != 'Persona')){
-            this.model.set('rfc_c','XXX010101XXX');
-        }
-        if(this.model.get('tipo_registro_c') == 'Prospecto' && this.model.get('estatus_c') == 'Interesado' && this.model.get('pais_nacimiento_c')!=2){
-            this.model.set('rfc_c','XXX010101XXX');
-        }
-    },
-    */
-    
+     validaExtranjerosRFC: function (){
+     if((this.model.get('pais_nacimiento_c')!=2) && (this.model.get('tipo_registro_c') != 'Prospecto' && this.model.get('tipo_registro_c') != 'Persona')){
+     this.model.set('rfc_c','XXX010101XXX');
+     }
+     if(this.model.get('tipo_registro_c') == 'Prospecto' && this.model.get('estatus_c') == 'Interesado' && this.model.get('pais_nacimiento_c')!=2){
+     this.model.set('rfc_c','XXX010101XXX');
+     }
+     },
+     */
+
     validaFechaNacimientoDesdeRFC: function () {
         //this._doValidateRFC();
         var RFC = this.model.get('rfc_c');
@@ -1047,9 +1052,9 @@
     },
 
     /*
-        AF - 26/12/17
-        Ajuste: Ocultar campo dependiente de multiselect "¿Instrumento monetario con el que espera realizar los pagos?"
-    */
+     AF - 26/12/17
+     Ajuste: Ocultar campo dependiente de multiselect "¿Instrumento monetario con el que espera realizar los pagos?"
+     */
     changeInstMonetario: function(){
         //console.log("Cambio de Inst monetario");
         var instMonetario = this.model.get('tct_inst_monetario_c');
@@ -1061,7 +1066,7 @@
             //this.$('[data-name="imotrodesc_c"]').hide();
         }
     },
-    
+
 
     changeLabelMarketing: function(){
         console.log("Cambio de Origen");
