@@ -309,6 +309,7 @@
             primaryRemoved;
         newTelefono = $.trim(newTelefono);
         if (newTelefono === '') {
+            /*
             // remove email if email is empty
             primaryRemoved = this._removeExistingAddressInModel(index);
 
@@ -338,6 +339,7 @@
                     .first()
                     .addClass('active');
             }
+             */
         }
         else {
             this._updateExistingAddressInModel(index, newTelefono, field_name);
@@ -398,7 +400,7 @@
         primaryRemoved = this._removeExistingAddressInModel(index);
 
         $removeThisField = $deleteButton.closest('.telefonos');
-        this.removePluginTooltips($removeThisField); // remove tooltips
+        //this.removePluginTooltips($removeThisField); // remove tooltips
         $removeThisField.remove();
 
         if (primaryRemoved) {
