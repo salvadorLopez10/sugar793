@@ -78,7 +78,7 @@
                 invalid_email: false
             });
             $newEmailField = this._getNewEmailField().closest('.email').before(emailFieldHtml);
-            this.addPluginTooltips($newEmailField.prev());
+            //this.addPluginTooltips($newEmailField.prev());
             if (this.def.required && this._shouldRenderRequiredPlaceholder()) {
                 var label = app.lang.get('LBL_REQUIRED_FIELD', this.module), el = this.$(this.fieldTag).last(), placeholder = el.prop('placeholder').replace('(' + label + ') ', '');
                 el.prop('placeholder', placeholder.trim()).removeClass('required');
@@ -121,7 +121,7 @@
         var $deleteButtons = this.$('.removeEmail'), $deleteButton = this.$(evt.currentTarget), index = $deleteButtons.index($deleteButton), primaryRemoved, $removeThisField;
         primaryRemoved = this._removeExistingAddressInModel(index);
         $removeThisField = $deleteButton.closest('.email');
-        this.removePluginTooltips($removeThisField);
+        //this.removePluginTooltips($removeThisField);
         $removeThisField.remove();
         if (primaryRemoved) {
             this.$('[data-emailproperty=primary_address]').first().addClass('active');
