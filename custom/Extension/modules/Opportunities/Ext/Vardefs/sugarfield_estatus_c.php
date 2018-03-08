@@ -2,6 +2,7 @@
  // created: 2018-01-10 13:38:27
 $dictionary['Opportunity']['fields']['estatus_c']['labelValue'] = 'Estatus';
 $dictionary['Opportunity']['fields']['estatus_c']['dependency'] = '';
+$dictionary['Opportunity']['fields']['estatus_c']['readonly'] = true;
 $dictionary['Opportunity']['fields']['estatus_c']['visibility_grid']['trigger'] = 'tipo_operacion_c';
 $dictionary['Opportunity']['fields']['estatus_c']['visibility_grid']['values'][1][0] = 'P';
 $dictionary['Opportunity']['fields']['estatus_c']['visibility_grid']['values'][1][1] = 'E';
