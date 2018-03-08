@@ -6,7 +6,7 @@ array (
   array (
     'view' => 
     array (
-      'detail' => 
+      'edit' => 
       array (
         'templateMeta' => 
         array (
