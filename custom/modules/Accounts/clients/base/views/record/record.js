@@ -284,6 +284,7 @@
             self.noEditFields.push('promotorcredit_c');
         }
 
+
         this._super('_renderHtml');
     },
 
@@ -365,6 +366,24 @@
                     }
                 }, this)
             });
+        }
+
+        //ocultando botones para no permitir creación de operaciones
+        if(this.model.get('tipo_registro_c')!=='Cliente'){
+            console.log('OCULTANDO BOTONES DE OPORTUNIDADES');
+            var operacion = $('[data-subpanel-link="opportunities"]');
+            operacion.find('[name="edit_button"]').hide();
+            operacion.find('[name="create_button"]').hide();
+            operacion.find('[name="edit_button"]').hide();
+            operacion.find('[class="fieldset-field"]').hide();
+            operacion.find('.dropdown-toggle').hide()
+        }else{
+            var operacion = $('[data-subpanel-link="opportunities"]');
+            operacion.find('[name="edit_button"]').show();
+            operacion.find('[name="create_button"]').show();
+            operacion.find('[name="edit_button"]').show();
+            operacion.find('[class="fieldset-field"]').show();
+            operacion.find('.dropdown-toggle').show()
         }
     },
 

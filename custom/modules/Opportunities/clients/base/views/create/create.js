@@ -16,6 +16,10 @@
         this.model.addValidationTask('check_condicionesFinancieras', _.bind(this.condicionesFinancierasCheck, this));
         this.model.addValidationTask('check_condicionesFinancierasIncremento', _.bind(this.condicionesFinancierasIncrementoCheck, this));
 
+        //Validación para evitar asociar una Persona que no sea cliente
+        this.model.addValidationTask('check_person_type', _.bind(this.personTypeCheck, this));
+
+
         this.model.on("change:porciento_ri_c", _.bind(this.calcularRI, this));
         this.model.on("change:ca_importe_enganche_c", _.bind(this.calcularPorcientoRI, this));
 
@@ -919,6 +923,74 @@
         }
         callback(null, fields, errors);
     },
+
+    personTypeCheck:function(fields, errors, callback) {
+        var self=this;
+        var tipo_registro;
+        //id de la Persona asociada
+        var id_person=this.model.get('account_id');
+
+
+        app.api.call('GET', app.api.buildURL('Accounts/' + id_person ), null, {
+            success: _.bind(function(data){
+                if(data!=null){
+
+                    if(data.tipo_registro_c!=='Cliente') {
+
+                        app.alert.show("Cliente no v\u00E1lido", {
+                            level: "error",
+                            title: "No se puede asociar la operaci\u00F3n a una Persona que no sea de tipo Cliente",
+                            autoClose: false
+                        });
+
+                        app.error.errorName2Keys['custom_message1'] = 'La persona asociada debe ser tipo Cliente';
+                        errors['account_name'] = errors['account_name'] || {};
+                        errors['account_name'].custom_message1 = true;
+                        //this.cancelClicked();
+                        callback(null, fields, errors);
+                    } else {
+                        callback(null, fields, errors);
+                    }
+
+                }
+            },this),
+        });
+
+        //Obtener tipo de registro de la Persona
+
+        /*
+        var personBean = app.data.createBean('Accounts', {id:id_person});
+
+        personBean.fetch({'success':function () {
+
+            tipo_registro = personBean.get('tipo_registro_c');
+            if (tipo_registro!=='Cliente')
+            {
+                //errors['account_id'] = errors['account_name'] || {};
+                //errors['account_name'].required = true;
+
+                //errors['account_name'] = errors['account_name'] || {};
+
+                app.alert.show("Cliente no v\u00E1lido", {
+                    level: "error",
+                    title: "La persona asociada debe ser tipo Cliente",
+                    autoClose: false
+                });
+                self.model.set('account_name','');
+                self.model.set('account_id','');
+            }
+
+            self.render();
+
+        }});
+
+
+        callback(null, fields, errors);
+
+         */
+    },
+
+
 
     calcularRI: function(){
 
