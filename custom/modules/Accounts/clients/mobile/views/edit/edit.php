@@ -37,6 +37,7 @@ array (
               array (
                 'name' => 'tipo_registro_c',
                 'label' => 'LBL_TIPO_REGISTRO',
+                'readonly' => true,
               ),
               1 => 
               array (
@@ -235,25 +236,11 @@ array (
                 'label' => 'LBL_PROMOTORCREDIT',
               ),
               44 => 'email',
-              45 => 
-              array (
-              ),
+              45 => 'phone_office',
               46 => 
               array (
-                'name' => 'account_telefonos',
-                'studio' => 'visible',
-                'label' => 'account_telefonos',
               ),
               47 => 
-              array (
-                'name' => 'account_direcciones',
-                'studio' => 'visible',
-                'label' => 'account_direcciones',
-              ),
-              48 => 
-              array (
-              ),
-              49 => 
               array (
               ),
             ),
