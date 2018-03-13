@@ -427,7 +427,7 @@ array (
                 'name' => 'generar_curp_c',
                 'label' => 'LBL_GENERAR_CURP',
               ),
-              /*
+
               49 => 
               array (
                 'name' => 'sectoreconomico_c',
@@ -442,7 +442,7 @@ array (
                 'studio' => 'visible',
                 'label' => 'LBL_SUBSECTORECONOMICO',
               ),
-              */
+
               52 => 
               array (
                 'name' => 'actividadeconomica_c',

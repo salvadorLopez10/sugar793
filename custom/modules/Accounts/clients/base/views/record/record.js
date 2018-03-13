@@ -89,6 +89,8 @@
 
         this.model.on('change:name', this.cleanName, this);
 
+        this.model.on('change:account_telefonos',this.setPhoneOffice, this);
+
         /*
          AF. 12-02-2018
          Ajuste para mostrar direcciones y teléfonos
@@ -1068,6 +1070,18 @@
         this.model.set("clean_name", clean_name);
 
         this.DuplicateCheck_Name();
+    },
+
+    setPhoneOffice: function(){
+
+        if(!_.isEmpty(this.model.get('account_telefonos'))){
+            var telefono=this.model.get('account_telefonos');
+            for(var i=0;i<telefono.length;i++){
+                if(telefono[i].principal){
+                    this.model.set('phone_office',telefono[i].pais+ " "+telefono[i].telefono);
+                }
+            }
+        }
     },
 
     /*

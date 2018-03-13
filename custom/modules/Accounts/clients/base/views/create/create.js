@@ -177,6 +177,8 @@
         this.model.on('change:pais_nacimiento_c',this.validaExtranjerosRFC, this);
         //this.model.on('change:rfc_c',this.validaFechaNacimientoDesdeRFC, this);
 
+        this.model.on('change:account_telefonos',this.setPhoneOffice, this);
+
         /*
          AF: 11/01/18
          Merge create-create-actions.js
@@ -984,6 +986,18 @@
         callback(null, fields, errors);
     },
     /* END */
+
+    setPhoneOffice: function(){
+
+        if(!_.isEmpty(this.model.get('account_telefonos'))){
+            var telefono=this.model.get('account_telefonos');
+            for(var i=0;i<telefono.length;i++){
+                if(telefono[i].principal){
+                    this.model.set('phone_office',telefono[i].pais+ " "+telefono[i].telefono);
+                }
+            }
+        }
+    },
     /**
      * @author Carlos Zaragoza Ortiz
      * @date 16-10-2015
