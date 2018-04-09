@@ -35,166 +35,175 @@ array (
                 array (
                     0 =>
                         array (
+                            'name' => 'name',
+                            'displayParams' =>
+                                array (
+                                    'required' => true,
+                                    'wireless_edit_only' => true,
+                                ),
+                        ),
+                    1 =>
+                        array (
                             'name' => 'tipo_registro_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPO_REGISTRO',
                             'readonly' => true,
                         ),
-                    1 =>
+                    2 =>
                         array (
                             'name' => 'idcliente_c',
                             'label' => 'LBL_IDCLIENTE',
                             'readonly' => true,
                         ),
-                    2 =>
+                    3 =>
                         array (
                             'name' => 'reus_c',
                             'label' => 'LBL_REUS',
                         ),
-                    3 =>
+                    4 =>
                         array (
                             'name' => 'referencia_bancaria_c',
                             'label' => 'LBL_REFERENCIA_BANCARIA_C',
                         ),
-                    4 =>
+                    5 =>
                         array (
                             'name' => 'origendelprospecto_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ORIGENDELPROSPECTO',
                         ),
-                    5 =>
+                    6 =>
                         array (
                         ),
-                    6 =>
+                    7 =>
                         array (
                             'name' => 'metodo_prospeccion_c',
                             'studio' => 'visible',
                             'label' => 'LBL_METODO_PROSPECCION',
                         ),
-                    7 =>
+                    8 =>
                         array (
                         ),
-                    8 =>
+                    9 =>
                         array (
                             'name' => 'evento_marketing_c',
                             'label' => 'LBL_EVENTO_MARKETING',
                         ),
-                    9 =>
+                    10 =>
                         array (
                             'name' => 'canal_marketing_c',
                             'studio' => 'visible',
                             'label' => 'LBL_CANAL_MARKETING',
                         ),
-                    10 =>
+                    11 =>
                         array (
                             'name' => 'referenciador_c',
                             'studio' => 'visible',
                             'label' => 'LBL_REFERENCIADOR',
                         ),
-                    11 =>
+                    12 =>
                         array (
                         ),
-                    12 =>
+                    13 =>
                         array (
                             'name' => 'referido_cliente_prov_c',
                             'studio' => 'visible',
                             'label' => 'LBL_REFERIDO_CLIENTE_PROV',
                         ),
-                    13 =>
+                    14 =>
                         array (
                         ),
-                    14 =>
+                    15 =>
                         array (
                             'name' => 'referenciado_agencia_c',
                             'label' => 'LBL_REFERENCIADO_AGENCIA',
                         ),
-                    15 =>
+                    16 =>
                         array (
                         ),
-                    16 =>
+                    17 =>
                         array (
                             'name' => 'estatus_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ESTATUS',
                         ),
-                    17 =>
+                    18 =>
                         array (
                             'name' => 'estatus_persona_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ESTATUS_PERSONA',
                         ),
-                    18 =>
+                    19 =>
                         array (
                             'name' => 'esproveedor_c',
                             'label' => 'LBL_ESPROVEEDOR',
                         ),
-                    19 =>
+                    20 =>
                         array (
                             'name' => 'alta_proveedor_c',
                             'label' => 'LBL_ALTA_PROVEEDOR_C',
                         ),
-                    20 =>
+                    21 =>
                         array (
                             'name' => 'cedente_factor_c',
                             'label' => 'LBL_CEDENTE_FACTOR',
                         ),
-                    21 =>
+                    22 =>
                         array (
                             'name' => 'deudor_factor_c',
                             'label' => 'LBL_DEUDOR_FACTOR',
                         ),
-                    22 =>
+                    23 =>
                         array (
                             'name' => 'tipo_proveedor_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPO_PROVEEDOR',
                         ),
-                    23 =>
+                    24 =>
                         array (
                             'name' => 'iva_c',
                             'label' => 'LBL_IVA',
                         ),
-                    24 =>
+                    25 =>
                         array (
                             'name' => 'es_referenciador_c',
                             'label' => 'LBL_ES_REFERENCIADOR_C',
                         ),
-                    25 =>
+                    26 =>
                         array (
                             'name' => 'estatus_referenciador_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ESTATUS_REFERENCIADOR_C',
                         ),
-                    26 =>
+                    27 =>
                         array (
                             'name' => 'tipodemotivo_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPODEMOTIVO',
                         ),
-                    27 =>
+                    28 =>
                         array (
                             'name' => 'motivo_c',
                             'studio' => 'visible',
                             'label' => 'LBL_MOTIVO',
                         ),
-                    28 =>
+                    29 =>
                         array (
                             'name' => 'seguimiento_futuro_c',
                             'label' => 'LBL_SEGUIMIENTO_FUTURO',
                         ),
-                    29 =>
+                    30 =>
                         array (
                             'name' => 'tiposeguimiento_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPOSEGUIMIENTO',
                         ),
-                    30 =>
+                    31 =>
                         array (
                             'name' => 'descripciondetarea_c',
                             'label' => 'LBL_DESCRIPCIONDETAREA',
                             'span' => 12,
                         ),
-                    31 =>
+                    32 =>
                         array (
                             'name' => 'promotorleasing_c',
                             'studio' => 'visible',
@@ -207,158 +216,158 @@ array (
                                 ),
                             'span' => 12,
                         ),
-                    32 =>
+                    33 =>
                         array (
                             'name' => 'tipodepersona_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPODEPERSONA',
                         ),
-                    33 =>
+                    34 =>
                         array (
                             'name' => 'tipo_relacion_c',
                             'studio' => 'visible',
                             'label' => 'LBL_TIPO_RELACION',
                         ),
-                    34 =>
+                    35 =>
                         array (
                             'name' => 'primernombre_c',
                             'label' => 'LBL_PRIMERNOMBRE',
                             'span' => 12,
                         ),
-                    35 =>
+                    36 =>
                         array (
                             'name' => 'apellidopaterno_c',
                             'label' => 'LBL_APELLIDOPATERNO',
                         ),
-                    36 =>
+                    37 =>
                         array (
                             'name' => 'apellidomaterno_c',
                             'label' => 'LBL_APELLIDOMATERNO',
                         ),
-                    37 =>
+                    38 =>
                         array (
                             'name' => 'razonsocial_c',
                             'label' => 'LBL_RAZONSOCIAL',
                         ),
-                    38 =>
+                    39 =>
                         array (
                             'name' => 'fechaconstitutiva_c',
                             'label' => 'LBL_FECHACONSTITUTIVA',
                         ),
-                    39 =>
+                    40 =>
                         array (
                             'name' => 'fechadenacimiento_c',
                             'label' => 'LBL_FECHADENACIMIENTO',
                         ),
-                    40 =>
+                    41 =>
                         array (
                         ),
-                    41 =>
+                    42 =>
                         array (
                             'name' => 'rfc_c',
                             'label' => 'LBL_RFC',
                         ),
-                    42 =>
+                    43 =>
                         array (
                             'type' => 'button',
                             'name' => 'generar_rfc_c',
                             'label' => 'LBL_GENERAR_RFC',
                         ),
-                    43 =>
+                    44 =>
                         array (
                             'name' => 'pais_nacimiento_c',
                             'studio' => 'visible',
                             'label' => 'LBL_PAIS_NACIMIENTO',
                         ),
-                    44 =>
+                    45 =>
                         array (
                             'name' => 'estado_nacimiento_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ESTADO_NACIMIENTO',
                         ),
-                    45 =>
+                    46 =>
                         array (
                             'name' => 'genero_c',
                             'studio' => 'visible',
                             'label' => 'LBL_GENERO',
                         ),
-                    46 =>
+                    47 =>
                         array (
                             'name' => 'ifepasaporte_c',
                             'label' => 'LBL_IFEPASAPORTE',
                         ),
-                    47 =>
+                    48 =>
                         array (
                             'name' => 'curp_c',
                             'label' => 'LBL_CURP',
                         ),
-                    48 =>
+                    49 =>
                         array (
                             'type' => 'button',
                             'name' => 'generar_curp_c',
                             'label' => 'LBL_GENERAR_CURP',
                         ),
 
-                    49 =>
+                    50 =>
                         array (
                             'name' => 'sectoreconomico_c',
                             'label' => 'LBL_SECTORECONOMICO',
                         ),
-                    50 =>
+                    51 =>
                         array (
                         ),
-                    51 =>
+                    52 =>
                         array (
                             'name' => 'subsectoreconomico_c',
                             'studio' => 'visible',
                             'label' => 'LBL_SUBSECTORECONOMICO',
                         ),
 
-                    52 =>
+                    53 =>
                         array (
                             'name' => 'actividadeconomica_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ACTIVIDADECONOMICA',
                         ),
-                    53 =>
+                    54 =>
                         array (
                             'name' => 'nacionalidad_c',
                             'studio' => 'visible',
                             'label' => 'LBL_NACIONALIDAD',
                         ),
-                    54 =>
+                    55 =>
                         array (
                             'name' => 'zonageografica_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ZONAGEOGRAFICA',
                         ),
-                    55 =>
+                    56 =>
                         array (
                             'name' => 'estadocivil_c',
                             'studio' => 'visible',
                             'label' => 'LBL_ESTADOCIVIL',
                         ),
-                    56 =>
+                    57 =>
                         array (
                             'name' => 'regimenpatrimonial_c',
                             'studio' => 'visible',
                             'label' => 'LBL_REGIMENPATRIMONIAL',
                         ),
-                    57 =>
+                    58 =>
                         array (
                             'name' => 'profesion_c',
                             'studio' => 'visible',
                             'label' => 'LBL_PROFESION',
                             'span' => 12,
                         ),
-                    58 =>
+                    59 =>
                         array (
                             'name' => 'parent_name',
                         ),
-                    59 =>
+                    60 =>
                         array (
                         ),
-                    60 =>
+                    61 =>
                         array (
                             'name' => 'promotorfactoraje_c',
                             'studio' => 'visible',
@@ -370,7 +379,7 @@ array (
                                     'tipodeproducto_c' => '4',
                                 ),
                         ),
-                    61 =>
+                    62 =>
                         array (
                             'name' => 'promotorcredit_c',
                             'studio' => 'visible',
@@ -382,13 +391,13 @@ array (
                                     'tipodeproducto_c' => '3',
                                 ),
                         ),
-                    62 =>
+                    63 =>
                         array (
                             'name' => 'email',
                             'span' => 12,
                         ),
 
-                    63 => 'phone_office',
+                    64 => 'phone_office',
 
                 ),
           ),

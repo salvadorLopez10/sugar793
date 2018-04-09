@@ -8119,3 +8119,8 @@ $app_list_strings['estatus_referenciador_c_list']=array (
     'No deseado' => 'No deseado',
     'Inactivo' => 'Vetado',
 );
+
+
+$app_strings['LBL_DETAILS'] = 'DETALLE';
+$app_strings['LBL_DETAIL_RELATED'] = 'RELACIONES';
+$app_strings['LBL_DASHBOARDS'] = 'DASHBOARDS';
