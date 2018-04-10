@@ -206,6 +206,10 @@
                 <td>
                     <span class="btn btn-primary ocultar_columnas">Ocultar Columnas</span>
                 </td>
+
+                <td>
+                    <span class="btn btn-primary mostrar_popup">Mostrar Pop up</span>
+                </td>
             </tr>
         </table>
     </div>
@@ -627,6 +631,62 @@
             <tr>
                 <td colspan="5">
                     <textarea rows="4" cols="80" style="width: 90%;" id="comentarios_revivir"></textarea>
+                </td>
+            </tr>
+        </table>
+
+
+        <table class="popuptables" style="display: {{popup_show_switch}};">
+            <tr>
+                <td colspan="3">
+                    COMENTARIOS DE OPERACIÓN
+                </td>
+            </tr>
+            <tr>
+                <td width="10%">
+                    Operacion:
+                </td>
+                <td></td>
+                <td class="popupC2" colspan="4">
+                    {{backlogName}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Monto Original:
+                </td>
+                <td></td>
+                <td class="popupC2">
+                    <span id="monto_comprometido_comm">{{backlogMonto}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Monto Real:
+                </td>
+                <td></td>
+                <td class="popupC2">
+                    <span id="monto_real_comm">{{backlogMonto_Real}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Comentarios:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <textarea rows="4" cols="80" style="width: 90%;" id="BacklogDescription" readonly>{{comentarios_existentes}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Agregar Comentario:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <textarea rows="4" cols="80" style="width: 90%;" id="newBacklogDescription"></textarea>
                 </td>
             </tr>
         </table>

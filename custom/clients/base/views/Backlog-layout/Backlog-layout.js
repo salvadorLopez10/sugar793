@@ -7,6 +7,10 @@
     plugins: ['Dashlet'],
 
     events: {
+
+        'click .mostrar_popup': 'cargarBacklogsButton',
+
+
         'click #btn_Buscar': 'cargarBacklogsButton',
         'click .Cancelar': 'cancelarBacklog',
         'click .Comentario': 'comentarioBacklog',
