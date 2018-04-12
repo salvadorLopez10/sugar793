@@ -101,7 +101,7 @@
 
     <!--.icon-comment -->
     .fa-comment {
-      color: red;
+        color: red;
     }
 
     .backlogInfo{
@@ -157,30 +157,30 @@
                 <td>Estatus:</td>
             </tr>
             <tr>
-            <td>
-                <select id="progreso_filtro" class="filtros">
-                    {{{progreso_list_html}}}
-                </select>
-            </td>
-            <td>
-                <select id="tipo_operacion_filtro" class="filtros">
-                    {{{tipo_operacion_list_html}}}
-                </select>
-            </td>
-            <td>
-                <select id="etapa_filtro" class="filtros">
-                    {{{etapa_list_html}}}
-                </select>
-            </td>
-            <td>
-                <select id="estatus_filtro" class="select2 filtros" multiple>
-                    {{{estatus_list_html}}}
-                </select>
-            </td>
-            <td colspan="6">
-                <input type="button" value="Buscar" id="btn_Buscar" class="btn btn-primary filtros"/>
-                <i class="fa fa-spinner fa-spin loadingIcon" style="display: none"></i>
-            </td>
+                <td>
+                    <select id="progreso_filtro" class="filtros">
+                        {{{progreso_list_html}}}
+                    </select>
+                </td>
+                <td>
+                    <select id="tipo_operacion_filtro" class="filtros">
+                        {{{tipo_operacion_list_html}}}
+                    </select>
+                </td>
+                <td>
+                    <select id="etapa_filtro" class="filtros">
+                        {{{etapa_list_html}}}
+                    </select>
+                </td>
+                <td>
+                    <select id="estatus_filtro" class="select2 filtros" multiple>
+                        {{{estatus_list_html}}}
+                    </select>
+                </td>
+                <td colspan="6">
+                    <input type="button" value="Buscar" id="btn_Buscar" class="btn btn-primary filtros"/>
+                    <i class="fa fa-spinner fa-spin loadingIcon" style="display: none"></i>
+                </td>
             </tr>
         </table>
     </div>
@@ -205,10 +205,6 @@
                 </td>
                 <td>
                     <span class="btn btn-primary ocultar_columnas">Ocultar Columnas</span>
-                </td>
-
-                <td>
-                    <span class="btn btn-primary mostrar_popup">Mostrar Pop up</span>
                 </td>
             </tr>
         </table>
@@ -438,9 +434,9 @@
         </table>
         <table class="popuptables" style="display: {{comentarios_switch}};">
             <tr>
-            <td colspan="3">
-                COMENTARIOS DE OPERACIÓN
-            </td>
+                <td colspan="3">
+                    COMENTARIOS DE OPERACIÓN
+                </td>
             </tr>
             <tr>
                 <td width="10%">
@@ -635,62 +631,6 @@
             </tr>
         </table>
 
-
-        <table class="popuptables" style="display: {{popup_show_switch}};">
-            <tr>
-                <td colspan="3">
-                    COMENTARIOS DE OPERACIÓN
-                </td>
-            </tr>
-            <tr>
-                <td width="10%">
-                    Operacion:
-                </td>
-                <td></td>
-                <td class="popupC2" colspan="4">
-                    {{backlogName}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Monto Original:
-                </td>
-                <td></td>
-                <td class="popupC2">
-                    <span id="monto_comprometido_comm">{{backlogMonto}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Monto Real:
-                </td>
-                <td></td>
-                <td class="popupC2">
-                    <span id="monto_real_comm">{{backlogMonto_Real}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    Comentarios:
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <textarea rows="4" cols="80" style="width: 90%;" id="BacklogDescription" readonly>{{comentarios_existentes}}</textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    Agregar Comentario:
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <textarea rows="4" cols="80" style="width: 90%;" id="newBacklogDescription"></textarea>
-                </td>
-            </tr>
-        </table>
-
         <table class="popup_footer">
             <tr>
                 <td class="popup_footer">
@@ -702,7 +642,7 @@
                         -->
                         <span class="btn btn-success popupSave" title="Guardar" style="margin-left: 0px; width: 50px;">
                           {{save}}
-                          <i class="fa fa-spinner fa-spin savingIcon" style="display: none"></i>
+                            <i class="fa fa-spinner fa-spin savingIcon" style="display: none"></i>
                         </span>
                     </div>
                 </td>
@@ -713,295 +653,265 @@
     <div class="dashlet-backlog-wrapper">
         <div class="backlogInfo" style="display: none">
             <table width="100%" class="table table-bordered table-condensed backlog_dashlet_box" id="backlog-dashlet">
-            <tr class="backlog_dashlet_header">
-                <!--<th width="1%">
-                    Comprometer
-                    <input type="checkbox" id="mass_update_btn"/>
-                </th>-->
-                <th width="5%" class="hide_acciones">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Acciones</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_estatus">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Estatus</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_mes">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Mes</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="1%" class="hide_equipo">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Equipo <i id="EquipoSort" class="fa fa-unsorted" {{EquipoSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="1%" class="hide_zona">
-                    <table width="100%" >
-                        <tr>
-                            <td class="innerTableTd">Zona</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_promotor">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Promotor <i id="PromotorSort" class="fa fa-unsorted" {{PromotorSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="30%" class="hide_cliente">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Cliente <i id="ClienteSort" class="fa fa-unsorted" {{ClienteSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_operacion">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">No. Backlog <i id="NumeroBacklogSort" class="fa fa-unsorted" {{NumeroBacklogSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="8%" class="hide_tipo_bien">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Tipo de Bien</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_monto_original">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Linea Disponible</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="7%" class="hide_monto_comprometido">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Monto Original <i id="MontoOperacionSort" class="fa fa-unsorted" {{MontoOperacionSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-				<th width="10%" class="hide_ri_comprometida">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">RI Original</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="7%" class="hide_monto_diferencia">
-                    <table width="100%">
-                        <tr>
-                        <td class="innerTableTd">Diferencia</td>
-                    </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_monto_final_comprometido">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Backlog <i id="MontoFinalSort" class="fa fa-unsorted" {{MontoFinalSortDirection}}></i></td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_ri_final_comprometida">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Renta Inicial</td>
-                        </tr>
-                    </table>
-                </th>
-                <!--<th width="5%" class="hide_bl_actual">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Backlog Actual</td>
-                        </tr>
-                    </table>
-                </th>-->
-                <th width="5%" class="hide_pipeline_posterior">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Colocacion Pipeline</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="5%" class="hide_monto_real">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Colocación Real</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_ri_real">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">RI Real</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_monto_cancelado">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Monto Cancelado</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_ri_cancelada">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">RI Cancelada</td>
-                        </tr>
-                    </table>
-                </th>
-				<th width="20%" class="hide_tipo_operacion">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Tipo de Operacion</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="10%" class="hide_etapa_preliminar">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Etapa Inicio Mes</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="15%" class="hide_etapa">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Etapa</td>
-                        </tr>
-                    </table>
-                </th>
-                <th width="15%" class="hide_progreso">
-                    <table width="100%">
-                        <tr>
-                            <td class="innerTableTd">Solicitud</td>
-                        </tr>
-                    </table>
-                </th>
+                <tr class="backlog_dashlet_header">
+                    <!--<th width="1%">
+                        Comprometer
+                        <input type="checkbox" id="mass_update_btn"/>
+                    </th>-->
+                    <th width="5%" class="hide_acciones">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Acciones</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_estatus">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Estatus</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_mes">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Mes</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="1%" class="hide_equipo">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Equipo <i id="EquipoSort" class="fa fa-unsorted" {{EquipoSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="1%" class="hide_zona">
+                        <table width="100%" >
+                            <tr>
+                                <td class="innerTableTd">Zona</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_promotor">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Promotor <i id="PromotorSort" class="fa fa-unsorted" {{PromotorSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="30%" class="hide_cliente">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Cliente <i id="ClienteSort" class="fa fa-unsorted" {{ClienteSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_operacion">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">No. Backlog <i id="NumeroBacklogSort" class="fa fa-unsorted" {{NumeroBacklogSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="8%" class="hide_tipo_bien">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Tipo de Bien</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_monto_original">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Linea Disponible</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="7%" class="hide_monto_comprometido">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Monto Original <i id="MontoOperacionSort" class="fa fa-unsorted" {{MontoOperacionSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_ri_comprometida">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">RI Original</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="7%" class="hide_monto_diferencia">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Diferencia</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_monto_final_comprometido">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Backlog <i id="MontoFinalSort" class="fa fa-unsorted" {{MontoFinalSortDirection}}></i></td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_ri_final_comprometida">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Renta Inicial</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <!--<th width="5%" class="hide_bl_actual">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Backlog Actual</td>
+                            </tr>
+                        </table>
+                    </th>-->
+                    <th width="5%" class="hide_pipeline_posterior">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Colocacion Pipeline</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="5%" class="hide_monto_real">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Colocación Real</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_ri_real">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">RI Real</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_monto_cancelado">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Monto Cancelado</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_ri_cancelada">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">RI Cancelada</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="20%" class="hide_tipo_operacion">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Tipo de Operacion</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="10%" class="hide_etapa_preliminar">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Etapa Inicio Mes</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="15%" class="hide_etapa">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Etapa</td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th width="15%" class="hide_progreso">
+                        <table width="100%">
+                            <tr>
+                                <td class="innerTableTd">Solicitud</td>
+                            </tr>
+                        </table>
+                    </th>
 
-            </tr>
-
-            {{#each backlogs}}
-                <tr class="backlog_dashlet_header_totals">
-                    <!--<th class="totales"></th>-->
-                    <th class="totales hide_acciones"></th>
-                    <th class="totales hide_estatus"></th>
-                    <th class="totales hide_mes"></th>
-                    <th class="totales hide_equipo"></th>
-                    <th class="totales hide_zona"></th>
-                    <th class="totales hide_promotor"></th>
-                    <th class="totales hide_cliente"></th>
-                    <th class="totales hide_operacion"></th>
-                    <th class="totales hide_tipo_bien"></th>
-                    <th class="totales hide_monto_original">{{customFormatNumber totales.total_monto_original}}</th>
-                    <th class="totales hide_monto_comprometido">{{customFormatNumber totales.total_monto_comprometido}}</th>
-                    <th class="totales hide_ri_comprometida">{{customFormatNumber totales.total_renta_inicial}}</th>
-					<th class="totales hide_monto_diferencia">{{customFormatNumber totales.total_monto_diferencia}}</th>
-					<th class="totales hide_monto_final_comprometido">{{customFormatNumber totales.total_monto_final_comprometido}}</th>
-                    <th class="totales hide_ri_final_comprometida">{{customFormatNumber totales.total_renta_inicial_final}}</th>
-                    <!--<th class="totales hide_bl_actual">{{customFormatNumber totales.total_bl_actual}}</th>-->
-                    <th class="totales hide_pipeline_posterior">{{customFormatNumber totales.total_pipeline_posterior}}</th>
-                    <th class="totales hide_monto_real">{{customFormatNumber totales.total_monto_real}}</th>
-                    <th class="totales hide_ri_real">{{customFormatNumber totales.total_renta_real}}</th>
-                    <th class="totales hide_monto_cancelado">{{customFormatNumber totales.total_monto_cancelado}}</th>
-                    <th class="totales hide_ri_cancelada">{{customFormatNumber totales.total_ri_cancelada}}</th>
-					<th class="totales hide_tipo_operacion"></th>
-                    <th class="totales hide_etapa_preliminar"></th>
-                    <th class="totales hide_etapa"></th>
-                    <th class="totales hide_progreso"></th>
                 </tr>
-            {{/each}}
 
-            {{#each backlogs}}
-                {{#each this.MyBacklogs.linea}}
-                    <tr bgcolor="{{color}}" class="backlog-dashlet-row">
-                        <td class="hide_acciones">
-                            <div class="btn-toolbar" style="margin: 0px; padding-left:0px;">
-                                <div class="btn-group">
-                                    <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
-                                    <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
-                                    <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
-                                    <span class="btn Comentario fa {{comentado}}" title="Comentario" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-comentarios="{{comentarios}}" data-progreso="{{progreso}}"></span>
-                                    <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
-                                </div>
+                {{#each backlogs}}
+                    <tr class="backlog_dashlet_header_totals">
+                        <!--<th class="totales"></th>-->
+                        <!-- AF: 09/04/2018 - Menú
+                        Actualizaicón masiva: Adición de menú de opciones-->
+                        <th class="totales hide_acciones">
+                            <div class="btn-group">
+                                <!-- <a class="btn">Menú</a> -->
+                                <span class="btn totales marcarTodos" title="Seleccionar Todo">
+                          <input type="checkbox" id="selectAll"/>
+                        </span>
+                                <a class="btn dropdown-toggle totales" data-toggle="dropdown">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- dropdown menu links -->
+                                    <li>
+                                        <a class="MoverOperacionMasiva"><i class="fa fa-hand-o-up"></i>Mover a otro mes</a>
+                                    </li>
+                                    <li>
+                                        <a class="CancelarMasiva"><i class="fa fa-times-circle "></i>Cancelar</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </td>
-                    <!--<tr class="backlog-dashlet-row">-->
-                        <!--<td>
-                            <input type="checkbox" class="mass_update" value="{{@key}}" {{estatus_checked}} {{mass_checked}}/>
-                        </td>-->
-                        <td class="hide_estatus">{{estatus_de_la_operacion}}</td>
-                        <td class="hide_mes">{{mes}}-{{anio}}</td>
-                        <td class="hide_equipo">{{equipo}}</td>
-                        <td class="hide_zona">{{zona}}</td>
-                        <td class="hide_promotor"  title="{{promotor}}">{{iniciales}}</td>
-                        <td class="hide_cliente">
-                            <a href="#Accounts/{{clienteId}}" target="_blank">{{cliente}}</a>
-                        </td>
-                        <td class="hide_operacion">
-                            <a href="#lev_Backlog/{{@key}}" target="_blank">{{numero_de_backlog}}</a>
-                        </td>
-                        <td class="hide_tipo_bien">{{tipo_bien}}</td>
-                        <td bgcolor="{{colorDispLinea}}" class="hide_monto_original">{{customFormatNumber monto_original}}</td>
-                        <td class="hide_monto_comprometido">{{customFormatNumber monto_comprometido}}</td>
-                        <td class="hide_ri_comprometida">{{customFormatNumber ri_comprometida}}</td>
-						<td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
-						<td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
-                        <td class="hide_ri_final_comprometida">{{customFormatNumber ri_final_comprometida}}</td>
-                        <!--<td class="hide_bl_actual">{{customFormatNumber bl_actual}}</td>-->
-                        <td class="hide_pipeline_posterior">{{customFormatNumber pipeline_posterior}}</td>
-                        <td class="hide_monto_real">{{customFormatNumber monto_real}}</td>
-                        <td class="hide_ri_real">{{customFormatNumber renta_real}}</td>
-                        <td class="hide_monto_cancelado">{{customFormatNumber monto_cancelado}}</td>
-                        <td class="hide_ri_cancelada">{{customFormatNumber ri_cancelada}}</td>
-						<td class="hide_tipo_operacion">{{tipo_operacion}}</td>
-                        <td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
-                        <td class="hide_etapa">{{etapa}}</td>
-                        <td class="hide_progreso">{{progreso}}</td>
-                        <!--<td>-->
-                        <!--<a href="#Opportunities/{{oppId}}" target="_blank">{{No_Solicitud}}</a>-->
-                        <!--</td>-->
+                        </th>
+                        <th class="totales hide_estatus"></th>
+                        <th class="totales hide_mes"></th>
+                        <th class="totales hide_equipo"></th>
+                        <th class="totales hide_zona"></th>
+                        <th class="totales hide_promotor"></th>
+                        <th class="totales hide_cliente"></th>
+                        <th class="totales hide_operacion"></th>
+                        <th class="totales hide_tipo_bien"></th>
+                        <th class="totales hide_monto_original">{{customFormatNumber totales.total_monto_original}}</th>
+                        <th class="totales hide_monto_comprometido">{{customFormatNumber totales.total_monto_comprometido}}</th>
+                        <th class="totales hide_ri_comprometida">{{customFormatNumber totales.total_renta_inicial}}</th>
+                        <th class="totales hide_monto_diferencia">{{customFormatNumber totales.total_monto_diferencia}}</th>
+                        <th class="totales hide_monto_final_comprometido">{{customFormatNumber totales.total_monto_final_comprometido}}</th>
+                        <th class="totales hide_ri_final_comprometida">{{customFormatNumber totales.total_renta_inicial_final}}</th>
+                        <!--<th class="totales hide_bl_actual">{{customFormatNumber totales.total_bl_actual}}</th>-->
+                        <th class="totales hide_pipeline_posterior">{{customFormatNumber totales.total_pipeline_posterior}}</th>
+                        <th class="totales hide_monto_real">{{customFormatNumber totales.total_monto_real}}</th>
+                        <th class="totales hide_ri_real">{{customFormatNumber totales.total_renta_real}}</th>
+                        <th class="totales hide_monto_cancelado">{{customFormatNumber totales.total_monto_cancelado}}</th>
+                        <th class="totales hide_ri_cancelada">{{customFormatNumber totales.total_ri_cancelada}}</th>
+                        <th class="totales hide_tipo_operacion"></th>
+                        <th class="totales hide_etapa_preliminar"></th>
+                        <th class="totales hide_etapa"></th>
+                        <th class="totales hide_progreso"></th>
                     </tr>
                 {{/each}}
 
-                {{#each this.SubBacklogs}}
-                    {{#each this.linea}}
+                {{#each backlogs}}
+                    {{#each this.MyBacklogs.linea}}
                         <tr bgcolor="{{color}}" class="backlog-dashlet-row">
                             <td class="hide_acciones">
                                 <div class="btn-toolbar" style="margin: 0px; padding-left:0px;">
                                     <div class="btn-group">
+                                        <span class="btn Seleccionar switch-mini round-switch" title="Seleccionar" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"> <input type="checkbox"/></span>
                                         <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
                                         <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
                                         <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
                                         <span class="btn Comentario fa {{comentado}}" title="Comentario" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-comentarios="{{comentarios}}" data-progreso="{{progreso}}"></span>
-                                        <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-progreso="{{progreso}}"></span>
+                                        <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
                                     </div>
                                 </div>
                             </td>
-                        <!--<tr class="backlog-dashlet-row">-->
+                            <!--<tr class="backlog-dashlet-row">-->
                             <!--<td>
-                                <input type="checkbox" class="mass_update" value="{{@key}}" {{estatus_checked}} {{mass_checked}}/>
-                            </td>-->
+                            <input type="checkbox" class="mass_update" value="{{@key}}" {{estatus_checked}} {{mass_checked}}/>
+                        </td>-->
                             <td class="hide_estatus">{{estatus_de_la_operacion}}</td>
                             <td class="hide_mes">{{mes}}-{{anio}}</td>
                             <td class="hide_equipo">{{equipo}}</td>
                             <td class="hide_zona">{{zona}}</td>
-                            <td class="hide_promotor" title="{{promotor}}">{{iniciales}}</td>
+                            <td class="hide_promotor"  title="{{promotor}}">{{iniciales}}</td>
                             <td class="hide_cliente">
                                 <a href="#Accounts/{{clienteId}}" target="_blank">{{cliente}}</a>
                             </td>
@@ -1012,88 +922,140 @@
                             <td bgcolor="{{colorDispLinea}}" class="hide_monto_original">{{customFormatNumber monto_original}}</td>
                             <td class="hide_monto_comprometido">{{customFormatNumber monto_comprometido}}</td>
                             <td class="hide_ri_comprometida">{{customFormatNumber ri_comprometida}}</td>
-							<td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
-							<td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
+                            <td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
+                            <td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
                             <td class="hide_ri_final_comprometida">{{customFormatNumber ri_final_comprometida}}</td>
                             <!--<td class="hide_bl_actual">{{customFormatNumber bl_actual}}</td>-->
                             <td class="hide_pipeline_posterior">{{customFormatNumber pipeline_posterior}}</td>
                             <td class="hide_monto_real">{{customFormatNumber monto_real}}</td>
                             <td class="hide_ri_real">{{customFormatNumber renta_real}}</td>
-                            <td class="hide_monto_cancelado" >{{customFormatNumber monto_cancelado}}</td>
+                            <td class="hide_monto_cancelado">{{customFormatNumber monto_cancelado}}</td>
                             <td class="hide_ri_cancelada">{{customFormatNumber ri_cancelada}}</td>
                             <td class="hide_tipo_operacion">{{tipo_operacion}}</td>
-							<td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
+                            <td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
                             <td class="hide_etapa">{{etapa}}</td>
                             <td class="hide_progreso">{{progreso}}</td>
                             <!--<td>-->
                             <!--<a href="#Opportunities/{{oppId}}" target="_blank">{{No_Solicitud}}</a>-->
                             <!--</td>-->
-
                         </tr>
                     {{/each}}
-                {{/each}}
 
-                {{#if Children}}
-                    {{#each Children}}
-                        {{#each this}}
+                    {{#each this.SubBacklogs}}
+                        {{#each this.linea}}
+                            <tr bgcolor="{{color}}" class="backlog-dashlet-row">
+                                <td class="hide_acciones">
+                                    <div class="btn-toolbar" style="margin: 0px; padding-left:0px;">
+                                        <div class="btn-group">
+                                            <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
+                                            <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
+                                            <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
+                                            <span class="btn Comentario fa {{comentado}}" title="Comentario" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-comentarios="{{comentarios}}" data-progreso="{{progreso}}"></span>
+                                            <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-progreso="{{progreso}}"></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--<tr class="backlog-dashlet-row">-->
+                                <!--<td>
+                                <input type="checkbox" class="mass_update" value="{{@key}}" {{estatus_checked}} {{mass_checked}}/>
+                            </td>-->
+                                <td class="hide_estatus">{{estatus_de_la_operacion}}</td>
+                                <td class="hide_mes">{{mes}}-{{anio}}</td>
+                                <td class="hide_equipo">{{equipo}}</td>
+                                <td class="hide_zona">{{zona}}</td>
+                                <td class="hide_promotor" title="{{promotor}}">{{iniciales}}</td>
+                                <td class="hide_cliente">
+                                    <a href="#Accounts/{{clienteId}}" target="_blank">{{cliente}}</a>
+                                </td>
+                                <td class="hide_operacion">
+                                    <a href="#lev_Backlog/{{@key}}" target="_blank">{{numero_de_backlog}}</a>
+                                </td>
+                                <td class="hide_tipo_bien">{{tipo_bien}}</td>
+                                <td bgcolor="{{colorDispLinea}}" class="hide_monto_original">{{customFormatNumber monto_original}}</td>
+                                <td class="hide_monto_comprometido">{{customFormatNumber monto_comprometido}}</td>
+                                <td class="hide_ri_comprometida">{{customFormatNumber ri_comprometida}}</td>
+                                <td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
+                                <td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
+                                <td class="hide_ri_final_comprometida">{{customFormatNumber ri_final_comprometida}}</td>
+                                <!--<td class="hide_bl_actual">{{customFormatNumber bl_actual}}</td>-->
+                                <td class="hide_pipeline_posterior">{{customFormatNumber pipeline_posterior}}</td>
+                                <td class="hide_monto_real">{{customFormatNumber monto_real}}</td>
+                                <td class="hide_ri_real">{{customFormatNumber renta_real}}</td>
+                                <td class="hide_monto_cancelado" >{{customFormatNumber monto_cancelado}}</td>
+                                <td class="hide_ri_cancelada">{{customFormatNumber ri_cancelada}}</td>
+                                <td class="hide_tipo_operacion">{{tipo_operacion}}</td>
+                                <td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
+                                <td class="hide_etapa">{{etapa}}</td>
+                                <td class="hide_progreso">{{progreso}}</td>
+                                <!--<td>-->
+                                <!--<a href="#Opportunities/{{oppId}}" target="_blank">{{No_Solicitud}}</a>-->
+                                <!--</td>-->
+
+                            </tr>
+                        {{/each}}
+                    {{/each}}
+
+                    {{#if Children}}
+                        {{#each Children}}
                             {{#each this}}
                                 {{#each this}}
-                                    <tr bgcolor="{{color}}" class="backlog-dashlet-row">
-                                        <td class="hide_acciones">
-                                            <div class="btn-toolbar" style="margin: 0px;padding-left:0px;">
-                                                <div class="btn-group">
-                                                    <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
-                                                    <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
-                                                    <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
-                                                    <span class="btn Comentario fa {{comentado}}" title="Comentario" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-comentarios="{{comentarios}}" data-progreso="{{progreso}}"></span>
-                                                    <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-progreso="{{progreso}}"></span>
+                                    {{#each this}}
+                                        <tr bgcolor="{{color}}" class="backlog-dashlet-row">
+                                            <td class="hide_acciones">
+                                                <div class="btn-toolbar" style="margin: 0px;padding-left:0px;">
+                                                    <div class="btn-group">
+                                                        <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
+                                                        <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
+                                                        <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
+                                                        <span class="btn Comentario fa {{comentado}}" title="Comentario" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-comentarios="{{comentarios}}" data-progreso="{{progreso}}"></span>
+                                                        <span class="btn Revivir fa fa-repeat" title="Revivir" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mreal="${{customFormatNumber monto_real}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-progreso="{{progreso}}"></span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    <!--<tr class="backlog-dashlet-row">-->
-                                        <!--<td>
+                                            </td>
+                                            <!--<tr class="backlog-dashlet-row">-->
+                                            <!--<td>
                                             <input type="checkbox" class="mass_update" value="{{@key}}" {{estatus_checked}} {{mass_checked}}/>
                                         </td>-->
-                                        <td class="hide_estatus">{{estatus_de_la_operacion}}</td>
-                                        <td class="hide_mes">{{mes}}-{{anio}}</td>
-                                        <td class="hide_equipo">{{equipo}}</td>
-                                        <td class="hide_zona">{{zona}}</td>
-                                        <td class="hide_promotor" title="{{promotor}}">{{iniciales}}</td>
-                                        <td class="hide_cliente">
-                                            <a href="#Accounts/{{clienteId}}" target="_blank">{{cliente}}</a>
-                                        </td>
-                                        <td class="hide_operacion">
-                                            <a href="#lev_Backlog/{{@key}}" target="_blank">{{numero_de_backlog}}</a>
-                                        </td>
-                                        <td class="hide_tipo_bien">{{tipo_bien}}</td>
-                                        <td bgcolor="{{colorDispLinea}}" class="hide_monto_original">{{customFormatNumber monto_original}}</td>
-                                        <td class="hide_monto_comprometido">{{customFormatNumber monto_comprometido}}</td>
-                                        <td class="hide_ri_comprometida">{{customFormatNumber ri_comprometida}}</td>
-										<td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
-										<td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
-                                        <td class="hide_ri_final_comprometida">{{customFormatNumber ri_final_comprometida}}</td>
-                                        <!--<td class="hide_bl_actual">{{customFormatNumber bl_actual}}</td>-->
-                                        <td class="hide_pipeline_posterior">{{customFormatNumber pipeline_posterior}}</td>
-                                        <td class="hide_monto_real">{{customFormatNumber monto_real}}</td>
-                                        <td class="hide_ri_real">{{customFormatNumber renta_real}}</td>
-                                        <td class="hide_monto_cancelado">{{customFormatNumber monto_cancelado}}</td>
-                                        <td class="hide_ri_cancelada">{{customFormatNumber ri_cancelada}}</td>
-                                        <td class="hide_tipo_operacion">{{tipo_operacion}}</td>
-										<td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
-                                        <td class="hide_etapa">{{etapa}}</td>
-                                        <td class="hide_progreso">{{progreso}}</td>
-                                        <!--<td>-->
-                                        <!--<a href="#Opportunities/{{oppId}}" target="_blank">{{No_Solicitud}}</a>-->
-                                        <!--</td>-->
+                                            <td class="hide_estatus">{{estatus_de_la_operacion}}</td>
+                                            <td class="hide_mes">{{mes}}-{{anio}}</td>
+                                            <td class="hide_equipo">{{equipo}}</td>
+                                            <td class="hide_zona">{{zona}}</td>
+                                            <td class="hide_promotor" title="{{promotor}}">{{iniciales}}</td>
+                                            <td class="hide_cliente">
+                                                <a href="#Accounts/{{clienteId}}" target="_blank">{{cliente}}</a>
+                                            </td>
+                                            <td class="hide_operacion">
+                                                <a href="#lev_Backlog/{{@key}}" target="_blank">{{numero_de_backlog}}</a>
+                                            </td>
+                                            <td class="hide_tipo_bien">{{tipo_bien}}</td>
+                                            <td bgcolor="{{colorDispLinea}}" class="hide_monto_original">{{customFormatNumber monto_original}}</td>
+                                            <td class="hide_monto_comprometido">{{customFormatNumber monto_comprometido}}</td>
+                                            <td class="hide_ri_comprometida">{{customFormatNumber ri_comprometida}}</td>
+                                            <td class="hide_monto_diferencia">{{customFormatNumber monto_diferencia}}</td>
+                                            <td class="hide_monto_final_comprometido">{{customFormatNumber monto_final_comprometido}}</td>
+                                            <td class="hide_ri_final_comprometida">{{customFormatNumber ri_final_comprometida}}</td>
+                                            <!--<td class="hide_bl_actual">{{customFormatNumber bl_actual}}</td>-->
+                                            <td class="hide_pipeline_posterior">{{customFormatNumber pipeline_posterior}}</td>
+                                            <td class="hide_monto_real">{{customFormatNumber monto_real}}</td>
+                                            <td class="hide_ri_real">{{customFormatNumber renta_real}}</td>
+                                            <td class="hide_monto_cancelado">{{customFormatNumber monto_cancelado}}</td>
+                                            <td class="hide_ri_cancelada">{{customFormatNumber ri_cancelada}}</td>
+                                            <td class="hide_tipo_operacion">{{tipo_operacion}}</td>
+                                            <td class="hide_etapa_preliminar">{{etapa_preliminar}}</td>
+                                            <td class="hide_etapa">{{etapa}}</td>
+                                            <td class="hide_progreso">{{progreso}}</td>
+                                            <!--<td>-->
+                                            <!--<a href="#Opportunities/{{oppId}}" target="_blank">{{No_Solicitud}}</a>-->
+                                            <!--</td>-->
 
-                                    </tr>
+                                        </tr>
+                                    {{/each}}
                                 {{/each}}
                             {{/each}}
                         {{/each}}
-                    {{/each}}
-                {{/if}}
-            {{/each}}
-        </table>
+                    {{/if}}
+                {{/each}}
+            </table>
         </div>
     </div>
 </div>
