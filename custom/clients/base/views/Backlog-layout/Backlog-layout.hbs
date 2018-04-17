@@ -631,6 +631,63 @@
             </tr>
         </table>
 
+        <!-- Se añade nuevo popup para mover mes masivo-->
+        <table class="popuptables" style="display: {{mes_masivo_switch}};">
+            <tr>
+                <td colspan="3">
+                    MOVER OPERACIÓN
+                </td>
+            </tr>
+            <!--
+            <tr>
+                <td>
+                    Operacion:
+                </td>
+                <td></td>
+                <td class="popupC2">
+                    {{backlogName}}
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td>
+                    Total de Líneas seleccionadas:
+                </td>
+                <td class="popupC2">
+                    {{countChecks}}
+                </td>
+                <td>
+                    <span id="monto_mes">{{backlogMonto}}</span>
+                </td>
+            </tr>
+            <tr>
+                <table class="popuptables" style="display: {{mes_masivo_switch}};">
+                    <tr>
+                        <td>
+                            Mes:
+                        </td>
+                        <td></td>
+                        <td>
+                            <select class="mes_switch_masivo_popup">
+                                {{{meses_list_popup_mover_mes}}}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Año:
+                        </td>
+                        <td></td>
+                        <td>
+                            <select class="anio_masivo_switch_popup">
+                                {{{anio_list_html}}}
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+
         <table class="popup_footer">
             <tr>
                 <td class="popup_footer">
@@ -894,7 +951,7 @@
                             <td class="hide_acciones">
                                 <div class="btn-toolbar" style="margin: 0px; padding-left:0px;">
                                     <div class="btn-group">
-                                        <span class="btn Seleccionar switch-mini round-switch" title="Seleccionar" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"> <input type="checkbox"/></span>
+                                        <span class="btn Seleccionar switch-mini round-switch"> <input type="checkbox" title="Seleccionar" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}" data-numBacklog="{{numero_de_backlog}}"/></span>
                                         <!--<span class="btn Comprometer icon-ok" title="Comprometer" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-monto-original="{{customFormatNumber monto_original}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-porciento="{{porciento_ri}}" data-progreso="{{progreso}}"></span>-->
                                         <span class="btn MoverOperacion fa fa-hand-o-up" title="Mover a otro mes" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-estatus="{{estatus_de_la_operacion}}" data-progreso="{{progreso}}"></span>
                                         <span class="btn Cancelar fa fa-times-circle" title="Cancelar" data-oppId="{{oppId}}" data-id="{{@key}}" data-name="{{name}}" data-monto="${{customFormatNumber monto_comprometido}}" data-renta_inicial="${{customFormatNumber ri_comprometida}}" data-estatus="{{estatus_de_la_operacion}}" data-mes="{{mes_int}}" data-anio="{{anio}}" data-oppTipo="{{tipo_operacion}}" data-progreso="{{progreso}}"></span>
