@@ -1013,21 +1013,25 @@
         });
 
         //Persiste checkbox seleccionados
-        //$('input[type="checkbox"][data-id="293fe4fe-a825-a8f8-28f5-59cc30de0f2a"]').attr('checked',true)
-        if(checks!=null || checks !==undefined || !_.isEmpty(checks)){
-            var longarray=checks.length;
+        var longarray=0;
+        var longarray_cancel=0;
+        if(checks !==undefined){
+            longarray=checks.length;
             if(longarray>0){
                 for(var i=0;i<longarray;i++){
                     var currentIdData=""+checks[i].getAttribute('data-id');
                     $('input[type="checkbox"][data-id='+currentIdData+']').attr('checked',true)
                 }
-
             }
+            /*else{
+                $('input[type="checkbox"]').attr('checked', false);
+            }
+            */
 
         }
 
-        if(checks_cancel!=null || checks_cancel !==undefined || !_.isEmpty(checks_cancel)){
-            var longarray_cancel=checks_cancel.length;
+        if(checks_cancel !==undefined){
+            longarray_cancel=checks_cancel.length;
             if(longarray_cancel>0){
                 for(var i=0;i<longarray_cancel;i++){
                     var currentIdDataCancel=""+checks_cancel[i].getAttribute('data-id');
@@ -1035,8 +1039,20 @@
                 }
 
             }
+            /*    
+            else{
+                $('input[type="checkbox"]').attr('checked', false);
+            }
+            */
+        }
+
+        if(longarray==0 && longarray_cancel==0 ){
+            $('input[type="checkbox"]').attr('checked', false);
 
         }
+        console.log("PERSIST");
+        console.log(checks);
+        console.log(checks_cancel);
 
 
     },
@@ -1128,7 +1144,7 @@
                         self.loadData(); self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-                    })
+                    },this)
                 });
             }
             if(this.revivir_switch == "block"){
@@ -1152,13 +1168,16 @@
                     'MesAnterior': tempMes,
                     'AnioAnterior': tempAnio,
                 };
+                $(".savingIcon").show();
                 var Url = app.api.buildURL("RevivirBacklog", '', {}, {});
                 app.api.call("create", Url, {data: Params}, {
                     success: _.bind(function (data) {
                         if (self.disposed) {
                             this.saving = 0;
+                            $(".savingIcon").hide();
                             return;
                         }
+                        $(".savingIcon").hide();
                         self.popup_switch = "none";
                         self.revivir_switch = "none";
                         this.cancelar_switch = "none";
@@ -1172,7 +1191,7 @@
                         self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-                    })
+                    },this)
                 });
             }
             if(this.cancelar_switch == "block"){
@@ -1260,7 +1279,7 @@
                         self.loadData(); self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-                    })
+                    },this)
                 });
             }
             if(this.mes_switch == "block"){
@@ -1359,8 +1378,7 @@
                         self.loadData(); self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-
-                    })
+                    },this)
                 });
             }
             if(this.lograda_switch == "block"){
@@ -1421,7 +1439,7 @@
                         self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-                    })
+                    },this)
                 });
             }
             if(this.compromiso_masivo_switch == "block"){
@@ -1468,7 +1486,7 @@
                         self.loadData(); self.render();
                         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
                         this.saving = 0;
-                    })
+                    },this)
                 });
             }
             //this.saving = 0;
@@ -1598,12 +1616,11 @@
                                 this.array_checks=[];
 
                             }
-                        }),
+                        },this),
 
                     });
 
                 }
-
             }
 
             //Nueva condición para cancelar masivamente
@@ -1732,6 +1749,7 @@
 
                                 if(successCountCancelar==countChecksCancelar){
                                     self.handleViewsAfterCall(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
+                                    //$('input[type="checkbox"]').attr('checked', false);
 
                                     app.alert.show('success_actualizar', {
                                         level: 'success',
@@ -1741,7 +1759,7 @@
 
 
 
-                                    if(countChecksCancelar>0){
+                                    if(countChecksCancelarError>0){
                                         app.alert.show('info_no_actualizar', {
                                             level: 'info',
                                             messages: countChecksCancelarError +" Registros no cancelados:<br>"+ noCanceladosResumen,
@@ -1749,18 +1767,17 @@
                                         });
 
                                     }
-
+                                    this.array_checks=[];
                                     this.array_checks_cancelar=[];
 
                                 }
-                            })
+                            },this)
                         });
 
                     }
 
 
                 }
-
             }
 
         }
@@ -1779,6 +1796,10 @@
         this.mes_masivo_switch="none";
         this.lograda_switch = "none";
         this.compromiso_masivo_switch = "none";
+
+        this.array_checks=[];
+        this.array_checks_cancelar=[];
+
         self.loadData(); self.render();
         self.persistData(tempMes, tempAnio, tempRegion, tempTipoOperacion, tempEtapa, tempEstatus, tempEquipo, tempPromotor, tempProgreso);
 
