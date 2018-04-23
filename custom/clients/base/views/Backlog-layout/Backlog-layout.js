@@ -41,6 +41,7 @@
         'change #ri_porciento': 'calcularRI',
         'change #renta_a_comprometer': 'calcularPorcientoRI',
         'change #motivo_de_cancelacion_popup': 'motivoCancelacion',
+        'change #motivo_de_cancelacion_masivo_popup': 'motivoCancelacionMasivo',
         'click #EquipoSort': 'ordenarPorEquipo',
         'click #PromotorSort': 'ordenarPorPromotor',
         'click #ClienteSort': 'ordenarPorCliente',
@@ -2436,6 +2437,25 @@
             //$('#label_mes_cancelacion').display = "none";
             $('#label_mes_cancelacion').hide();
             $('#label_anio_cancelacion').hide();
+        }
+
+    },
+
+    motivoCancelacionMasivo: function(){
+        if($('#motivo_de_cancelacion_masivo_popup').val() == "Mes posterior"){
+            //Solicitar mes
+            $('#mes_cancelacion_masivo').show();
+            $('#anio_cancelacion_masivo').show();
+            //$('#label_mes_cancelacion').display = "inherit";
+            $('#label_mes_cancelacion_masivo').show();
+            $('#label_anio_cancelacion_masivo').show();
+        }else{
+            //Ocultar mes y año para mover
+            $('#mes_cancelacion_masivo').hide();
+            $('#anio_cancelacion_masivo').hide();
+            //$('#label_mes_cancelacion').display = "none";
+            $('#label_mes_cancelacion_masivo').hide();
+            $('#label_anio_cancelacion_masivo').hide();
         }
 
     },
