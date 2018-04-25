@@ -12,3 +12,4 @@ $mod_strings['LBL_VACACIONES'] = 'Vacaciones';
 $mod_strings['LBL_TIEMPO_REVISION_EXPEDIENTE_C'] = 'Revisión de expediente';
 $mod_strings['LBL_PORCENTAJE_REVISION_EXP_C'] = '% revision de expedientes';
 $mod_strings['LBL_TIEMPO_TOTAL'] = 'Total';
+$mod_strings['LBL_TCT_UNI_CITAS_TXF'] = 'Citas';

@@ -1,5 +1,5 @@
 <?php
-// created: 2018-03-06 12:38:45
+// created: 2018-04-23 13:54:44
 $wireless_module_registry = array (
   'Accounts' => 
   array (
@@ -12,6 +12,9 @@ $wireless_module_registry = array (
   array (
   ),
   'Calls' => 
+  array (
+  ),
+  'uni_Brujula' => 
   array (
   ),
   'Tasks' => 
