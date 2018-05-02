@@ -140,6 +140,7 @@ array (
                 'name' => 'promotorleasing_c',
                 'studio' => 'visible',
                 'label' => 'LBL_PROMOTORLEASING',
+                'css_class' => 'promotor_class',
               ),
               24 => 
               array (
@@ -228,12 +229,15 @@ array (
                 'name' => 'promotorfactoraje_c',
                 'studio' => 'visible',
                 'label' => 'LBL_PROMOTORFACTORAJE',
+                'css_class' => 'promotor_class',
+
               ),
               43 => 
               array (
                 'name' => 'promotorcredit_c',
                 'studio' => 'visible',
                 'label' => 'LBL_PROMOTORCREDIT',
+                'css_class' => 'promotor_class',
               ),
               44 => 'email',
               45 => 'phone_office',
