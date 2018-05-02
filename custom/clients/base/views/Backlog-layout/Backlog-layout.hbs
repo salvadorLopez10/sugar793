@@ -36,8 +36,8 @@
     }
 
     .popup {
-        margin-left: 33%;
-        width: 27%;
+        margin-left: 20%;
+        /*width: 27%; */
         border-style: groove;
         position: absolute;
         top: 0;
@@ -195,6 +195,26 @@
                         <span class="icon-minus"></span></a>
                 </td>-->
                 <td>
+                	<div class="btn-group">
+                		<!-- <a class="btn">Menú</a> -->
+                		<span class="btn totales marcarTodos checkboxChange" title="Seleccionar Todo">
+                			<input type="checkbox" id="selectAll"/>
+                		</span>
+                		<a class="btn dropdown-toggle totales disabled" id="menuOptions" data-toggle="dropdown">
+                			<i class="fa fa-caret-down"></i>
+                		</a>
+                		<ul class="dropdown-menu">
+                			<!-- dropdown menu links -->
+                			<li>
+                				<a class="MoverOperacionMasiva"><i class="fa fa-hand-o-up"></i>Mover a otro mes</a>
+                			</li>
+                			<li>
+                				<a class="CancelarMasiva"><i class="fa fa-times-circle "></i>Cancelar</a>
+                			</li>
+                		</ul>
+                	</div>
+                </td>
+                <td>
                     <span class="btn btn-success exportar">Exportar a Excel</span>
                 </td>
                 <!--<td>
@@ -251,6 +271,7 @@
     </div>
 
     <div class="popup" style="display: {{popup_switch}};">
+<div class="span6">
         <table class="popuptables" style="display: {{lograda_switch}};">
             <tr>
                 <td colspan="4">
@@ -651,7 +672,7 @@
             -->
             <tr>
                 <td>
-                    Total de Líneas seleccionadas:
+                    Número de líneas selecionadas:
                 </td>
                 <td class="popupC2">
                     {{countChecks}}
@@ -697,7 +718,7 @@
             </tr>
             <tr>
                 <td>
-                    Número de Lineas selecionadas:
+                    Número de líneas selecionadas:
                 </td>
                 <td></td>
                 <td class="popupC2" colspan="3">
@@ -787,6 +808,7 @@
             </tr>
         </table>
     </div>
+</div>
 
     <div class="dashlet-backlog-wrapper">
         <div class="backlogInfo" style="display: none">
@@ -979,26 +1001,7 @@
                         <!--<th class="totales"></th>-->
                         <!-- AF: 09/04/2018 - Menú
                         Actualizaicón masiva: Adición de menú de opciones-->
-                        <th class="totales hide_acciones">
-                            <div class="btn-group">
-                                <!-- <a class="btn">Menú</a> -->
-                                <span class="btn totales marcarTodos checkboxChange" title="Seleccionar Todo">
-                          <input type="checkbox" id="selectAll"/>
-                        </span>
-                                <a class="btn dropdown-toggle totales disabled" id="menuOptions" data-toggle="dropdown">
-                                    <i class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- dropdown menu links -->
-                                    <li>
-                                        <a class="MoverOperacionMasiva"><i class="fa fa-hand-o-up"></i>Mover a otro mes</a>
-                                    </li>
-                                    <li>
-                                        <a class="CancelarMasiva"><i class="fa fa-times-circle "></i>Cancelar</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </th>
+                        <th class="totales hide_acciones"></th>
                         <th class="totales hide_estatus"></th>
                         <th class="totales hide_mes"></th>
                         <th class="totales hide_equipo"></th>

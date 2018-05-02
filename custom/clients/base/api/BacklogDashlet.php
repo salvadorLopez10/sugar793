@@ -772,7 +772,8 @@ SQL;
                         }
                     }else{ // Si no se esta en periodo de revision
                         // Si se esta moviendo un BL del BL en elaboración o posterior
-                        if ($backlog->mes >= $BacklogElaboracion){
+                        //if ($backlog->mes >= $BacklogElaboracion){
+                        if ($anio > $backlog->anio || ($anio==$backlog->anio && $mes >= $backlog->mes)){
                             $backlog->mes = $mes;
                             $backlog->anio = $anio;
                         }else{
