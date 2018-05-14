@@ -420,17 +420,8 @@ array (
               ),
               11 => 
               array (
-                'name' => 'acompaniante_c',
-                'studio' => 'visible',
-                'label' => 'LBL_ACOMPANIANTE_C',
-              ),
-              12 => 
-              array (
                 'name' => 'referenciada_c',
                 'label' => 'LBL_REFERENCIADA_C',
-              ),
-              13 => 
-              array (
               ),
             ),
           ),
@@ -499,7 +490,6 @@ array (
         ),
         'templateMeta' => 
         array (
-          'maxColumns' => '2',
           'useTabs' => false,
         ),
       ),

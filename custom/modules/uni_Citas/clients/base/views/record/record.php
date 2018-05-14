@@ -77,12 +77,7 @@ array (
                 'name' => 'referenciada',
                 'label' => 'LBL_REFERENCIADA',
               ),
-              4 => 
-              array (
-                'name' => 'acompaniante',
-                'studio' => 'visible',
-                'label' => 'LBL_ACOMPANIANTE',
-              ),
+              4 => 'assigned_user_name',
               5 => 
               array (
                 'name' => 'objetivo',
@@ -107,13 +102,21 @@ array (
                 'studio' => 'visible',
                 'label' => 'LBL_ID_MEETING',
               ),
-              9 => 'assigned_user_name',
-              10 => 
+              9 => 
               array (
                 'name' => 'uni_citas_uni_brujula_name',
               ),
+              10 => 
+              array (
+                'name' => 'acompanantes_c',
+                'studio' => 'visible',
+                'label' => 'LBL_ACOMPANANTES',
+                'span' => 12,
+              ),
               11 => 
               array (
+                'name' => 'tag',
+                'span' => 12,
               ),
             ),
           ),

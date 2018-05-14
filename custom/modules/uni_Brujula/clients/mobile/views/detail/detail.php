@@ -1,24 +1,31 @@
 <?php
 $module_name = 'uni_Brujula';
-$viewdefs[$module_name] =
+$viewdefs[$module_name] = 
 array (
-  'mobile' =>
+  'mobile' => 
   array (
-    'view' =>
+    'view' => 
     array (
-      'edit' =>
+      'detail' => 
       array (
-        'templateMeta' =>
+        'templateMeta' => 
         array (
-          'maxColumns' => '1',
-          'widths' =>
+          'form' => 
           array (
-            0 =>
+            'buttons' => 
+            array (
+              0 => 'DELETE',
+            ),
+          ),
+          'maxColumns' => '1',
+          'widths' => 
+          array (
+            0 => 
             array (
               'label' => '10',
               'field' => '30',
             ),
-            1 =>
+            1 => 
             array (
               'label' => '10',
               'field' => '30',
@@ -26,9 +33,9 @@ array (
           ),
           'useTabs' => false,
         ),
-        'panels' =>
+        'panels' => 
         array (
-          0 =>
+          0 => 
           array (
             'label' => 'LBL_PANEL_DEFAULT',
             'newTab' => false,
@@ -37,150 +44,136 @@ array (
             'columns' => '1',
             'labelsOnTop' => 1,
             'placeholders' => 1,
-            'fields' =>
+            'fields' => 
             array (
               0 => 'name',
-              1 =>
-              array (
-                'name' => 'assigned_user_name',
-                'readonly' => true,
-              ),
-              2 =>
+              1 => 'assigned_user_name',
+              2 => 
               array (
                 'name' => 'fecha_reporte',
                 'label' => 'LBL_FECHA_REPORTE',
               ),
-              3 =>
+              3 => 
               array (
                 'name' => 'vacaciones_c',
                 'label' => 'LBL_VACACIONES',
               ),
-              4 =>
+              4 => 
               array (
                 'name' => 'contactos_numero',
                 'label' => 'LBL_CONTACTOS_NUMERO',
-                'css_class' => 'bloque1',
               ),
-              5 =>
+              5 => 
               array (
                 'name' => 'contactos_duracion',
                 'label' => 'LBL_CONTACTOS_DURACION',
-                'css_class' => 'class_duration_contacto',
               ),
-              6 =>
+              6 => 
               array (
                 'name' => 'contactos_no_localizados',
                 'label' => 'LBL_CONTACTOS_NO_LOCALIZADOS',
-                'css_class' => 'bloque2',
               ),
-              7 =>
+              7 => 
               array (
                 'name' => 'contactos_no_interesados',
                 'label' => 'LBL_CONTACTOS_NO_INTERESADOS',
               ),
-              8 =>
+              8 => 
               array (
                 'name' => 'contactos_seguimiento_futuro',
                 'label' => 'LBL_CONTACTOS_SEGUIMIENTO_FUTURO',
               ),
-              9 =>
+              9 => 
               array (
                 'name' => 'contactos_siguiente_llamada',
                 'label' => 'LBL_CONTACTOS_SIGUIENTE_LLAMADA',
               ),
-              10 =>
+              10 => 
               array (
                 'name' => 'contactos_por_visitar',
                 'label' => 'LBL_CONTACTOS_POR_VISITAR',
               ),
-              11 =>
+              11 => 
               array (
                 'name' => 'contactos_enviaran_informacion',
                 'label' => 'LBL_CONTACTOS_ENVIARAN_INFORMACION',
               ),
-              12 =>
-              array (
-                'name' => 'tct_uni_citas_txf_c',
-                'label' => 'LBL_TCT_UNI_CITAS_TXF',
-                'css_class' => 'class_uni_citas bloque3',
-              ),
-              13 =>
+              12 => 
               array (
                 'name' => 'tiempo_prospeccion',
                 'label' => 'LBL_TIEMPO_PROSPECCION',
-                'css_class' => 'bloque4',
               ),
-              14 =>
+              13 => 
               array (
                 'name' => 'tiempo_revision_expediente_c',
                 'label' => 'LBL_TIEMPO_REVISION_EXPEDIENTE_C',
               ),
-              15 =>
+              14 => 
               array (
                 'name' => 'tiempo_armado_expedientes',
                 'label' => 'LBL_TIEMPO_ARMADO_EXPEDIENTES',
               ),
-              16 =>
+              15 => 
               array (
                 'name' => 'tiempo_seguimiento_expedientes',
                 'label' => 'LBL_TIEMPO_SEGUIMIENTO_EXPEDIENTES',
               ),
-              17 =>
+              16 => 
               array (
                 'name' => 'tiempo_operacion',
                 'label' => 'LBL_TIEMPO_OPERACION',
               ),
-              18 =>
+              17 => 
               array (
                 'name' => 'tiempo_liberacion',
                 'label' => 'LBL_TIEMPO_LIBERACION',
               ),
-              19 =>
+              18 => 
               array (
                 'name' => 'tiempo_servicio_cliente',
                 'label' => 'LBL_TIEMPO_SERVICIO_CLIENTE',
               ),
-              20 =>
+              19 => 
               array (
                 'name' => 'tiempo_otras_actividades',
                 'label' => 'LBL_TIEMPO_OTRAS_ACTIVIDADES',
               ),
-              21 =>
+              20 => 
               array (
                 'name' => 'porcentaje_prospeccion',
                 'label' => 'LBL_PORCENTAJE_PROSPECCION',
               ),
-              22 =>
+              21 => 
               array (
                 'name' => 'porcentaje_revision_exp_c',
                 'label' => 'LBL_PORCENTAJE_REVISION_EXP_C',
               ),
-              23 =>
+              22 => 
               array (
                 'name' => 'porcentaje_armado_expedientes',
                 'label' => 'LBL_PORCENTAJE_ARMADO_EXPEDIENTES',
               ),
-              24 =>
+              23 => 
               array (
                 'name' => 'porcentaje_seguimiento_expedie',
                 'label' => 'LBL_PORCENTAJE_SEGUIMIENTO_EXPEDIE',
               ),
-              25 =>
+              24 => 
               array (
                 'name' => 'porcentaje_operacion',
                 'label' => 'LBL_PORCENTAJE_OPERACION',
               ),
-              26 =>
+              25 => 
               array (
                 'name' => 'porcentaje_liberacion',
                 'label' => 'LBL_PORCENTAJE_LIBERACION',
               ),
-              27 =>
+              26 => 
               array (
                 'name' => 'porcentaje_servicio_cliente',
                 'label' => 'LBL_PORCENTAJE_SERVICIO_CLIENTE',
               ),
-              28 =>
+              27 => 
               array (
                 'name' => 'porcentaje_otras_actividades',
                 'label' => 'LBL_PORCENTAJE_OTRAS_ACTIVIDADES',

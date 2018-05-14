@@ -88,7 +88,6 @@
     },
 
     getCitas: function(){
-
         if(this.action == "view"){
             return;
         }
@@ -121,11 +120,7 @@
                     var acompaniante = "";
                     var estatus = "";
                     var referenciada = "";
-                    if(!_.isEmpty(key.acompanante)){
-                        acompaniante = key.acompanante;
-                    }else{
-                        acompaniante = "Editar";
-                    }
+                    acompaniante = key.acompanante;
 
                     if(key.status == "Held"){
                         estatus = "1";
@@ -215,24 +210,24 @@
             });
             return;
         }else{
-		if(parseInt($("#nuevo_duracion").val()) < 0){
-			app.alert.show('Valor de duracion incorrecto', {
-                	level: 'error',
-                	messages: 'El campo de duracion no es valido.',
-                	autoClose: true
-            	});
-            	return;
-		}
-	}
-		
-	if(parseInt($("#nuevo_traslado").val()) < 0){
-		app.alert.show('Valor de traslado incorrecto', {
+        if(parseInt($("#nuevo_duracion").val()) < 0){
+            app.alert.show('Valor de duracion incorrecto', {
+                    level: 'error',
+                    messages: 'El campo de duracion no es valido.',
+                    autoClose: true
+                });
+                return;
+        }
+    }
+        
+    if(parseInt($("#nuevo_traslado").val()) < 0){
+        app.alert.show('Valor de traslado incorrecto', {
                 level: 'error',
                 messages: 'El campo de traslado no es valido.',
                 autoClose: true
             });
             return;
-	}
+    }
 
         if(_.isEmpty($("#hora_cita").val())){
             app.alert.show('hora requerido', {
@@ -323,7 +318,7 @@
 
     showClienteField: function(e){
 
-        $(e.target).parent().children("div").css("display","inline");
+        //$(e.target).parent().children("div").css("display","inline");
     },
 
     removerAcompanante: function (e){

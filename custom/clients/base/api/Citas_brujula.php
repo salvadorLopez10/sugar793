@@ -44,8 +44,8 @@ SQL;
             return $response = "Existente";
         }
 
-         $query = <<<SQL
-SELECT m.id, m.parent_type, m.parent_id, m.duration_minutes, m.duration_hours, m.status, mc.referenciada_c, mc.user_id_c, mc.objetivo_c, mc.resultado_c, a.name AS cliente, CONCAT(u.first_name, " ", u.last_name) AS acompanante 
+/*         $query = <<<SQL
+SELECT m.id, m.parent_type, m.parent_id, m.duration_minutes, m.duration_hours, m.status, mc.referenciada_c, mc.user_id_c, mc.objetivo_c, mc.resultado_c, a.name AS cliente, CONCAT(u.first_name, " ", u.last_name) AS acompanante
 FROM meetings m
 INNER JOIN meetings_cstm mc ON mc.id_c = m.id AND m.deleted = 0
 INNER JOIN accounts a ON a.id = m.parent_id AND a.deleted = 0 AND m.parent_type = 'Accounts'
@@ -55,11 +55,49 @@ AND EXTRACT(MONTH FROM DATE_ADD(date_start,INTERVAL -6 HOUR)) = EXTRACT(MONTH FR
 AND EXTRACT(YEAR FROM  DATE_ADD(date_start,INTERVAL -6 HOUR)) = EXTRACT(YEAR FROM '{$fecha}')
 AND m.assigned_user_id = '{$promotor}' AND m.status != 'Not Held'
 SQL;
+*/
+        $query = <<<SQL
+select
+    m.id,
+    m.parent_type,
+    m.parent_id,
+    m.duration_minutes,
+    m.duration_hours,
+    m.status,
+    mc.referenciada_c,
+    mc.user_id_c,
+    mc.objetivo_c,
+    mc.resultado_c,
+    '' as traslado,
+    a.name as cliente,
+    (
+        select
+            group_concat(u2.first_name, " ", u2.last_name) as acompanante
+        from meetings_users mu2
+        left join users u2 on mu2.user_id = u2.id
+        where mu2.deleted=0
+            and mu2.meeting_id= mu.meeting_id
+            and mu2.accept_status != 'decline'
+            and u2.id != u.id
+        group by mu2.meeting_id
+    ) as acompanante
+from meetings_users mu
+left join users u on mu.user_id = u.id
+left join meetings m on mu.meeting_id = m.id
+left join meetings_cstm mc on mu.meeting_id = mc.id_c
+inner join accounts a on m.parent_id = a.id
+where mu.deleted=0
+and m.status != 'Not Held'
+and date(convert_tz(m.date_start,'+00:00','-06:00')) = '{$fecha}'
+and mu.user_id='{$promotor}'
+and mu.accept_status != 'decline'
+SQL;
 
          $queryResult = $db->query($query);
          while($row = $db->fetchByAssoc($queryResult))
          {
-            $response[] = $row;
+           $test = $row;
+             $response[] = $row;
          }
 
          return $response;
@@ -69,13 +107,36 @@ SQL;
 
         $brujula_id = $args['data']['brujula_id'];
          global $db;
+         /*
          $query = <<<SQL
 SELECT c.*, a.name AS account_name, CONCAT(u.first_name, " ", u.last_name) AS acompanante FROM uni_citas c
 INNER JOIN uni_citas_uni_brujula_c cu ON cu.uni_citas_uni_brujulauni_citas_idb = c.id AND cu.deleted = 0
 INNER JOIN accounts a ON a.id = c.account_id1_c AND a.deleted = 0
 LEFT JOIN users u ON u.id = c.user_id1_c AND u.deleted = 0
 WHERE cu.uni_citas_uni_brujulauni_brujula_ida = '{$brujula_id}' AND c.deleted = 0
+SQL;    */
+        $query = <<<SQL
+SELECT
+    c.*,
+    a.name AS account_name,
+    (
+        select
+            group_concat(u2.first_name, " ", u2.last_name) as acompanante
+        from meetings_users mu2
+        left join users u2 on mu2.user_id = u2.id
+        where mu2.deleted=0
+            and mu2.meeting_id= c.meeting_id_c
+            and mu2.accept_status != 'decline'
+            and u2.id != u.id
+        group by mu2.meeting_id
+    ) as acompanante
+FROM uni_citas c
+INNER JOIN uni_citas_uni_brujula_c cu ON cu.uni_citas_uni_brujulauni_citas_idb = c.id AND cu.deleted = 0
+INNER JOIN accounts a ON a.id = c.account_id1_c AND a.deleted = 0
+left join users u on c.assigned_user_id = u.id
+WHERE cu.uni_citas_uni_brujulauni_brujula_ida = '{$brujula_id}' AND c.deleted = 0
 SQL;
+
 
          $queryResult = $db->query($query);
          while($row = $db->fetchByAssoc($queryResult))
