@@ -10,6 +10,36 @@
  * Copyright (C) SugarCRM Inc. All rights reserved.
  */
 --}}
+<script>
+    //existingMultiClass
+    /*
+    $(".saninput").each(function(){
+        if ($(this).val() != ""){
+        var animal = $(".saninput").data("animal");
+        alert (animal)
+        };
+    });
+    */
+    /*
+    $('select.existingMultiClass').each(function(){
+        $(this).select2({
+            width:'100%',
+            closeOnSelect: false,
+            containerCssClass: 'select2-choices-pills-close'
+        });
+    });
+    */
+
+    /*
+    $('#existingMulti1').select2({
+        width:'100%',
+        //minimumResultsForSearch:7,
+        closeOnSelect: false,
+        containerCssClass: 'select2-choices-pills-close'
+    });
+    */
+
+</script>
 <div class="control-group direccion">
     <table class="dashlet" cellspacing="1" cellpadding="5">
         <tr>
@@ -29,7 +59,19 @@
                     {{{indicador_html}}}
                 </select>
             </td>
-            <td></td>
+            <td valign="top">
+                <div class="record-label">
+                    Indicador
+                </div>
+                <select id="existingMulti1" class="select2 existingMultiClass" multiple="multiple" size="3">
+                    <!--data-placeholder="Elige un indicador"-->
+                    <option value=""></option>
+                    <option value="1">Correspondencia</option>
+                    <option value="2">Fiscal</option>
+                    <option value="3">Entrega de Bienes</option>
+
+                </select>
+            </td>
         </tr>
         <tr>
             <td valign="top">

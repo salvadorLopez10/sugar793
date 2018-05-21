@@ -29,6 +29,10 @@
         'change .newPostal': 'updateExistingDireccionDropdown',
         'change .newColonia': 'updateExistingDireccionDropdown',
         'change .existingColonia': 'updateExistingDireccionDropdown',
+        'change #multi1': 'updateValueIndicadorMultiselect',
+        'change select.existingMultiClass': 'updateValueIndicadorExisting',
+        //'change .existingMultiClass': 'updateIndicador',
+
     },
     _flag2Deco: {
         principal: {lbl: "LBL_DIRECCION_PRIMARY", cl: "primary"},
@@ -196,6 +200,93 @@
         this.model.addValidationTask('check_direccion_nacional', _.bind(this._doValidateDireccionNacional, this));
     },
 
+    updateValueIndicadorMultiselect:function (evt) {
+        var valores=evt.val;
+        //Estableciendo valores para solo 1 valor seleccionado
+        if(valores.length==1){
+            if(valores[0]=="1"){
+                $('.newIndicador').val("1");
+            }else if(valores[0]=="2"){
+                $('.newIndicador').val("2");
+            }else if(valores[0]=="3"){
+                $('.newIndicador').val("4");
+            }else if(valores[0]==""){
+                $('.newIndicador').val("");
+            }
+
+        }
+        //Estableciendo valores para 2 valores seleccionados
+        else if(valores.length==2){
+            //var a = fruits.indexOf("Banana");
+            if(valores.indexOf("1") != -1 && valores.indexOf("2") != -1){
+                $('.newIndicador').val("3");
+            }
+            else if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
+                $('.newIndicador').val("5");
+            }
+            else if(valores.indexOf("2") != -1 && valores.indexOf("3") != -1){
+                $('.newIndicador').val("6");
+            }
+
+        }
+        //Estableciendo opcion para cuando se eligen los 3 valores
+        else if(valores.length==3){
+            $('.newIndicador').val("7");
+        }
+        //Estableciendo valor vacio
+        else if(valores.length==0){
+            $('.newIndicador').val("");
+        }
+
+        $('.newIndicador').trigger("change");
+
+    },
+
+    updateValueIndicadorExisting:function (evt) {
+        var valorEx=evt.val;
+        //evt.target.parentElement.previousElementSibling.children[1].value=“3”
+
+        //Estableciendo valores para solo 1 valor seleccionado
+        if(valorEx.length==1){
+            if(valorEx[0]=="1"){
+                evt.target.parentElement.previousElementSibling.children[1].value="1";
+            }else if(valorEx[0]=="2"){
+                evt.target.parentElement.previousElementSibling.children[1].value="2";
+            }else if(valorEx[0]=="3"){
+                evt.target.parentElement.previousElementSibling.children[1].value="4";
+            }else if(valorEx[0]==""){
+                evt.target.parentElement.previousElementSibling.children[1].value="";
+            }
+
+        }
+        //Estableciendo valores para 2 valores seleccionados
+        else if(valorEx.length==2){
+            //var a = fruits.indexOf("Banana");
+            if(valorEx.indexOf("1") != -1 && valorEx.indexOf("2") != -1){
+                evt.target.parentElement.previousElementSibling.children[1].value="3";
+            }
+            else if(valorEx.indexOf("1") != -1 && valorEx.indexOf("3") != -1){
+                evt.target.parentElement.previousElementSibling.children[1].value="5";
+            }
+            else if(valorEx.indexOf("2") != -1 && valorEx.indexOf("3") != -1){
+                evt.target.parentElement.previousElementSibling.children[1].value="6";
+            }
+
+        }
+        //Estableciendo opcion para cuando se eligen los 3 valores
+        else if(valorEx.length==3){
+            evt.target.parentElement.previousElementSibling.children[1].value="7";
+        }
+        //Estableciendo valor vacio
+        else if(valorEx.length==0){
+            evt.target.parentElement.previousElementSibling.children[1].value="";
+        }
+
+        $('.existingIndicador').trigger("change");
+
+
+    },
+
     /** BEGIN CUSTOMIZATION: jescamilla@levementum.com 6/18/2015 Description: detect multiple fiscal address*/
     updateIndicador: function (evt) {
 
@@ -228,6 +319,29 @@
             var alertOptions = {title: "Multiples direcciones fiscales, favor de corregir.", level: "error"};
             app.alert.show('validation', alertOptions);
             $input.val('');
+
+            //Obtener valores de multiselect
+            var valores= $("#multi1").select2('val');
+
+            //Obteniendo índice de "Fiscal"
+            var index = valores.indexOf("2");
+            //Eliminando el valor "Fiscal" del arreglo
+            valores.splice(index,1);
+            //Estableciendo nuevo arreglo a campo multiselect (sin "Fiscal")
+            $("#multi1").select2('val',valores);
+            if(valores.length==2){
+                if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
+                    $('.newIndicador').val("5");
+                }
+            }
+            if(valores.length==1){
+                if(valores.indexOf("1") != -1){
+                    $('.newIndicador').val("1");
+                }else if(valores.indexOf("3")!= -1){
+                    $('.newIndicador').val("4");
+                }
+            }
+
             $input.focus();
             this.fiscalCounter = 0;
         } else {
@@ -504,13 +618,74 @@
      */
     _render: function () {
         var direccionsHtml = '';
+        //var $select = $('#multi1');
         this._super("_render");
+        $('#multi1').select2({
+            width:'100%',
+            //minimumResultsForSearch:7,
+            closeOnSelect: false,
+            containerCssClass: 'select2-choices-pills-close'
+        });
+
+        /*
+        $('#existingMulti1').select2({
+            width:'100%',
+            //minimumResultsForSearch:7,
+            closeOnSelect: false,
+            containerCssClass: 'select2-choices-pills-close'
+        });
+         */
+
+        //Obteniendo valores de multiselect
+        //$('#multi1').select2('val');
         if (this.tplName === 'edit') {
             //get realted records
             _.each(this.model.get('account_direcciones'), function (direccion) {
                 direccionsHtml += this._buildDireccionFieldHtml(direccion);
             }, this);
             this.$el.prepend(direccionsHtml);
+
+            //Cambia estructura para multiseelct
+            $('select.existingMultiClass').each(function(){
+                $(this).select2({
+                    width:'100%',
+                    closeOnSelect: false,
+                    containerCssClass: 'select2-choices-pills-close'
+                });
+            });
+
+            //Obteniendo valores de Indicador
+            self=this;
+            $("select.existingIndicador").each(function(i, obj) {
+                var valuesI=self._getIndicador($(this).val())
+                $('select.existingMultiClass').eq(i).select2('val',valuesI);
+
+                //$('select.existingMultiClass').select2('val',['1','2'])
+            });
+
+
+            //Establece valor para multiselect
+            /*
+            var arrrayA = [];
+            var c=0;
+            $('select.existingIndicador').each(function(){
+                //console.log($(this).find('.existingIndicador').val())
+                arrrayA[c] = $(this).val();
+                c++;
+
+            });
+
+            var c=0;
+            var self = this;
+            $("select.existingMultiClass").each(function(){
+                //console.log($(this));
+                var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
+                $(this).val(valuesI);
+                $(this).trigger('change');
+                c++;
+            });
+             */
+
 
             //now populate colonias
             //Because colonias depends on the Zip Code we can't preload the list of colonias because the API calls are asynchronous and so if we request the list of
@@ -535,6 +710,38 @@
 
     },
 
+    _getIndicador: function (val) {
+        //val = valor en campo indicador
+        //result =  valor para establecer en multiselect
+        var result = null;
+        switch (val) {
+            case "1":
+                result = ['1'];
+                break;
+            case "2":
+                result = ['2'];
+                break;
+            case "3":
+                result = ['1','2'];
+                break;
+            case "4":
+                result = ['3'];
+                break;
+            case "5":
+                result = ['1','3'];
+                break;
+            case "6":
+                result = ['2','3'];
+                break;
+            case "7":
+                result = ['1','2','3'];
+                break;
+            default:
+
+        }
+        return result;
+    },
+
     /**
      * Get HTML for direccion input field.
      * @param {Object} direccion
@@ -551,6 +758,26 @@
         var dir_tipo_list = app.lang.getAppListStrings('tipodedirecion_list');
         var dir_tipo_keys = app.lang.getAppListKeys('tipodedirecion_list');
         var dir_indicador_list = app.lang.getAppListStrings('dir_Indicador_list');
+        /*
+        var dir_indicadorMulti_list = {
+            "1":"Correspondencia",
+            "2":"Fiscal",
+            "1":"Entrega de Bienes",
+        }
+         */
+
+
+        /*
+        $('#existingMulti1').select2({
+            width:'100%',
+            //minimumResultsForSearch:7,
+            closeOnSelect: false,
+            containerCssClass: 'select2-choices-pills-close'
+        });
+         */
+
+
+
         var country_list = app.metadata.getCountries();
         var estado_list = app.metadata.getStates();
         var municipio_list = app.metadata.getMunicipalities();
@@ -561,6 +788,7 @@
             tel_estatus_list_html = '',
             pais_list_html = '<option value=""></option>';
         //dynamicly populate dropdown options based on language values
+
         for (dir_tipo_key in dir_tipo_list) {
             if ($.inArray(dir_tipo_key, direccion.tipodedireccion) != -1) {
                 dir_tipo_list_html += '<option value="' + dir_tipo_key + '" selected="true">' + dir_tipo_list[dir_tipo_key] + '</option>';
@@ -618,6 +846,15 @@
                 indicador_html += '<option value="' + indicador_id + '" >' + dir_indicador_list[indicador_id] + '</option>';
             }
         }
+
+        //Obteniendo valores recibidos del template principal
+        var valores_get=direccion.indicador_multi;
+        //$("#existingMulti1").val(valores_get);
+        //$("#existingMulti1").trigger("change");
+        /*
+        $('#existingMulti1').select2(valores_get);
+        $('#existingMulti1').trigger('change');
+         */
 
         var ciudad_html = '<option value="xkcd"> Seleccionar Ciudad</option>';
         for (city_id in city_list) {
@@ -858,6 +1095,9 @@
                 municipio: $('.newMunicipio').val(),
                 indicador: $('.newIndicador').val(),
                 indicador_label: dir_indicador_list[$('.newIndicador').val()],
+                //Añadiendo nuevo atributo
+                indicador_multi:$("#multi1").val(),
+
                 dire_direccion_dire_municipiodire_municipio_ida: $('.newMunicipio').val(),
                 ciudad: $('.newCiudad').val(),
                 dire_direccion_dire_ciudaddire_ciudad_ida: $('.newCiudad').val(),
@@ -877,6 +1117,50 @@
             $newDireccionField = this._getNewDireccionField()
                 .closest('.direccion')
                 .before(direccionFieldHtml);
+            $('select.existingMultiClass').each(function(){
+                $(this).select2({
+                    width:'100%',
+                    closeOnSelect: false,
+                    containerCssClass: 'select2-choices-pills-close'
+                });
+            });
+
+            //Obteniendo valores de Indicador
+            self=this;
+            $("select.existingIndicador").each(function(i, obj) {
+                var valuesI=self._getIndicador($(this).val())
+                $('select.existingMultiClass').eq(i).select2('val',valuesI);
+
+                //$('select.existingMultiClass').select2('val',['1','2'])
+            });
+
+            /*
+             var arrrayA = [];
+             var c=0;
+             $('select.existingIndicador').each(function(){
+             //console.log($(this).find('.existingIndicador').val())
+             arrrayA[c] = $(this).val();
+             c++;
+
+             });
+
+             var c=0;
+             var self = this;
+             $("select.existingMultiClass").each(function(){
+             //console.log($(this));
+             var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
+             $(this).val(valuesI);
+             $(this).trigger('change');
+             c++;
+             });
+             */
+
+
+            /*
+            var valores=$("#multi1").val();
+            $("#existingMulti1").val(valores);
+            $("#existingMulti1").trigger("change");
+             */
 
             // add tooltips
             //this.addPluginTooltips($newDireccionField.prev());
@@ -1190,6 +1474,11 @@
         $('.newNumExt').val('');
         $('.newNumInt').val('');
         $('.newColonia').empty();
+
+        //limpiando campo multiSelect
+        $("#multi1").select2('val',[]);
+        $("#multi1").trigger('change');
+
     },
 
     /**
