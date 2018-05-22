@@ -92,12 +92,12 @@
         this.def.indicador_html = indicador_options;
 
         //Indicador multiselect
-         var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
-         var indicador_multi_options = '<option value=""></option>'
-         for (indicador_id in dir_indicador_unique_list) {
-             indicador_multi_options += '<option value="' + indicador_id + '" >' + dir_indicador_unique_list[indicador_id] + '</option>';
-         }
-         this.def.indicador_multi_html = indicador_multi_options;
+        var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
+        var indicador_multi_options = '<option value=""></option>'
+        for (indicador_id in dir_indicador_unique_list) {
+            indicador_multi_options += '<option value="' + indicador_id + '" >' + dir_indicador_unique_list[indicador_id] + '</option>';
+        }
+        this.def.indicador_multi_html = indicador_multi_options;
 
         //*
         var fields = ['id', 'name', 'calle', 'inactivo', 'numext', 'numint', 'indicador', 'principal', 'secuencia', 'tipodedireccion'
@@ -169,7 +169,7 @@
                     for(a_codigopostal in postal_list){
                         if(a_codigopostal == data.records[i].dire_direccion_dire_codigopostaldire_codigopostal_ida){
                             data.records[i].postal_code_label = postal_list[a_codigopostal].name;
-                           // console.log("Cuando se inicializa el record");
+                            // console.log("Cuando se inicializa el record");
                             //console.log(data.records[i].postal_code_label);
                         }
                     }
@@ -213,40 +213,40 @@
         var id= this._getIndicador(null,valores)
         //Estableciendo valores para solo 1 valor seleccionado
         /*
-        if(valores.length==1){
-            if(valores[0]=="1"){
-                $('.newIndicador').val("1");
-            }else if(valores[0]=="2"){
-                $('.newIndicador').val("2");
-            }else if(valores[0]=="3"){
-                $('.newIndicador').val("4");
-            }else if(valores[0]==""){
-                $('.newIndicador').val("");
-            }
+         if(valores.length==1){
+         if(valores[0]=="1"){
+         $('.newIndicador').val("1");
+         }else if(valores[0]=="2"){
+         $('.newIndicador').val("2");
+         }else if(valores[0]=="3"){
+         $('.newIndicador').val("4");
+         }else if(valores[0]==""){
+         $('.newIndicador').val("");
+         }
 
-        }
-        //Estableciendo valores para 2 valores seleccionados
-        else if(valores.length==2){
-            //var a = fruits.indexOf("Banana");
-            if(valores.indexOf("1") != -1 && valores.indexOf("2") != -1){
-                $('.newIndicador').val("3");
-            }
-            else if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
-                $('.newIndicador').val("5");
-            }
-            else if(valores.indexOf("2") != -1 && valores.indexOf("3") != -1){
-                $('.newIndicador').val("6");
-            }
+         }
+         //Estableciendo valores para 2 valores seleccionados
+         else if(valores.length==2){
+         //var a = fruits.indexOf("Banana");
+         if(valores.indexOf("1") != -1 && valores.indexOf("2") != -1){
+         $('.newIndicador').val("3");
+         }
+         else if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
+         $('.newIndicador').val("5");
+         }
+         else if(valores.indexOf("2") != -1 && valores.indexOf("3") != -1){
+         $('.newIndicador').val("6");
+         }
 
-        }
-        //Estableciendo opcion para cuando se eligen los 3 valores
-        else if(valores.length==3){
-            $('.newIndicador').val("7");
-        }
-        //Estableciendo valor vacio
-        else if(valores.length==0){
-            $('.newIndicador').val("");
-        }
+         }
+         //Estableciendo opcion para cuando se eligen los 3 valores
+         else if(valores.length==3){
+         $('.newIndicador').val("7");
+         }
+         //Estableciendo valor vacio
+         else if(valores.length==0){
+         $('.newIndicador').val("");
+         }
          */
         $('.newIndicador').val(id);
         $('.newIndicador').trigger("change");
@@ -258,43 +258,44 @@
         var id = this._getIndicador(null,valorEx)
         //evt.target.parentElement.previousElementSibling.children[1].value=“3”
         /*
-        //Estableciendo valores para solo 1 valor seleccionado
-        if(valorEx.length==1){
-            if(valorEx[0]=="1"){
-                evt.target.parentElement.previousElementSibling.children[1].value="1";
-            }else if(valorEx[0]=="2"){
-                evt.target.parentElement.previousElementSibling.children[1].value="2";
-            }else if(valorEx[0]=="3"){
-                evt.target.parentElement.previousElementSibling.children[1].value="4";
-            }else if(valorEx[0]==""){
-                evt.target.parentElement.previousElementSibling.children[1].value="";
-            }
+         //Estableciendo valores para solo 1 valor seleccionado
+         if(valorEx.length==1){
+         if(valorEx[0]=="1"){
+         evt.target.parentElement.previousElementSibling.children[1].value="1";
+         }else if(valorEx[0]=="2"){
+         evt.target.parentElement.previousElementSibling.children[1].value="2";
+         }else if(valorEx[0]=="3"){
+         evt.target.parentElement.previousElementSibling.children[1].value="4";
+         }else if(valorEx[0]==""){
+         evt.target.parentElement.previousElementSibling.children[1].value="";
+         }
 
-        }
-        //Estableciendo valores para 2 valores seleccionados
-        else if(valorEx.length==2){
-            //var a = fruits.indexOf("Banana");
-            if(valorEx.indexOf("1") != -1 && valorEx.indexOf("2") != -1){
-                evt.target.parentElement.previousElementSibling.children[1].value="3";
-            }
-            else if(valorEx.indexOf("1") != -1 && valorEx.indexOf("3") != -1){
-                evt.target.parentElement.previousElementSibling.children[1].value="5";
-            }
-            else if(valorEx.indexOf("2") != -1 && valorEx.indexOf("3") != -1){
-                evt.target.parentElement.previousElementSibling.children[1].value="6";
-            }
+         }
+         //Estableciendo valores para 2 valores seleccionados
+         else if(valorEx.length==2){
+         //var a = fruits.indexOf("Banana");
+         if(valorEx.indexOf("1") != -1 && valorEx.indexOf("2") != -1){
+         evt.target.parentElement.previousElementSibling.children[1].value="3";
+         }
+         else if(valorEx.indexOf("1") != -1 && valorEx.indexOf("3") != -1){
+         evt.target.parentElement.previousElementSibling.children[1].value="5";
+         }
+         else if(valorEx.indexOf("2") != -1 && valorEx.indexOf("3") != -1){
+         evt.target.parentElement.previousElementSibling.children[1].value="6";
+         }
 
-        }
-        //Estableciendo opcion para cuando se eligen los 3 valores
-        else if(valorEx.length==3){
-            evt.target.parentElement.previousElementSibling.children[1].value="7";
-        }
-        //Estableciendo valor vacio
-        else if(valorEx.length==0){
-            evt.target.parentElement.previousElementSibling.children[1].value="";
-        }*/
+         }
+         //Estableciendo opcion para cuando se eligen los 3 valores
+         else if(valorEx.length==3){
+         evt.target.parentElement.previousElementSibling.children[1].value="7";
+         }
+         //Estableciendo valor vacio
+         else if(valorEx.length==0){
+         evt.target.parentElement.previousElementSibling.children[1].value="";
+         }*/
 
-        evt.target.parentElement.previousElementSibling.children[1].value=id;
+        //evt.target.parentElement.previousElementSibling.children[1].value=id;
+        evt.target.parentElement.children[1].value=id;
         //$('.existingIndicador').trigger("change");
         //Lanzando evento change para únicamente borrar el valor de indicador correspondiente a la misma fila del multiselect modificado
         //$(evt.target).parent().parent().children().eq(1).trigger('change');
@@ -348,18 +349,18 @@
             $("#multi1").select2('val',valores);
             $('.newIndicador').val(this._getIndicador(null,valores));
             /*
-            if(valores.length==2){
-                if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
-                    $('.newIndicador').val("5");
-                }
-            }
-            if(valores.length==1){
-                if(valores.indexOf("1") != -1){
-                    $('.newIndicador').val("1");
-                }else if(valores.indexOf("3")!= -1){
-                    $('.newIndicador').val("4");
-                }
-            }
+             if(valores.length==2){
+             if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
+             $('.newIndicador').val("5");
+             }
+             }
+             if(valores.length==1){
+             if(valores.indexOf("1") != -1){
+             $('.newIndicador').val("1");
+             }else if(valores.indexOf("3")!= -1){
+             $('.newIndicador').val("4");
+             }
+             }
              */
 
             //Obteniendo valores multiselect existing
@@ -369,18 +370,18 @@
             $(evt.target).parent().parent().find('select.existingMultiClass').select2('val',valoresExisting);
             $(evt.target).val(this._getIndicador(null,valoresExisting));
             /*
-            if(valoresExisting.length==2){
-                if(valoresExisting.indexOf("1") != -1 && valoresExisting.indexOf("3") != -1){
-                    $(evt.target).val("5");
-                }
-            }
-            if(valoresExisting.length==1){
-                if(valoresExisting.indexOf("1") != -1){
-                    $(evt.target).val("1");
-                }else if(valoresExisting.indexOf("3")!= -1){
-                    $(evt.target).val("1");
-                }
-            }
+             if(valoresExisting.length==2){
+             if(valoresExisting.indexOf("1") != -1 && valoresExisting.indexOf("3") != -1){
+             $(evt.target).val("5");
+             }
+             }
+             if(valoresExisting.length==1){
+             if(valoresExisting.indexOf("1") != -1){
+             $(evt.target).val("1");
+             }else if(valoresExisting.indexOf("3")!= -1){
+             $(evt.target).val("1");
+             }
+             }
              */
 
             $input.focus();
@@ -427,8 +428,8 @@
     _doValidateDireccionFiscalCorrespondencia: function (fields, errors, callback){
 
         if(this.model.get("tipo_registro_c") == "Cliente"){
-                 var correspondencia = false;
-                 var fiscal = false;
+            var correspondencia = false;
+            var fiscal = false;
             _.each(this.model.get("account_direcciones"), function(direccion, key) {
                 if(direccion.indicador == "1"){
                     correspondencia = true;
@@ -511,7 +512,7 @@
             //pass id instead of dropdown value for relationship generation purposes
             dropdown_value = pais_id;
             $selEstado.change();
-           // console.log("$selEstado");
+            // console.log("$selEstado");
             //console.log($selEstado);
         }
 
@@ -545,8 +546,8 @@
 
 
             }
-           // console.log("$selMunicipio");
-           // console.log($selMunicipio);
+            // console.log("$selMunicipio");
+            // console.log($selMunicipio);
             $selMunicipio.change();
 
         }
@@ -563,9 +564,9 @@
             var codigopostal_list = app.metadata.getPostalCodes();
             $codigoPostal.append($("<option>").val('').html(''));
             //console.log("dropdown_value");
-           // console.log(dropdown_value);
+            // console.log(dropdown_value);
             //console.log("input");
-           // console.log($input);
+            // console.log($input);
             var lista = "";
             for(codigopostal_id in codigopostal_list){
                 if(codigopostal_list[codigopostal_id].id_municipio == dropdown_value){
@@ -610,7 +611,7 @@
                     {
                         "id": {
                             "$starts" : id_filtro_colonia
-                            }
+                        }
 
                     }
                 ]
@@ -669,12 +670,12 @@
         });
 
         /*
-        $('#existingMulti1').select2({
-            width:'100%',
-            //minimumResultsForSearch:7,
-            closeOnSelect: false,
-            containerCssClass: 'select2-choices-pills-close'
-        });
+         $('#existingMulti1').select2({
+         width:'100%',
+         //minimumResultsForSearch:7,
+         closeOnSelect: false,
+         containerCssClass: 'select2-choices-pills-close'
+         });
          */
 
         //Obteniendo valores de multiselect
@@ -707,24 +708,24 @@
 
             //Establece valor para multiselect
             /*
-            var arrrayA = [];
-            var c=0;
-            $('select.existingIndicador').each(function(){
-                //console.log($(this).find('.existingIndicador').val())
-                arrrayA[c] = $(this).val();
-                c++;
+             var arrrayA = [];
+             var c=0;
+             $('select.existingIndicador').each(function(){
+             //console.log($(this).find('.existingIndicador').val())
+             arrrayA[c] = $(this).val();
+             c++;
 
-            });
+             });
 
-            var c=0;
-            var self = this;
-            $("select.existingMultiClass").each(function(){
-                //console.log($(this));
-                var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
-                $(this).val(valuesI);
-                $(this).trigger('change');
-                c++;
-            });
+             var c=0;
+             var self = this;
+             $("select.existingMultiClass").each(function(){
+             //console.log($(this));
+             var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
+             $(this).val(valuesI);
+             $(this).trigger('change');
+             c++;
+             });
              */
 
 
@@ -753,70 +754,70 @@
 
     _getIndicador: function(idSelected, valuesSelected) {
 
-    //idSelected = valor en campo indicador
-    //valuesSelected =  valore en multiselect
+        //idSelected = valor en campo indicador
+        //valuesSelected =  valore en multiselect
 
-    //variable con resultado
-    var result = null;
+        //variable con resultado
+        var result = null;
 
-    //Arma objeto de mapeo
-    var dir_indicador_map_list = app.lang.getAppListStrings('dir_indicador_map_list');
+        //Arma objeto de mapeo
+        var dir_indicador_map_list = app.lang.getAppListStrings('dir_indicador_map_list');
 
-    var element = {};
-    var object = [];
-    var values = [];
-
-    for(var key in dir_indicador_map_list) {
-        console.log(key);
-        console.log(dir_indicador_map_list[key]);
         var element = {};
-        element.id = key;
-        values = dir_indicador_map_list[key].split(",");
-        element.values = values;
-        object.push(element);
-    }
-    console.log(object);
+        var object = [];
+        var values = [];
 
-
-    //Recupera arreglo de valores por id
-    if(idSelected){
-        for(var i=0; i<object.length; i++) {
-            if ((object[i].id) == idSelected) {
-                result = object[i].values;
-            }
+        for(var key in dir_indicador_map_list) {
+            console.log(key);
+            console.log(dir_indicador_map_list[key]);
+            var element = {};
+            element.id = key;
+            values = dir_indicador_map_list[key].split(",");
+            element.values = values;
+            object.push(element);
         }
-        console.log(result);
-    }
+        console.log(object);
 
-    //Recupera id por valores
-    if(valuesSelected){
-        result = [];
-        for(var i=0; i<object.length; i++) {
-            if (object[i].values.length == valuesSelected.length) {
-                //Ordena arreglos y compara
-                valuesSelected.sort();
-                object[i].values.sort();
-                var tempVal = true;
-                for(var j=0; j<valuesSelected.length; j++) {
-                    if(valuesSelected[j] != object[i].values[j]){
-                        tempVal = false;
+
+        //Recupera arreglo de valores por id
+        if(idSelected){
+            for(var i=0; i<object.length; i++) {
+                if ((object[i].id) == idSelected) {
+                    result = object[i].values;
+                }
+            }
+            console.log(result);
+        }
+
+        //Recupera id por valores
+        if(valuesSelected){
+            result = [];
+            for(var i=0; i<object.length; i++) {
+                if (object[i].values.length == valuesSelected.length) {
+                    //Ordena arreglos y compara
+                    valuesSelected.sort();
+                    object[i].values.sort();
+                    var tempVal = true;
+                    for(var j=0; j<valuesSelected.length; j++) {
+                        if(valuesSelected[j] != object[i].values[j]){
+                            tempVal = false;
+                        }
                     }
-                }
-                if( tempVal == true){
-                    result[0] = object[i].id;
-                }
+                    if( tempVal == true){
+                        result[0] = object[i].id;
+                    }
 
+                }
             }
+
+            console.log(result);
         }
 
-        console.log(result);
-    }
-
-    return result;
-},
+        return result;
+    },
 
 
-/**
+    /**
      * Get HTML for direccion input field.
      * @param {Object} direccion
      * @returns {Object}
@@ -834,21 +835,21 @@
         var dir_indicador_list = app.lang.getAppListStrings('dir_Indicador_list');
         var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
         /*
-        var dir_indicadorMulti_list = {
-            "1":"Correspondencia",
-            "2":"Fiscal",
-            "1":"Entrega de Bienes",
-        }
+         var dir_indicadorMulti_list = {
+         "1":"Correspondencia",
+         "2":"Fiscal",
+         "1":"Entrega de Bienes",
+         }
          */
 
 
         /*
-        $('#existingMulti1').select2({
-            width:'100%',
-            //minimumResultsForSearch:7,
-            closeOnSelect: false,
-            containerCssClass: 'select2-choices-pills-close'
-        });
+         $('#existingMulti1').select2({
+         width:'100%',
+         //minimumResultsForSearch:7,
+         closeOnSelect: false,
+         containerCssClass: 'select2-choices-pills-close'
+         });
          */
 
 
@@ -927,11 +928,11 @@
         //$("#existingMulti1").val(valores_get);
         //$("#existingMulti1").trigger("change");
         /*
-        $('#existingMulti1').select2(valores_get);
-        $('#existingMulti1').trigger('change');
+         $('#existingMulti1').select2(valores_get);
+         $('#existingMulti1').trigger('change');
          */
 
-         //indicador multiseelct
+        //indicador multiseelct
         var indicador_multi_html = '<option value=""></option>';
         for (indicador_id in dir_indicador_unique_list) {
             indicador_multi_html += '<option value="' + indicador_id + '" >' + dir_indicador_unique_list[indicador_id] + '</option>';
@@ -977,7 +978,7 @@
         var colonia_id = '';
         if (direccion.dire_direccion_dire_coloniadire_colonia_ida != '') {
             colonia_id = direccion.dire_direccion_dire_coloniadire_colonia_ida;
-           // console.log(colonia_id);
+            // console.log(colonia_id);
         }
 
         //If this came from a new control, the colonias seleccion is going to be included in the direcciones variable
@@ -1166,7 +1167,7 @@
             }
             currentValue = this.model.get(this.name);
             //console.log("AGREGA UNA NUEVA DIRECCION");
-           // console.log($('.newPostal').val());
+            // console.log($('.newPostal').val());
             direccionFieldHtml = this._buildDireccionFieldHtml({
                 tipodedireccion: $('.newTipodedireccion').val(),
                 tipo_label: dir_tipo_list[$('.newTipodedireccion').val()],
@@ -1239,9 +1240,9 @@
 
 
             /*
-            var valores=$("#multi1").val();
-            $("#existingMulti1").val(valores);
-            $("#existingMulti1").trigger("change");
+             var valores=$("#multi1").val();
+             $("#existingMulti1").val(valores);
+             $("#existingMulti1").trigger("change");
              */
 
             // add tooltips
@@ -1279,35 +1280,35 @@
         if (newDireccion === '') {
             // remove direccion if direccion is empty
             /*
-            primaryRemoved = this._removeExistingDireccionInModel(index);
+             primaryRemoved = this._removeExistingDireccionInModel(index);
 
-            $input
-                .closest('.direccion')
-                .remove();
+             $input
+             .closest('.direccion')
+             .remove();
 
-            if (primaryRemoved) {
-                // on list views we need to set the current value on the input
-                if (this.view && this.view.action === 'list') {
-                    var direcciones = this.model.get(this.name) || [];
-                    var primaryDireccion = _.filter(direcciones, function (direccion) {
-                        if (direccion.principal) {
-                            return true;
-                        }
-                    });
-                    if (primaryDireccion[0] && primaryDireccion[0].direccion_direccion) {
-                        app.alert.show('list_delete_direccion_info', {
-                            level: 'info',
-                            autoClose: true,
-                            messages: app.lang.get('LBL_LIST_REMOVE_DIRECCION_INFO')
-                        });
-                        $input.val(primaryDireccion[0].direccion_direccion);
-                    }
-                }
-                this.$('[data-direccionproperty=principal]')
-                    .first()
-                    .addClass('active');
-            }
-            */
+             if (primaryRemoved) {
+             // on list views we need to set the current value on the input
+             if (this.view && this.view.action === 'list') {
+             var direcciones = this.model.get(this.name) || [];
+             var primaryDireccion = _.filter(direcciones, function (direccion) {
+             if (direccion.principal) {
+             return true;
+             }
+             });
+             if (primaryDireccion[0] && primaryDireccion[0].direccion_direccion) {
+             app.alert.show('list_delete_direccion_info', {
+             level: 'info',
+             autoClose: true,
+             messages: app.lang.get('LBL_LIST_REMOVE_DIRECCION_INFO')
+             });
+             $input.val(primaryDireccion[0].direccion_direccion);
+             }
+             }
+             this.$('[data-direccionproperty=principal]')
+             .first()
+             .addClass('active');
+             }
+             */
         }
         else {
             this._updateExistingDireccionInModel(index, newDireccion, field_name);
@@ -1443,7 +1444,7 @@
         existingDirecciones[index][field_name] = newDireccion;
         if(field_name == 'colonia'){
             existingDirecciones[index]['dire_direccion_dire_coloniadire_colonia_ida'] = newDireccion;
-          //  existingDirecciones[index]['colonia'] = '';
+            //  existingDirecciones[index]['colonia'] = '';
         }
         if(field_name == 'ciudad'){
             existingDirecciones[index]['dire_direccion_dire_ciudaddire_ciudad_ida'] = newDireccion;

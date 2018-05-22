@@ -21,21 +21,24 @@
                     {{{def.dir_tipo_list_html}}}
                 </select>
             </td>
-            <td valign="top" style="display:none;">
+            <td valign="top" style="display:block;">
                 <div class="record-label">
                     Indicador
                 </div>
-                <select class="newIndicador" data-field="indicador" placeholder="indicador" style="font-size: 15px;font-weight: 500;">
+                <select class="newIndicador hide" data-field="indicador" placeholder="indicador" style="font-size: 15px;font-weight: 500;">
                     {{{def.indicador_html}}}
+                </select>
+                <select id="multi1" class="select2" multiple="multiple" size="3">
+                    {{{def.indicador_multi_html}}}
                 </select>
             </td>
             <td valign="top">
-                <div class="record-label">
+                <!-- <div class="record-label">
                     Indicador
                 </div>
                 <select id="multi1" class="select2" multiple="multiple" size="3">
                     {{{def.indicador_multi_html}}}
-                </select>
+                </select> -->
             </td>
         </tr>
         <tr>
@@ -107,11 +110,11 @@
                 <input type="text" class="newNumInt" placeholder="numInt" value="{{numint}}" data-field="numint" style="width: 33%;margin: 0px;">
             </td>
             <td>
-              <div class="btn-toolbar prevent-mousedown">
-                  <div class="btn-group">
-                      <a href="javascript:void(0)" class="btn addDireccion" rel="tooltip" title="Add Direccion"><i class="fa fa-check"></i></a>
-                  </div>
-              </div>
+                <div class="btn-toolbar prevent-mousedown">
+                    <div class="btn-group">
+                        <a href="javascript:void(0)" class="btn addDireccion" rel="tooltip" title="Add Direccion"><i class="fa fa-check"></i></a>
+                    </div>
+                </div>
             </td>
         </tr>
     </table>
