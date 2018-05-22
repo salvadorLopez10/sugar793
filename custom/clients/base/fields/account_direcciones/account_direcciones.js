@@ -91,6 +91,14 @@
         }
         this.def.indicador_html = indicador_options;
 
+        //Indicador multiselect
+         var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
+         var indicador_multi_options = '<option value=""></option>'
+         for (indicador_id in dir_indicador_unique_list) {
+             indicador_multi_options += '<option value="' + indicador_id + '" >' + dir_indicador_unique_list[indicador_id] + '</option>';
+         }
+         this.def.indicador_multi_html = indicador_multi_options;
+
         //*
         var fields = ['id', 'name', 'calle', 'inactivo', 'numext', 'numint', 'indicador', 'principal', 'secuencia', 'tipodedireccion'
             , 'dire_direccion_dire_ciudaddire_ciudad_ida', 'dire_direccion_dire_codigopostaldire_codigopostal_ida', 'dire_direccion_dire_coloniadire_colonia_ida',
@@ -202,7 +210,9 @@
 
     updateValueIndicadorMultiselect:function (evt) {
         var valores=evt.val;
+        var id= this._getIndicador(null,valores)
         //Estableciendo valores para solo 1 valor seleccionado
+        /*
         if(valores.length==1){
             if(valores[0]=="1"){
                 $('.newIndicador').val("1");
@@ -237,15 +247,17 @@
         else if(valores.length==0){
             $('.newIndicador').val("");
         }
-
+         */
+        $('.newIndicador').val(id);
         $('.newIndicador').trigger("change");
 
     },
 
     updateValueIndicadorExisting:function (evt) {
         var valorEx=evt.val;
+        var id = this._getIndicador(null,valorEx)
         //evt.target.parentElement.previousElementSibling.children[1].value=“3”
-
+        /*
         //Estableciendo valores para solo 1 valor seleccionado
         if(valorEx.length==1){
             if(valorEx[0]=="1"){
@@ -280,9 +292,13 @@
         //Estableciendo valor vacio
         else if(valorEx.length==0){
             evt.target.parentElement.previousElementSibling.children[1].value="";
-        }
+        }*/
 
-        $('.existingIndicador').trigger("change");
+        evt.target.parentElement.previousElementSibling.children[1].value=id;
+        //$('.existingIndicador').trigger("change");
+        //Lanzando evento change para únicamente borrar el valor de indicador correspondiente a la misma fila del multiselect modificado
+        //$(evt.target).parent().parent().children().eq(1).trigger('change');
+        $(evt.target).parent().parent().find('.existingIndicador').trigger('change');
 
 
     },
@@ -319,6 +335,7 @@
             var alertOptions = {title: "Multiples direcciones fiscales, favor de corregir.", level: "error"};
             app.alert.show('validation', alertOptions);
             $input.val('');
+            //evt.target.parentElement.previousElementSibling.children[1].value='';
 
             //Obtener valores de multiselect
             var valores= $("#multi1").select2('val');
@@ -329,6 +346,8 @@
             valores.splice(index,1);
             //Estableciendo nuevo arreglo a campo multiselect (sin "Fiscal")
             $("#multi1").select2('val',valores);
+            $('.newIndicador').val(this._getIndicador(null,valores));
+            /*
             if(valores.length==2){
                 if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
                     $('.newIndicador').val("5");
@@ -341,6 +360,28 @@
                     $('.newIndicador').val("4");
                 }
             }
+             */
+
+            //Obteniendo valores multiselect existing
+            var valoresExisting=$(evt.target).parent().parent().find('select.existingMultiClass').select2('val');
+            var indexExisting=valoresExisting.indexOf("2");
+            valoresExisting.splice(indexExisting,1);
+            $(evt.target).parent().parent().find('select.existingMultiClass').select2('val',valoresExisting);
+            $(evt.target).val(this._getIndicador(null,valoresExisting));
+            /*
+            if(valoresExisting.length==2){
+                if(valoresExisting.indexOf("1") != -1 && valoresExisting.indexOf("3") != -1){
+                    $(evt.target).val("5");
+                }
+            }
+            if(valoresExisting.length==1){
+                if(valoresExisting.indexOf("1") != -1){
+                    $(evt.target).val("1");
+                }else if(valoresExisting.indexOf("3")!= -1){
+                    $(evt.target).val("1");
+                }
+            }
+             */
 
             $input.focus();
             this.fiscalCounter = 0;
@@ -382,7 +423,7 @@
 
         callback(null, fields, errors);
     },
-    
+
     _doValidateDireccionFiscalCorrespondencia: function (fields, errors, callback){
 
         if(this.model.get("tipo_registro_c") == "Cliente"){
@@ -657,7 +698,7 @@
             //Obteniendo valores de Indicador
             self=this;
             $("select.existingIndicador").each(function(i, obj) {
-                var valuesI=self._getIndicador($(this).val())
+                var valuesI=self._getIndicador($(this).val(),null)
                 $('select.existingMultiClass').eq(i).select2('val',valuesI);
 
                 //$('select.existingMultiClass').select2('val',['1','2'])
@@ -710,39 +751,72 @@
 
     },
 
-    _getIndicador: function (val) {
-        //val = valor en campo indicador
-        //result =  valor para establecer en multiselect
-        var result = null;
-        switch (val) {
-            case "1":
-                result = ['1'];
-                break;
-            case "2":
-                result = ['2'];
-                break;
-            case "3":
-                result = ['1','2'];
-                break;
-            case "4":
-                result = ['3'];
-                break;
-            case "5":
-                result = ['1','3'];
-                break;
-            case "6":
-                result = ['2','3'];
-                break;
-            case "7":
-                result = ['1','2','3'];
-                break;
-            default:
+    _getIndicador: function(idSelected, valuesSelected) {
 
+    //idSelected = valor en campo indicador
+    //valuesSelected =  valore en multiselect
+
+    //variable con resultado
+    var result = null;
+
+    //Arma objeto de mapeo
+    var dir_indicador_map_list = app.lang.getAppListStrings('dir_indicador_map_list');
+
+    var element = {};
+    var object = [];
+    var values = [];
+
+    for(var key in dir_indicador_map_list) {
+        console.log(key);
+        console.log(dir_indicador_map_list[key]);
+        var element = {};
+        element.id = key;
+        values = dir_indicador_map_list[key].split(",");
+        element.values = values;
+        object.push(element);
+    }
+    console.log(object);
+
+
+    //Recupera arreglo de valores por id
+    if(idSelected){
+        for(var i=0; i<object.length; i++) {
+            if ((object[i].id) == idSelected) {
+                result = object[i].values;
+            }
         }
-        return result;
-    },
+        console.log(result);
+    }
 
-    /**
+    //Recupera id por valores
+    if(valuesSelected){
+        result = [];
+        for(var i=0; i<object.length; i++) {
+            if (object[i].values.length == valuesSelected.length) {
+                //Ordena arreglos y compara
+                valuesSelected.sort();
+                object[i].values.sort();
+                var tempVal = true;
+                for(var j=0; j<valuesSelected.length; j++) {
+                    if(valuesSelected[j] != object[i].values[j]){
+                        tempVal = false;
+                    }
+                }
+                if( tempVal == true){
+                    result[0] = object[i].id;
+                }
+
+            }
+        }
+
+        console.log(result);
+    }
+
+    return result;
+},
+
+
+/**
      * Get HTML for direccion input field.
      * @param {Object} direccion
      * @returns {Object}
@@ -758,6 +832,7 @@
         var dir_tipo_list = app.lang.getAppListStrings('tipodedirecion_list');
         var dir_tipo_keys = app.lang.getAppListKeys('tipodedirecion_list');
         var dir_indicador_list = app.lang.getAppListStrings('dir_Indicador_list');
+        var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
         /*
         var dir_indicadorMulti_list = {
             "1":"Correspondencia",
@@ -856,6 +931,12 @@
         $('#existingMulti1').trigger('change');
          */
 
+         //indicador multiseelct
+        var indicador_multi_html = '<option value=""></option>';
+        for (indicador_id in dir_indicador_unique_list) {
+            indicador_multi_html += '<option value="' + indicador_id + '" >' + dir_indicador_unique_list[indicador_id] + '</option>';
+        }
+
         var ciudad_html = '<option value="xkcd"> Seleccionar Ciudad</option>';
         for (city_id in city_list) {
             if (city_list[city_id].estado_id == direccion.dire_direccion_dire_estadodire_estado_ida) {
@@ -924,6 +1005,7 @@
             estado_html: estado_html,
             municipio_html: municipio_html,
             indicador_html: indicador_html,
+            indicador_multi_html: indicador_multi_html,
             ciudad_html: ciudad_html,
             postal_html: postal_html,
             postal: postal,
@@ -1128,7 +1210,7 @@
             //Obteniendo valores de Indicador
             self=this;
             $("select.existingIndicador").each(function(i, obj) {
-                var valuesI=self._getIndicador($(this).val())
+                var valuesI=self._getIndicador($(this).val(),null)
                 $('select.existingMultiClass').eq(i).select2('val',valuesI);
 
                 //$('select.existingMultiClass').select2('val',['1','2'])
@@ -1196,7 +1278,7 @@
 
         if (newDireccion === '') {
             // remove direccion if direccion is empty
-            /*  
+            /*
             primaryRemoved = this._removeExistingDireccionInModel(index);
 
             $input
