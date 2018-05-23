@@ -31,7 +31,6 @@
         'change .existingColonia': 'updateExistingDireccionDropdown',
         'change #multi1': 'updateValueIndicadorMultiselect',
         'change select.existingMultiClass': 'updateValueIndicadorExisting',
-        //'change .existingMultiClass': 'updateIndicador',
 
     },
     _flag2Deco: {
@@ -208,99 +207,28 @@
         this.model.addValidationTask('check_direccion_nacional', _.bind(this._doValidateDireccionNacional, this));
     },
 
+    /**
+     * Establece campo original de Indicador depende el valor del campo multiselect
+     * @param  {object} evt, Objeto que contiene información del evento
+     */
     updateValueIndicadorMultiselect:function (evt) {
         var valores=evt.val;
         var id= this._getIndicador(null,valores)
         //Estableciendo valores para solo 1 valor seleccionado
-        /*
-         if(valores.length==1){
-         if(valores[0]=="1"){
-         $('.newIndicador').val("1");
-         }else if(valores[0]=="2"){
-         $('.newIndicador').val("2");
-         }else if(valores[0]=="3"){
-         $('.newIndicador').val("4");
-         }else if(valores[0]==""){
-         $('.newIndicador').val("");
-         }
-
-         }
-         //Estableciendo valores para 2 valores seleccionados
-         else if(valores.length==2){
-         //var a = fruits.indexOf("Banana");
-         if(valores.indexOf("1") != -1 && valores.indexOf("2") != -1){
-         $('.newIndicador').val("3");
-         }
-         else if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
-         $('.newIndicador').val("5");
-         }
-         else if(valores.indexOf("2") != -1 && valores.indexOf("3") != -1){
-         $('.newIndicador').val("6");
-         }
-
-         }
-         //Estableciendo opcion para cuando se eligen los 3 valores
-         else if(valores.length==3){
-         $('.newIndicador').val("7");
-         }
-         //Estableciendo valor vacio
-         else if(valores.length==0){
-         $('.newIndicador').val("");
-         }
-         */
         $('.newIndicador').val(id);
         $('.newIndicador').trigger("change");
 
     },
 
+    /**
+     * Establece campo original de Indicador en direcciones ya agregadas dependiendo el valor del campo multiselect
+     * @param  {object} evt, Objeto que contiene información del evento
+     */
     updateValueIndicadorExisting:function (evt) {
         var valorEx=evt.val;
         var id = this._getIndicador(null,valorEx)
-        //evt.target.parentElement.previousElementSibling.children[1].value=“3”
-        /*
-         //Estableciendo valores para solo 1 valor seleccionado
-         if(valorEx.length==1){
-         if(valorEx[0]=="1"){
-         evt.target.parentElement.previousElementSibling.children[1].value="1";
-         }else if(valorEx[0]=="2"){
-         evt.target.parentElement.previousElementSibling.children[1].value="2";
-         }else if(valorEx[0]=="3"){
-         evt.target.parentElement.previousElementSibling.children[1].value="4";
-         }else if(valorEx[0]==""){
-         evt.target.parentElement.previousElementSibling.children[1].value="";
-         }
-
-         }
-         //Estableciendo valores para 2 valores seleccionados
-         else if(valorEx.length==2){
-         //var a = fruits.indexOf("Banana");
-         if(valorEx.indexOf("1") != -1 && valorEx.indexOf("2") != -1){
-         evt.target.parentElement.previousElementSibling.children[1].value="3";
-         }
-         else if(valorEx.indexOf("1") != -1 && valorEx.indexOf("3") != -1){
-         evt.target.parentElement.previousElementSibling.children[1].value="5";
-         }
-         else if(valorEx.indexOf("2") != -1 && valorEx.indexOf("3") != -1){
-         evt.target.parentElement.previousElementSibling.children[1].value="6";
-         }
-
-         }
-         //Estableciendo opcion para cuando se eligen los 3 valores
-         else if(valorEx.length==3){
-         evt.target.parentElement.previousElementSibling.children[1].value="7";
-         }
-         //Estableciendo valor vacio
-         else if(valorEx.length==0){
-         evt.target.parentElement.previousElementSibling.children[1].value="";
-         }*/
-
-        //evt.target.parentElement.previousElementSibling.children[1].value=id;
         evt.target.parentElement.children[1].value=id;
-        //$('.existingIndicador').trigger("change");
-        //Lanzando evento change para únicamente borrar el valor de indicador correspondiente a la misma fila del multiselect modificado
-        //$(evt.target).parent().parent().children().eq(1).trigger('change');
         $(evt.target).parent().parent().find('.existingIndicador').trigger('change');
-
 
     },
 
@@ -348,20 +276,6 @@
             //Estableciendo nuevo arreglo a campo multiselect (sin "Fiscal")
             $("#multi1").select2('val',valores);
             $('.newIndicador').val(this._getIndicador(null,valores));
-            /*
-             if(valores.length==2){
-             if(valores.indexOf("1") != -1 && valores.indexOf("3") != -1){
-             $('.newIndicador').val("5");
-             }
-             }
-             if(valores.length==1){
-             if(valores.indexOf("1") != -1){
-             $('.newIndicador').val("1");
-             }else if(valores.indexOf("3")!= -1){
-             $('.newIndicador').val("4");
-             }
-             }
-             */
 
             //Obteniendo valores multiselect existing
             var valoresExisting=$(evt.target).parent().parent().find('select.existingMultiClass').select2('val');
@@ -369,20 +283,6 @@
             valoresExisting.splice(indexExisting,1);
             $(evt.target).parent().parent().find('select.existingMultiClass').select2('val',valoresExisting);
             $(evt.target).val(this._getIndicador(null,valoresExisting));
-            /*
-             if(valoresExisting.length==2){
-             if(valoresExisting.indexOf("1") != -1 && valoresExisting.indexOf("3") != -1){
-             $(evt.target).val("5");
-             }
-             }
-             if(valoresExisting.length==1){
-             if(valoresExisting.indexOf("1") != -1){
-             $(evt.target).val("1");
-             }else if(valoresExisting.indexOf("3")!= -1){
-             $(evt.target).val("1");
-             }
-             }
-             */
 
             $input.focus();
             this.fiscalCounter = 0;
@@ -662,6 +562,7 @@
         var direccionsHtml = '';
         //var $select = $('#multi1');
         this._super("_render");
+        //Se establece formato de multiselect a campo select con id "multi1"
         $('#multi1').select2({
             width:'100%',
             //minimumResultsForSearch:7,
@@ -669,17 +570,6 @@
             containerCssClass: 'select2-choices-pills-close'
         });
 
-        /*
-         $('#existingMulti1').select2({
-         width:'100%',
-         //minimumResultsForSearch:7,
-         closeOnSelect: false,
-         containerCssClass: 'select2-choices-pills-close'
-         });
-         */
-
-        //Obteniendo valores de multiselect
-        //$('#multi1').select2('val');
         if (this.tplName === 'edit') {
             //get realted records
             _.each(this.model.get('account_direcciones'), function (direccion) {
@@ -687,7 +577,7 @@
             }, this);
             this.$el.prepend(direccionsHtml);
 
-            //Cambia estructura para multiseelct
+            //Se establece formato multiselect a cada campo select con la clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
                 $(this).select2({
                     width:'100%',
@@ -698,36 +588,12 @@
 
             //Obteniendo valores de Indicador
             self=this;
+            //Se establece valor de multiselect dependiendo el valor de select que se encuentra en la misma fila
             $("select.existingIndicador").each(function(i, obj) {
                 var valuesI=self._getIndicador($(this).val(),null)
                 $('select.existingMultiClass').eq(i).select2('val',valuesI);
 
-                //$('select.existingMultiClass').select2('val',['1','2'])
             });
-
-
-            //Establece valor para multiselect
-            /*
-             var arrrayA = [];
-             var c=0;
-             $('select.existingIndicador').each(function(){
-             //console.log($(this).find('.existingIndicador').val())
-             arrrayA[c] = $(this).val();
-             c++;
-
-             });
-
-             var c=0;
-             var self = this;
-             $("select.existingMultiClass").each(function(){
-             //console.log($(this));
-             var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
-             $(this).val(valuesI);
-             $(this).trigger('change');
-             c++;
-             });
-             */
-
 
             //now populate colonias
             //Because colonias depends on the Zip Code we can't preload the list of colonias because the API calls are asynchronous and so if we request the list of
@@ -752,10 +618,13 @@
 
     },
 
+    /**
+     * Establece identificador dependiendo "id"
+     * @param  {string} idSelected, valor en campo indicador
+     * @param  {object} valueSelected, valores en campo multiselect
+     * @return  {array}, valor(es) a establecer en campo indicador
+     */
     _getIndicador: function(idSelected, valuesSelected) {
-
-        //idSelected = valor en campo indicador
-        //valuesSelected =  valore en multiselect
 
         //variable con resultado
         var result = null;
@@ -768,16 +637,12 @@
         var values = [];
 
         for(var key in dir_indicador_map_list) {
-            console.log(key);
-            console.log(dir_indicador_map_list[key]);
             var element = {};
             element.id = key;
             values = dir_indicador_map_list[key].split(",");
             element.values = values;
             object.push(element);
         }
-        console.log(object);
-
 
         //Recupera arreglo de valores por id
         if(idSelected){
@@ -823,7 +688,6 @@
      * @returns {Object}
      * @private
      */
-
     _buildDireccionFieldHtml: function (direccion) {
         var editDireccionFieldTemplate = app.template.getField('account_direcciones', 'edit-account-direcciones'),
             direcciones = this.model.get('account_direcciones'),
@@ -834,25 +698,6 @@
         var dir_tipo_keys = app.lang.getAppListKeys('tipodedirecion_list');
         var dir_indicador_list = app.lang.getAppListStrings('dir_Indicador_list');
         var dir_indicador_unique_list = app.lang.getAppListStrings('dir_indicador_unique_list');
-        /*
-         var dir_indicadorMulti_list = {
-         "1":"Correspondencia",
-         "2":"Fiscal",
-         "1":"Entrega de Bienes",
-         }
-         */
-
-
-        /*
-         $('#existingMulti1').select2({
-         width:'100%',
-         //minimumResultsForSearch:7,
-         closeOnSelect: false,
-         containerCssClass: 'select2-choices-pills-close'
-         });
-         */
-
-
 
         var country_list = app.metadata.getCountries();
         var estado_list = app.metadata.getStates();
@@ -925,13 +770,6 @@
 
         //Obteniendo valores recibidos del template principal
         var valores_get=direccion.indicador_multi;
-        //$("#existingMulti1").val(valores_get);
-        //$("#existingMulti1").trigger("change");
-        /*
-         $('#existingMulti1').select2(valores_get);
-         $('#existingMulti1').trigger('change');
-         */
-
         //indicador multiseelct
         var indicador_multi_html = '<option value=""></option>';
         for (indicador_id in dir_indicador_unique_list) {
@@ -1200,6 +1038,8 @@
             $newDireccionField = this._getNewDireccionField()
                 .closest('.direccion')
                 .before(direccionFieldHtml);
+
+            //Establece formato multiselect a campo select que contenga clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
                 $(this).select2({
                     width:'100%',
@@ -1209,41 +1049,14 @@
             });
 
             //Obteniendo valores de Indicador
+            //Establece valores a campo multiselect dependiendo el valor del campo select original
             self=this;
             $("select.existingIndicador").each(function(i, obj) {
                 var valuesI=self._getIndicador($(this).val(),null)
                 $('select.existingMultiClass').eq(i).select2('val',valuesI);
 
-                //$('select.existingMultiClass').select2('val',['1','2'])
             });
 
-            /*
-             var arrrayA = [];
-             var c=0;
-             $('select.existingIndicador').each(function(){
-             //console.log($(this).find('.existingIndicador').val())
-             arrrayA[c] = $(this).val();
-             c++;
-
-             });
-
-             var c=0;
-             var self = this;
-             $("select.existingMultiClass").each(function(){
-             //console.log($(this));
-             var valuesI =  self._getIndicador(arrrayA[c]); //['1'];
-             $(this).val(valuesI);
-             $(this).trigger('change');
-             c++;
-             });
-             */
-
-
-            /*
-             var valores=$("#multi1").val();
-             $("#existingMulti1").val(valores);
-             $("#existingMulti1").trigger("change");
-             */
 
             // add tooltips
             //this.addPluginTooltips($newDireccionField.prev());
