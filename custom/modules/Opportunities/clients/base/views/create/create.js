@@ -5,9 +5,9 @@
     productoUsuario: null,
     multiProducto: null,
     productos: null,
-	initialize: function (options) {
-		self = this;
-		this._super("initialize", [options]);
+    initialize: function (options) {
+        self = this;
+        this._super("initialize", [options]);
 
         this.model.addValidationTask('check_activos_seleccionados', _.bind(this.validaClientesActivos, this));
         this.model.addValidationTask('check_activos_index', _.bind(this.validaActivoIndex, this));
@@ -24,11 +24,11 @@
         this.model.on("change:ca_importe_enganche_c", _.bind(this.calcularPorcientoRI, this));
 
         /*@author Carlos Zaragoza Ortiz
-        * @version 1
-        * @date 12/10/2015
-        * Validar la cantidad de operaciones que se pueden generar para un cliente/Prospecto (solo una)
-        * @type Event
-        * */
+         * @version 1
+         * @date 12/10/2015
+         * Validar la cantidad de operaciones que se pueden generar para un cliente/Prospecto (solo una)
+         * @type Event
+         * */
         this.model.addValidationTask('check_operaciones_permitidas', _.bind(this.validaOperacionesPermitidasPorCuenta, this));
 
         /*@author Carlos Zaragoza Ortiz
@@ -48,10 +48,10 @@
         //this.model.addValidationTask('check_requeridos', _.bind(this.validaDatosRequeridos, this));
 
         /*
-        * @author Carlos Zaragoza Ortiz
-        * @version 1
-        * Ocultar opciones de cotización, contrato y línea de crédito al crear la oportunidad y bloquear el campo. Los cambios posteriores se controlan desde UNICS
-        * */
+         * @author Carlos Zaragoza Ortiz
+         * @version 1
+         * Ocultar opciones de cotización, contrato y línea de crédito al crear la oportunidad y bloquear el campo. Los cambios posteriores se controlan desde UNICS
+         * */
         var new_opctions = app.lang.getAppListStrings('tipo_operacion_list');
         Object.keys(new_opctions).forEach(function(key){
             if(key == 2 || key == 3 || key == 4){
@@ -74,31 +74,31 @@
         this.model.fields['tipo_producto_c'].options = opciones_producto;
 
         /*
-        * @author Carlos Zaragoza Ortiz
-        * @version 1
-        * En operaciones de solicitud de crédito quitar opción de pipeline en lista de Forecast
-        * */
+         * @author Carlos Zaragoza Ortiz
+         * @version 1
+         * En operaciones de solicitud de crédito quitar opción de pipeline en lista de Forecast
+         * */
         /*
-        var opciones_forecast = app.lang.getAppListStrings('forecast_list');
-        var operacion = this.model.get('tipo_operacion_c');
-        Object.keys(opciones_forecast).forEach(function(key){
-            if(key == "Pipeline"){
-                if(operacion == 1){
-                    delete opciones_forecast[key];
-                }
-            }
+         var opciones_forecast = app.lang.getAppListStrings('forecast_list');
+         var operacion = this.model.get('tipo_operacion_c');
+         Object.keys(opciones_forecast).forEach(function(key){
+         if(key == "Pipeline"){
+         if(operacion == 1){
+         delete opciones_forecast[key];
+         }
+         }
 
-        });
-        this.model.fields['forecast_c'].options = opciones_forecast;
-        */
+         });
+         this.model.fields['forecast_c'].options = opciones_forecast;
+         */
 
-	    //Obtiene fecha default para fecha de cierre, debe ser el ultimo día del mes corriente
+        //Obtiene fecha default para fecha de cierre, debe ser el ultimo día del mes corriente
         /*
-    	var fecha = new Date();
-		var f = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 1) - (24*60*60*1000);
-		var FechaCierre = new Date(f);
-    	this.model.set('date_closed', FechaCierre.getFullYear() + '-' + (FechaCierre.getMonth()+1) + '-' + FechaCierre.getDate());
-        */
+         var fecha = new Date();
+         var f = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 1) - (24*60*60*1000);
+         var FechaCierre = new Date(f);
+         this.model.set('date_closed', FechaCierre.getFullYear() + '-' + (FechaCierre.getMonth()+1) + '-' + FechaCierre.getDate());
+         */
         this.model.addValidationTask('check_monto_c', _.bind(this._ValidateAmount, this));
         this.model.on('change:tipo_producto_c', this._ActualizaEtiquetas, this);
 
@@ -152,8 +152,8 @@
         this.getCurrentYearMonth("loading");
         this.model.on("change:anio_c", _.bind(this.getCurrentYearMonth, this));
     },
-    
-	_render: function() {
+
+    _render: function() {
         this._super("_render");
         this.obtieneCondicionesFinancieras();
         this.model.on("change:plazo_c", _.bind(function(){
@@ -192,7 +192,7 @@
                     });
                     this.model.set('tipo_producto_c','1');
                 }
-				this.obtieneCondicionesFinancieras();
+                this.obtieneCondicionesFinancieras();
             }
             if(this.model.get('tipo_producto_c') == '4'){
                 //Oculta los campos
@@ -211,100 +211,100 @@
          * @version 1
          * Validamos que se pueda usar el campo vacío en el forecast. Agregar opción "…" en forecast time para indicar que se cierra este mes (esta opción se selecciona en automático si la fecha de cierre está dentro del mes corriente) Si la fecha de cierre esta fuera del mes corriente calcular si es 30, 60, etc.
          * */
-         // CVV - 28/03/2016 - El campo de fecha de cierre se elimino del layout
-         /*
-        this.model.on("change:date_closed", _.bind(function() {
-            var fecha_cierre = this.model.get('date_closed');
-            var fecha_actual = new Date();
-            fecha_cierre  = new Date(fecha_cierre+"T12:00:00Z");
-            var months;
-            months = (fecha_cierre.getFullYear() - fecha_actual.getFullYear()) * 12;
-            months -= fecha_actual.getMonth();
-            months += fecha_cierre.getMonth();
+        // CVV - 28/03/2016 - El campo de fecha de cierre se elimino del layout
+        /*
+         this.model.on("change:date_closed", _.bind(function() {
+         var fecha_cierre = this.model.get('date_closed');
+         var fecha_actual = new Date();
+         fecha_cierre  = new Date(fecha_cierre+"T12:00:00Z");
+         var months;
+         months = (fecha_cierre.getFullYear() - fecha_actual.getFullYear()) * 12;
+         months -= fecha_actual.getMonth();
+         months += fecha_cierre.getMonth();
 
-            if(months == 0 ){
-                this.model.set('forecast_time_c',"");
-            }
-            if(months == 1){
-                this.model.set('forecast_time_c',"30");
-            }
-            if(months == 2){
-                this.model.set('forecast_time_c',"60");
-            }
-            if(months == 3){
-                this.model.set('forecast_time_c',"90");
-            }
-            if(months >= 4){
-                this.model.set('forecast_time_c',"90mas");
+         if(months == 0 ){
+         this.model.set('forecast_time_c',"");
+         }
+         if(months == 1){
+         this.model.set('forecast_time_c',"30");
+         }
+         if(months == 2){
+         this.model.set('forecast_time_c',"60");
+         }
+         if(months == 3){
+         this.model.set('forecast_time_c',"90");
+         }
+         if(months >= 4){
+         this.model.set('forecast_time_c',"90mas");
+         }
+         },this));
+         */
+        /* END CUSTOMIZATION */
+
+        this.model.on("change:monto_c", _.bind(function() {
+            if (this.model.get('amount') == null || this.model.get('amount') == ''){
+                this.model.set('amount',this.model.get('monto_c'));
+            }else{
+                if(parseFloat(this.model.get('amount')) > parseFloat(this.model.get('monto_c'))){
+                    app.alert.show("Monto a operar invalido", {
+                        level: "error",
+                        title: "El monto a operar no puede ser mayor al monto de la linea.",
+                        autoClose: false
+                    });
+                    this.model.set('amount',this.model.get('monto_c'));
+                }
             }
         },this));
-        */
-        /* END CUSTOMIZATION */
-        
-		this.model.on("change:monto_c", _.bind(function() {
-    		if (this.model.get('amount') == null || this.model.get('amount') == ''){
-				this.model.set('amount',this.model.get('monto_c'));
-			}else{
-				if(parseFloat(this.model.get('amount')) > parseFloat(this.model.get('monto_c'))){
-					app.alert.show("Monto a operar invalido", {
-						level: "error",
-						title: "El monto a operar no puede ser mayor al monto de la linea.",
-						autoClose: false
-					});
-					this.model.set('amount',this.model.get('monto_c'));
-            	}	
-			}
-    	},this));
-    	
-		this.model.on("change:amount", _.bind(function() {
-			if(parseFloat(this.model.get('amount')) > parseFloat(this.model.get('monto_c'))){
-				app.alert.show("Moto a operar invalido", {
-					level: "error",
-					title: "El monto a operar no puede ser mayor al monto de la linea.",
-					autoClose: false
-				});
-				this.model.set('amount',this.model.get('monto_c'));
+
+        this.model.on("change:amount", _.bind(function() {
+            if(parseFloat(this.model.get('amount')) > parseFloat(this.model.get('monto_c'))){
+                app.alert.show("Moto a operar invalido", {
+                    level: "error",
+                    title: "El monto a operar no puede ser mayor al monto de la linea.",
+                    autoClose: false
+                });
+                this.model.set('amount',this.model.get('monto_c'));
             }
-    	},this));
+        },this));
 
         this.model.on("change:account_id", _.bind(function(){
             this.verificaOperacionProspecto();
         },this));
-		
-		// CVV - 28/03/2016 - Los campos de activo se reemplazaron por el control de condiciones financieras
-		/*
-        this.model.on("change:activo_c", _.bind(function(){
-            //console.log("Activo cambió");
-            //console.log(this.model.get('sub_activo_c'));
-            this.model.set('sub_activo_c','');
-        },this));
 
-        this.model.on("change:sub_activo_c", _.bind(function(){
-            //console.log("Activo cambió");
-            //console.log(this.model.get('sub_activo_c'));
-            this.model.set('sub_activo_2_c','');
-        },this));
+        // CVV - 28/03/2016 - Los campos de activo se reemplazaron por el control de condiciones financieras
+        /*
+         this.model.on("change:activo_c", _.bind(function(){
+         //console.log("Activo cambió");
+         //console.log(this.model.get('sub_activo_c'));
+         this.model.set('sub_activo_c','');
+         },this));
 
-        this.model.on("change:sub_activo_2_c", _.bind(function(){
-            //console.log("Activo cambió");
-            //console.log(this.model.get('sub_activo_c'));
-            this.model.set('sub_activo_3_c','');
-        },this));
-		*/
-		
-		//Actualiza las etiquetas de acuerdo al tipo de operacion Solicitud/Cotizacion
-		//Si la operacion es Cotización o Contrato cambiar etiqueta de "Monto de línea" a "Monto colocación"
-		if (this.model.get('tipo_operacion_c') == '3' || this.model.get('tipo_operacion_c') == '4'){
-			this.$("div.record-label[data-name='monto_c']").text("Monto colocaci\u00F3n");
-			this.$("div.record-label[data-name='tipo_de_operacion_c']").text("Tipo de operaci\u00F3n");
-		}
-		else{
-			this.$("div.record-label[data-name='monto_c']").text("Monto de l\u00EDnea");
-			this.$("div.record-label[data-name='tipo_de_operacion_c']").text("Tipo de solicitud");
-		}
-		if (this.model.get('tipo_operacion_c') == '1' && this.model.get('tipo_de_operacion_c') == 'RATIFICACION_INCREMENTO'){
-			this.$("div.record-label[data-name='monto_c']").text("Monto del incremento");
-		}
+         this.model.on("change:sub_activo_c", _.bind(function(){
+         //console.log("Activo cambió");
+         //console.log(this.model.get('sub_activo_c'));
+         this.model.set('sub_activo_2_c','');
+         },this));
+
+         this.model.on("change:sub_activo_2_c", _.bind(function(){
+         //console.log("Activo cambió");
+         //console.log(this.model.get('sub_activo_c'));
+         this.model.set('sub_activo_3_c','');
+         },this));
+         */
+
+        //Actualiza las etiquetas de acuerdo al tipo de operacion Solicitud/Cotizacion
+        //Si la operacion es Cotización o Contrato cambiar etiqueta de "Monto de línea" a "Monto colocación"
+        if (this.model.get('tipo_operacion_c') == '3' || this.model.get('tipo_operacion_c') == '4'){
+            this.$("div.record-label[data-name='monto_c']").text("Monto colocaci\u00F3n");
+            this.$("div.record-label[data-name='tipo_de_operacion_c']").text("Tipo de operaci\u00F3n");
+        }
+        else{
+            this.$("div.record-label[data-name='monto_c']").text("Monto de l\u00EDnea");
+            this.$("div.record-label[data-name='tipo_de_operacion_c']").text("Tipo de solicitud");
+        }
+        if (this.model.get('tipo_operacion_c') == '1' && this.model.get('tipo_de_operacion_c') == 'RATIFICACION_INCREMENTO'){
+            this.$("div.record-label[data-name='monto_c']").text("Monto del incremento");
+        }
         if(this.model.get('tipo_producto_c')=='1'){
             this.$("div.record-label[data-name='ca_importe_enganche_c']").text("Renta Inicial");
         }else{
@@ -348,15 +348,15 @@
             this.$('div[data-name=plazo_ratificado_incremento_c]').show();
             this.$('div[data-name=ri_usuario_bo_c]').show();
         }
-	},
-		   
-	_ValidateAmount: function (fields, errors, callback){
+    },
+
+    _ValidateAmount: function (fields, errors, callback){
         if (parseFloat(this.model.get('monto_c')) <= 0)
         {
             errors['monto_c'] = errors['monto_c'] || {};
             errors['monto_c'].required = true;
         }
-        
+
         if (parseFloat(this.model.get('amount')) <= 0)
         {
             errors['amount'] = errors['amount'] || {};
@@ -371,67 +371,67 @@
 
         callback(null, fields, errors);
     },
-    
+
     getCustomSaveOptions: function(options) {
         this.createdModel = this.model;
         // since we are in a drawer
         this.listContext = this.context.parent || this.context;
         this.originalSuccess = options.success;
-		
+
         var success = _.bind(function(model) {
-            this.originalSuccess(model); 
-        }, this); 
+            this.originalSuccess(model);
+        }, this);
 
         return {
             success: success
         };
     },
-	
-    validaActivoIndex: function(fields, errors, callback){
-    	//CVV - 28/03/2016 - Modulo de condiciones financieras
-        /*var activo = this.model.get('activo_c');
-        var subactivo = this.model.get('sub_activo_c');
-        var subactivo2 = this.model.get('sub_activo_2_c');
-        var subactivo3 = this.model.get('sub_activo_3_c');
-        var index_c;
-        var id_c;
-        var field_activo;
-        var field_activo_compara;
-        if(activo != undefined && subactivo != undefined && subactivo2 != undefined && subactivo3 != undefined){
-            field_activo = this.model.get('sub_activo_2_c');
-            field_activo_compara = this.model.get('sub_activo_3_c');
-        }
-        if(activo != undefined && subactivo != undefined && subactivo2 != undefined && subactivo3 == undefined){
-            field_activo = this.model.get('sub_activo_c');
-            field_activo_compara = this.model.get('sub_activo_2_c');
-        }
-        if(activo != undefined && subactivo != undefined && subactivo2 == undefined && subactivo3 == undefined){
-            field_activo = this.model.get('activo_c');
-            field_activo_compara = this.model.get('sub_activo_c');
-        }
-        if(activo != undefined && subactivo == undefined && subactivo2 == undefined && subactivo3 == undefined){
-            field_activo = this.model.get('activo_c');
-            field_activo_compara = this.model.get('activo_c');
-        }
-        if(activo != undefined && subactivo == "" && subactivo2 == undefined && subactivo3 == undefined){
-            field_activo = this.model.get('activo_c');
-            field_activo_compara = this.model.get('activo_c');
-        }
-        var activo_subactivo_url = app.api.buildURL('ActivoAPI?activo=' + field_activo,
-            null, null, null);
 
-        app.api.call('READ', activo_subactivo_url, {}, {
-            success: _.bind(function (data) {
-                $.each(data, function( index, value ) {
-                    if(field_activo_compara == value){
-                        index_c = value;
-                        id_c = index;
-                    }
-                });
-                this.model.set('id_activo_c', id_c);
-                this.model.set('index_activo_c', index_c);
-            }, this)
-        });*/
+    validaActivoIndex: function(fields, errors, callback){
+        //CVV - 28/03/2016 - Modulo de condiciones financieras
+        /*var activo = this.model.get('activo_c');
+         var subactivo = this.model.get('sub_activo_c');
+         var subactivo2 = this.model.get('sub_activo_2_c');
+         var subactivo3 = this.model.get('sub_activo_3_c');
+         var index_c;
+         var id_c;
+         var field_activo;
+         var field_activo_compara;
+         if(activo != undefined && subactivo != undefined && subactivo2 != undefined && subactivo3 != undefined){
+         field_activo = this.model.get('sub_activo_2_c');
+         field_activo_compara = this.model.get('sub_activo_3_c');
+         }
+         if(activo != undefined && subactivo != undefined && subactivo2 != undefined && subactivo3 == undefined){
+         field_activo = this.model.get('sub_activo_c');
+         field_activo_compara = this.model.get('sub_activo_2_c');
+         }
+         if(activo != undefined && subactivo != undefined && subactivo2 == undefined && subactivo3 == undefined){
+         field_activo = this.model.get('activo_c');
+         field_activo_compara = this.model.get('sub_activo_c');
+         }
+         if(activo != undefined && subactivo == undefined && subactivo2 == undefined && subactivo3 == undefined){
+         field_activo = this.model.get('activo_c');
+         field_activo_compara = this.model.get('activo_c');
+         }
+         if(activo != undefined && subactivo == "" && subactivo2 == undefined && subactivo3 == undefined){
+         field_activo = this.model.get('activo_c');
+         field_activo_compara = this.model.get('activo_c');
+         }
+         var activo_subactivo_url = app.api.buildURL('ActivoAPI?activo=' + field_activo,
+         null, null, null);
+
+         app.api.call('READ', activo_subactivo_url, {}, {
+         success: _.bind(function (data) {
+         $.each(data, function( index, value ) {
+         if(field_activo_compara == value){
+         index_c = value;
+         id_c = index;
+         }
+         });
+         this.model.set('id_activo_c', id_c);
+         this.model.set('index_activo_c', index_c);
+         }, this)
+         });*/
         // Obtener el primer activo del control de condiciones financieras
         this.model.set('id_activo_c', "97");
         this.model.set('index_activo_c', "000100030001");
@@ -491,7 +491,7 @@
                     this.model.set('estatus_c','P');
                 }
                 // 0000080: El sistema permite crear una operación de tipo Factoraje para una PF
-                // todo pendiente              
+                // todo pendiente
                 if( modelo.get('tipodepersona_c')=='Persona Fisica' && modelo.get('id') != null){
                     this.tipoDePersona = true;
                     //console.log("Cambiamos a tipo producto leasing");
@@ -515,34 +515,34 @@
      * */
     validaOperacionesPermitidasPorCuenta: function(fields, errors, callback){
         //Controlamos la solicitud del servicio:
-            var OppParams = {
-                'id_c': this.model.get('account_id'),
-            };
-            var urlOperaciones = app.api.buildURL("Opportunities/Operaciones", '', {}, {});
-            app.api.call("create", urlOperaciones, {data: OppParams}, {
-                success: _.bind(function (data) {
-                    if (data != null) {
-                        //console.log(data);
-                        var cantidad = data['cantidad'];
-                        //console.log("Cantidad de operaciones" + cantidad);
-                        if (cantidad > 0) {
-                            app.alert.show("Cantidad de operaciones", {
-                                level: "error",
-                                title: "No puedes generar m&aacute;s de una operaci&oacute;n para prospectos.",
-                                autoClose: false
-                            });
-                            app.error.errorName2Keys['custom_message'] = 'Solo puede tener una operacion como prospecto ';
-                            errors['account_name'] = errors['account_name'] || {};
-                            errors['account_name'].custom_message = true;
+        var OppParams = {
+            'id_c': this.model.get('account_id'),
+        };
+        var urlOperaciones = app.api.buildURL("Opportunities/Operaciones", '', {}, {});
+        app.api.call("create", urlOperaciones, {data: OppParams}, {
+            success: _.bind(function (data) {
+                if (data != null) {
+                    //console.log(data);
+                    var cantidad = data['cantidad'];
+                    //console.log("Cantidad de operaciones" + cantidad);
+                    if (cantidad > 0) {
+                        app.alert.show("Cantidad de operaciones", {
+                            level: "error",
+                            title: "No puedes generar m&aacute;s de una operaci&oacute;n para prospectos.",
+                            autoClose: false
+                        });
+                        app.error.errorName2Keys['custom_message'] = 'Solo puede tener una operacion como prospecto ';
+                        errors['account_name'] = errors['account_name'] || {};
+                        errors['account_name'].custom_message = true;
 
-                            //this.cancelClicked();
-                            callback(null, fields, errors);
-                        } else {
-                            callback(null, fields, errors);
-                        }
+                        //this.cancelClicked();
+                        callback(null, fields, errors);
+                    } else {
+                        callback(null, fields, errors);
                     }
-                }, this)
-            });
+                }
+            }, this)
+        });
 
     },
     _ActualizaEtiquetas: function(){
@@ -561,77 +561,77 @@
         }
         // CVV - 28/03/2016 - Se reemplaza por control de condiciones financieras
         /*
-        if(this.model.get('tipo_producto_c')=='3'){
-            this.$("div.record-label[data-name='porcentaje_renta_inicial_c']").text("Porcentaje de Enganche");
-        }else{
-            this.$("div.record-label[data-name='porcentaje_renta_inicial_c']").text("Porcentaje Renta Inicial");
-        }
-		*/
+         if(this.model.get('tipo_producto_c')=='3'){
+         this.$("div.record-label[data-name='porcentaje_renta_inicial_c']").text("Porcentaje de Enganche");
+         }else{
+         this.$("div.record-label[data-name='porcentaje_renta_inicial_c']").text("Porcentaje Renta Inicial");
+         }
+         */
     },
     // CVV - 28/03/2016 - Se reemplaza por modulo de condiciones financieras
     /*
-    validaActivo: function (fields, errors, callback){
-        //console.log(this.model.get('activo_c'));
-        if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
-            if (this.model.get('activo_c') == undefined || this.model.get('activo_c') == "") {
-                app.alert.show("TodosActivos", {
-                    level: "error",
-                    title: "Selecciona el activo",
-                    autoClose: true
-                });
-                errors['activo_c'] = errors['activo_c'] || {};
-                errors['activo_c'].required = true;
-            }
-        }
-        callback(null, fields, errors);
-    },
+     validaActivo: function (fields, errors, callback){
+     //console.log(this.model.get('activo_c'));
+     if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
+     if (this.model.get('activo_c') == undefined || this.model.get('activo_c') == "") {
+     app.alert.show("TodosActivos", {
+     level: "error",
+     title: "Selecciona el activo",
+     autoClose: true
+     });
+     errors['activo_c'] = errors['activo_c'] || {};
+     errors['activo_c'].required = true;
+     }
+     }
+     callback(null, fields, errors);
+     },
 
-    validaSubActivo: function (fields, errors, callback){
-        //console.log(this.model.get('sub_activo_c'));
-        if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false){
-            if( this.model.get('sub_activo_c')==undefined ||  this.model.get('sub_activo_c') == ""){
-                app.alert.show("TodosActivos1", {
-                    level: "error",
-                    title: "Selecciona el Sub activo",
-                    autoClose: true
-                });
-                errors['sub_activo_c'] = errors['sub_activo_c'] || {};
-                errors['sub_activo_c'].required = true;
-            }
-        }
-        callback(null, fields, errors);
-    },
-    validaSubActivo2: function (fields, errors, callback){
-        //console.log(this.model.get('sub_activo_2_c'));
-        if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
-            if (this.model.get('sub_activo_2_c') == undefined || this.model.get('sub_activo_2_c') == "") {
-                app.alert.show("TodosActivos2", {
-                    level: "error",
-                    title: "Selecciona el tipo de activo",
-                    autoClose: true
-                });
-                errors['sub_activo_2_c'] = errors['sub_activo_2_c'] || {};
-                errors['sub_activo_2_c'].required = true;
-            }
-        }
-        callback(null, fields, errors);
-    },
-    validaSubActivo3: function (fields, errors, callback){
-       // console.log(this.model.get('sub_activo_3_c'));
-        if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
-            if (this.model.get('sub_activo_3_c') == undefined || this.model.get('sub_activo_3_c') == "") {
-                app.alert.show("TodosActivos3", {
-                    level: "error",
-                    title: "Selecciona la Marca",
-                    autoClose: true
-                });
-                errors['sub_activo_3_c'] = errors['sub_activo_3_c'] || {};
-                errors['sub_activo_3_c'].required = true;
-            }
-        }
-        callback(null, fields, errors);
-    },
-    */
+     validaSubActivo: function (fields, errors, callback){
+     //console.log(this.model.get('sub_activo_c'));
+     if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false){
+     if( this.model.get('sub_activo_c')==undefined ||  this.model.get('sub_activo_c') == ""){
+     app.alert.show("TodosActivos1", {
+     level: "error",
+     title: "Selecciona el Sub activo",
+     autoClose: true
+     });
+     errors['sub_activo_c'] = errors['sub_activo_c'] || {};
+     errors['sub_activo_c'].required = true;
+     }
+     }
+     callback(null, fields, errors);
+     },
+     validaSubActivo2: function (fields, errors, callback){
+     //console.log(this.model.get('sub_activo_2_c'));
+     if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
+     if (this.model.get('sub_activo_2_c') == undefined || this.model.get('sub_activo_2_c') == "") {
+     app.alert.show("TodosActivos2", {
+     level: "error",
+     title: "Selecciona el tipo de activo",
+     autoClose: true
+     });
+     errors['sub_activo_2_c'] = errors['sub_activo_2_c'] || {};
+     errors['sub_activo_2_c'].required = true;
+     }
+     }
+     callback(null, fields, errors);
+     },
+     validaSubActivo3: function (fields, errors, callback){
+     // console.log(this.model.get('sub_activo_3_c'));
+     if(this.model.get('tipo_producto_c')!='4' && this.model.get('es_multiactivo_c') == false) {
+     if (this.model.get('sub_activo_3_c') == undefined || this.model.get('sub_activo_3_c') == "") {
+     app.alert.show("TodosActivos3", {
+     level: "error",
+     title: "Selecciona la Marca",
+     autoClose: true
+     });
+     errors['sub_activo_3_c'] = errors['sub_activo_3_c'] || {};
+     errors['sub_activo_3_c'].required = true;
+     }
+     }
+     callback(null, fields, errors);
+     },
+     */
     valiaAforo: function (fields, errors, callback){
         if(this.model.get('tipo_producto_c')=='4'){
             if(Number(this.model.get('f_aforo_c')) >= 0.000000) {
@@ -716,36 +716,36 @@
                 errors['cartera_descontar_c'] = errors['cartera_descontar_c'] || {};
                 errors['cartera_descontar_c'].required = true;
             }
-	    /*
-            console.log(this.model.get('tasa_fija_ordinario_c'));
-            console.log('tasa_fija_ordinario_c');
-            if(this.model.get('tasa_fija_ordinario_c') == null ||this.model.get('tasa_fija_ordinario_c') == "" || (Number(this.model.get('tasa_fija_ordinario_c'))<0 || Number(this.model.get('tasa_fija_ordinario_c'))>99.999999)){
-                //error
-                errors['tasa_fija_ordinario_c'] = errors['tasa_fija_ordinario_c'] || {};
-                errors['tasa_fija_ordinario_c'].required = true;
-            }
-            if(this.model.get('tasa_fija_moratorio_c') == null ||this.model.get('tasa_fija_moratorio_c') == "" || (Number(this.model.get('tasa_fija_moratorio_c'))<0 || Number(this.model.get('tasa_fija_moratorio_c'))>99.999999)){
-                //error
-                errors['tasa_fija_moratorio_c'] = errors['tasa_fija_moratorio_c'] || {};
-                errors['tasa_fija_moratorio_c'].required = true;
-            }
-	*/
+            /*
+             console.log(this.model.get('tasa_fija_ordinario_c'));
+             console.log('tasa_fija_ordinario_c');
+             if(this.model.get('tasa_fija_ordinario_c') == null ||this.model.get('tasa_fija_ordinario_c') == "" || (Number(this.model.get('tasa_fija_ordinario_c'))<0 || Number(this.model.get('tasa_fija_ordinario_c'))>99.999999)){
+             //error
+             errors['tasa_fija_ordinario_c'] = errors['tasa_fija_ordinario_c'] || {};
+             errors['tasa_fija_ordinario_c'].required = true;
+             }
+             if(this.model.get('tasa_fija_moratorio_c') == null ||this.model.get('tasa_fija_moratorio_c') == "" || (Number(this.model.get('tasa_fija_moratorio_c'))<0 || Number(this.model.get('tasa_fija_moratorio_c'))>99.999999)){
+             //error
+             errors['tasa_fija_moratorio_c'] = errors['tasa_fija_moratorio_c'] || {};
+             errors['tasa_fija_moratorio_c'].required = true;
+             }
+             */
         }
         callback(null, fields, errors);
     },
     // CVV - 28/03/2016 - Se sustituye por modulo de condiciones financieras
     /************/
-	validaMultiactivo: function(fields, errors, callback){
-       // console.log("Valida MultiActivo");
+    validaMultiactivo: function(fields, errors, callback){
+        // console.log("Valida MultiActivo");
         if(this.model.get('es_multiactivo_c')==true){
             this.model.set('activo_c','');
             var activos = new String(this.model.get('multiactivo_c'));
-           // console.log(activos);
-          //  console.log(typeof activos);
+            // console.log(activos);
+            //  console.log(typeof activos);
             var arrActivos = activos.split(",");
-           // console.log(arrActivos);
-          //  console.log(typeof arrActivos);
-          //  console.log(arrActivos.length);
+            // console.log(arrActivos);
+            //  console.log(typeof arrActivos);
+            //  console.log(arrActivos.length);
 
             if(arrActivos.length<=1){
                 errors['multiactivo_c'] = errors['multiactivo_c'] || {};
@@ -801,42 +801,42 @@
     validaCondicionesFinanceras: function(fields, errors, callback){
         // CVV - 28/03/2016 - Se reemplaza por control de condiciones financieras
         /*if(this.model.get('tipo_producto_c')=='1'){ //Leasing
-            if(Number(this.model.get('ca_tasa_c'))>=100 || Number(this.model.get('ca_tasa_c')<0) || this.model.get('ca_tasa_c')==''){
-                errors['ca_tasa_c'] = errors['ca_tasa_c'] || {};
-                errors['ca_tasa_c'].required = true;
-            }
-            if(Number(this.model.get('porcentaje_ca_c'))>=100 || Number(this.model.get('porcentaje_ca_c')<0 || this.model.get('porcentaje_ca_c')=='')){
-                errors['porcentaje_ca_c'] = errors['porcentaje_ca_c'] || {};
-                errors['porcentaje_ca_c'].required = true;
-            }
-            if(Number(this.model.get('vrc_c'))>=100 || Number(this.model.get('vrc_c')<0) || this.model.get('vrc_c') == ''){
-                errors['vrc_c'] = errors['vrc_c'] || {};
-                errors['vrc_c'].required = true;
-            }
-            if(Number(this.model.get('porcentaje_renta_inicial_c'))>=100 || Number(this.model.get('porcentaje_renta_inicial_c')<0) || this.model.get('porcentaje_renta_inicial_c') == ''){
-                errors['porcentaje_renta_inicial_c'] = errors['porcentaje_renta_inicial_c'] || {};
-                errors['porcentaje_renta_inicial_c'].required = true;
-            }
-            if(Number(this.model.get('vri_c'))>=100 || Number(this.model.get('vri_c')<0) || this.model.get('vri_c') == ''){
-                errors['vri_c'] = errors['vri_c'] || {};
-                errors['vri_c'].required = true;
-            }
-        }
-        if(this.model.get('tipo_producto_c')=='3'){ //CA
-            if(Number(this.model.get('ca_tasa_c'))>=100 || Number(this.model.get('ca_tasa_c')<0) || this.model.get('ca_tasa_c')==''){
-                errors['ca_tasa_c'] = errors['ca_tasa_c'] || {};
-                errors['ca_tasa_c'].required = true;
-            }
-            if(Number(this.model.get('porcentaje_ca_c'))>=100 || Number(this.model.get('porcentaje_ca_c')<0) || this.model.get('porcentaje_ca_c') == ''){
-                errors['porcentaje_ca_c'] = errors['porcentaje_ca_c'] || {};
-                errors['porcentaje_ca_c'].required = true;
-            }
-            if(Number(this.model.get('porcentaje_renta_inicial_c'))>=100 || Number(this.model.get('porcentaje_renta_inicial_c')<0) || this.model.get('porcentaje_renta_inicial_c') == ''){
-                errors['porcentaje_renta_inicial_c'] = errors['porcentaje_renta_inicial_c'] || {};
-                errors['porcentaje_renta_inicial_c'].required = true;
-            }
+         if(Number(this.model.get('ca_tasa_c'))>=100 || Number(this.model.get('ca_tasa_c')<0) || this.model.get('ca_tasa_c')==''){
+         errors['ca_tasa_c'] = errors['ca_tasa_c'] || {};
+         errors['ca_tasa_c'].required = true;
+         }
+         if(Number(this.model.get('porcentaje_ca_c'))>=100 || Number(this.model.get('porcentaje_ca_c')<0 || this.model.get('porcentaje_ca_c')=='')){
+         errors['porcentaje_ca_c'] = errors['porcentaje_ca_c'] || {};
+         errors['porcentaje_ca_c'].required = true;
+         }
+         if(Number(this.model.get('vrc_c'))>=100 || Number(this.model.get('vrc_c')<0) || this.model.get('vrc_c') == ''){
+         errors['vrc_c'] = errors['vrc_c'] || {};
+         errors['vrc_c'].required = true;
+         }
+         if(Number(this.model.get('porcentaje_renta_inicial_c'))>=100 || Number(this.model.get('porcentaje_renta_inicial_c')<0) || this.model.get('porcentaje_renta_inicial_c') == ''){
+         errors['porcentaje_renta_inicial_c'] = errors['porcentaje_renta_inicial_c'] || {};
+         errors['porcentaje_renta_inicial_c'].required = true;
+         }
+         if(Number(this.model.get('vri_c'))>=100 || Number(this.model.get('vri_c')<0) || this.model.get('vri_c') == ''){
+         errors['vri_c'] = errors['vri_c'] || {};
+         errors['vri_c'].required = true;
+         }
+         }
+         if(this.model.get('tipo_producto_c')=='3'){ //CA
+         if(Number(this.model.get('ca_tasa_c'))>=100 || Number(this.model.get('ca_tasa_c')<0) || this.model.get('ca_tasa_c')==''){
+         errors['ca_tasa_c'] = errors['ca_tasa_c'] || {};
+         errors['ca_tasa_c'].required = true;
+         }
+         if(Number(this.model.get('porcentaje_ca_c'))>=100 || Number(this.model.get('porcentaje_ca_c')<0) || this.model.get('porcentaje_ca_c') == ''){
+         errors['porcentaje_ca_c'] = errors['porcentaje_ca_c'] || {};
+         errors['porcentaje_ca_c'].required = true;
+         }
+         if(Number(this.model.get('porcentaje_renta_inicial_c'))>=100 || Number(this.model.get('porcentaje_renta_inicial_c')<0) || this.model.get('porcentaje_renta_inicial_c') == ''){
+         errors['porcentaje_renta_inicial_c'] = errors['porcentaje_renta_inicial_c'] || {};
+         errors['porcentaje_renta_inicial_c'].required = true;
+         }
 
-        }*/
+         }*/
         if(this.model.get('tipo_producto_c')=='4'){ //Factoraje
             if(Number(this.model.get('puntos_sobre_tasa_c'))>=100 || Number(this.model.get('puntos_sobre_tasa_c')<0) || this.model.get('puntos_sobre_tasa_c') == ''){
                 errors['puntos_sobre_tasa_c'] = errors['puntos_sobre_tasa_c'] || {};
@@ -959,33 +959,33 @@
         //Obtener tipo de registro de la Persona
 
         /*
-        var personBean = app.data.createBean('Accounts', {id:id_person});
+         var personBean = app.data.createBean('Accounts', {id:id_person});
 
-        personBean.fetch({'success':function () {
+         personBean.fetch({'success':function () {
 
-            tipo_registro = personBean.get('tipo_registro_c');
-            if (tipo_registro!=='Cliente')
-            {
-                //errors['account_id'] = errors['account_name'] || {};
-                //errors['account_name'].required = true;
+         tipo_registro = personBean.get('tipo_registro_c');
+         if (tipo_registro!=='Cliente')
+         {
+         //errors['account_id'] = errors['account_name'] || {};
+         //errors['account_name'].required = true;
 
-                //errors['account_name'] = errors['account_name'] || {};
+         //errors['account_name'] = errors['account_name'] || {};
 
-                app.alert.show("Cliente no v\u00E1lido", {
-                    level: "error",
-                    title: "La persona asociada debe ser tipo Cliente",
-                    autoClose: false
-                });
-                self.model.set('account_name','');
-                self.model.set('account_id','');
-            }
+         app.alert.show("Cliente no v\u00E1lido", {
+         level: "error",
+         title: "La persona asociada debe ser tipo Cliente",
+         autoClose: false
+         });
+         self.model.set('account_name','');
+         self.model.set('account_id','');
+         }
 
-            self.render();
+         self.render();
 
-        }});
+         }});
 
 
-        callback(null, fields, errors);
+         callback(null, fields, errors);
 
          */
     },

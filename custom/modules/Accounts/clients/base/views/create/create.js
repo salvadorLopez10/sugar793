@@ -75,7 +75,6 @@
          * */
         this.$('div[data-name=estatus_persona_c]').hide();
 
-
         if (this.model.dataFetched) {
             this.model.on("change:tipo_registro_c", _.bind(function() {
                 // Carlos Zaragoza: Se elimina el campo por defaiult de tipo de proveedor del registro pero sies proveedor, se selecciona bienes por default
@@ -159,9 +158,13 @@
 
             console.log($('.existingAddress').val());
         }
+
+        //Hide Vista360
+        this._hideVista360();
+        this.model.set("tipo_registro_c", 'Cliente');
+        this.model.set("tipo_registro_c", 'Prospecto');
         //callback(null, fields, errors);
     },
-
 
     initialize: function (options) {
         self = this;
@@ -170,13 +173,13 @@
         //Hide panels
         this.model.on('change:tct_fedeicomiso_chk_c', this._hideFideicomiso, this);
         this.model.on('change:tipodepersona_c', this._hidePeps, this);
+        this.model.on("change:tipo_registro_c", this._hideGuardar, this);
 
         //add validation tasks
         this.model.addValidationTask('check_email_telefono', _.bind(this._doValidateEmailTelefono, this));
         this.model.addValidationTask('check_rfc', _.bind(this._doValidateRFC, this));
         this.model.on('change:pais_nacimiento_c',this.validaExtranjerosRFC, this);
         //this.model.on('change:rfc_c',this.validaFechaNacimientoDesdeRFC, this);
-
         this.model.on('change:account_telefonos',this.setPhoneOffice, this);
 
         /*
@@ -337,7 +340,7 @@
 
         /** BEGIN CUSTOMIZATION: jgarcia@levementum.com 7/14/2015 Description: Cuando estamos en el modulo de Personas, no queremos que se muestre la opcion Persona para el tipo de registro */
         var new_options = app.lang.getAppListStrings('tipo_registro_list');
-   
+
         Object.keys(new_options).forEach(function(key) {
             if(key == "Persona"){
                 delete new_options[key];
@@ -368,6 +371,20 @@
      * Salvador Lopez 19/01/2018
      * Descripción: Función que oculta o muestra paneles de Peps según sea el valor de Tipo de Persona*/
 
+    _hideVista360: function(){
+
+        //TabNav
+        $("#drawers li.tab").removeClass('active');
+        $('#drawers li.tab.panel_body').addClass("active");
+        $('#drawers li.tab.LBL_RECORDVIEW_PANEL8').hide();
+
+        //Tabcontent
+        $("#drawers div.tab-content").children()[0].classList.remove('active');
+        $("#drawers div.tab-content").children()[1].classList.add('active');
+        $("#drawers div.tab-content").children()[1].classList.remove('fade');
+
+    },
+
     _hidePeps : function(fields, errors, callback) {
 
         if(this.model.get('tipodepersona_c')=="Persona Fisica" ||
@@ -391,6 +408,19 @@
         }
     },
 
+    _hideGuardar : function(fields, errors, callback)
+    {
+        var tipo = this.model.get('tipo_registro_c');
+        var puesto = app.user.get('puestousuario_c');
+        if((tipo=="Prospecto" || tipo=="Cliente") && (puesto==6 || puesto==12 || puesto==17))
+        {
+            $('[name="save_button"]').hide();
+        }
+        else
+        {
+            $('[name="save_button"]').show();
+        }
+    },
 
     _doValidateEmailTelefono: function(fields, errors, callback) {
 
@@ -987,6 +1017,11 @@
     },
     /* END */
 
+    /**
+     * @author Salvador Lopez Balleza
+     * @date 13/03/2018
+     * Establecer campo phone_office con la misma información que el campo personalizado account_telefonos
+     * */
     setPhoneOffice: function(){
 
         if(!_.isEmpty(this.model.get('account_telefonos'))){
