@@ -570,12 +570,15 @@
             containerCssClass: 'select2-choices-pills-close'
         });
 
+
         if (this.tplName === 'edit') {
             //get realted records
             _.each(this.model.get('account_direcciones'), function (direccion) {
                 direccionsHtml += this._buildDireccionFieldHtml(direccion);
             }, this);
             this.$el.prepend(direccionsHtml);
+
+            $('select.existingIndicador').hide();
 
             //Se establece formato multiselect a cada campo select con la clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
@@ -1038,6 +1041,8 @@
             $newDireccionField = this._getNewDireccionField()
                 .closest('.direccion')
                 .before(direccionFieldHtml);
+
+            $('select.existingIndicador').hide();
 
             //Establece formato multiselect a campo select que contenga clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
