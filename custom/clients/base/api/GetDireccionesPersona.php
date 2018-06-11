@@ -333,9 +333,17 @@ FROM accounts a INNER JOIN accounts_dire_direccion_1_c ad ON a.id = ad.accounts_
         //Regresa resultado
         return $records_in;
 
-        /////////////////////
     }
 
+    /**
+     * Obtiene clave de un valor perteneciente a una lista
+     *
+     * Método que obtiene la clave de un valor pasado como parámetro, el cual será buscado en una lista
+     *
+     * @param string $valor Cadena a buscar dentro de la lista
+     * @param array $list_indicadores Array con los indicadores únicos  (Fiscal,Correspondencia,Entrega de Bienes ...)
+     * @return string $clave Clave encontrada con la cadena que se pasa como parámetro para buscar dentro de la lista
+     */
     public function getIndicador($valor, $list_indicadores)
     {
 
@@ -345,6 +353,15 @@ FROM accounts a INNER JOIN accounts_dire_direccion_1_c ad ON a.id = ad.accounts_
 
     }
 
+    /**
+     * Obtiene clave de una lista
+     *
+     * Método que obtiene la clave de un valor pasado como parámetro, el cual será buscado en una lista
+     *
+     * @param string $valor Cadena a buscar dentro de la lista
+     * @param array $list_indicadores_map Array perteneciente a la lista dir_indicador_map_list
+     * @return string $key_encontrados Claves encontradas (separadas por comas) que contienen en su etiqueta el $valor pasado como parámetro
+     */
     public function getIndicadorMap($valor, $list_indicadores_map)
     {
 
@@ -367,6 +384,22 @@ FROM accounts a INNER JOIN accounts_dire_direccion_1_c ad ON a.id = ad.accounts_
 
     }
 
+    /**
+     * Ejecuta query para información relacionada
+     *
+     * Método que genera y ejecuta query para obtener información relacionada a la dirección (estado,cp,colonia,ciudad,pais y municipio)
+     *
+     * @param string $id_direccion Identificador de la dirección en la bd
+     * @param int $pos Posición en la que se está ejecutando el arreglo records_in
+     * @param string $table_unique Nombre de la tabla en BD que contiene info princial del registro relacionado
+     * @param string $table_dire_unique Nombre de la tabla en BD que relaciona la Dirección con estado,cp,colonia,ciudad,pais o municipio
+     * @param array $records_in Arreglo principal que se va armando con los querys ejecutados
+     * @param string $str_name_related Nombre del nuevo nodo del arreglo principal que contendrá el nombre de la info relacionada
+     * @param string $str_array_related Nombre del nuevo nodo del arreglo princiapl que contendrá el arreglo con la info relacionada
+     * @param string $field_related Nombre del campo de la tabla en BD que relaciona el id de la tabla relacionada con el id de la tabla que mantiene la relación de registros
+     * @param string $fiel_related_dire Nombre del campo de la tbla en BD que relaciona el id de la dirección en el id de la dirección dentro de la tabla que mantiene la relación de os registros
+     * @return array $records_in Nuevo arreglo generado con el query ejecutado
+     */
     public function getRelatedInfoAddress($id_direccion, $pos, $table_unique, $table_dire_unique, $records_in, $str_name_related, $str_array_related,$field_related,$fiel_related_dire)
     {
 
