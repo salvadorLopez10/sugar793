@@ -219,7 +219,7 @@ array (
 
                   'filter_populate' =>
                       array (
-                          'puestousuario_c' => array('18'),
+                          'puestousuario_c' => array('27'),
                       ),
 
               ),

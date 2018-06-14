@@ -1,6 +1,7 @@
 <?php
- // created: 2018-06-11 18:37:59
+ // created: 2018-06-13 11:45:09
 $dictionary['Account']['fields']['tct_detalle_origen_ddw_c']['labelValue']='Detalle Origen';
+$dictionary['Account']['fields']['tct_detalle_origen_ddw_c']['dependency']='';
 $dictionary['Account']['fields']['tct_detalle_origen_ddw_c']['visibility_grid']=array (
   'trigger' => 'origendelprospecto_c',
   'values' => 

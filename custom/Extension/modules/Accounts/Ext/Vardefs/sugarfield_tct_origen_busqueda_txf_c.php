@@ -1,5 +1,5 @@
 <?php
- // created: 2018-06-11 18:48:07
+ // created: 2018-06-13 11:50:56
 $dictionary['Account']['fields']['tct_origen_busqueda_txf_c']['labelValue']='Búsqueda';
 $dictionary['Account']['fields']['tct_origen_busqueda_txf_c']['full_text_search']=array (
   'enabled' => '0',

@@ -7740,6 +7740,7 @@ $app_list_strings['puestousuario_c_list']=array (
     24 => 'MESA DE CONTROL',
     25 => 'CONTRATOS',
     26 => 'ANALISTA CREDITO',
+    27 => 'AGENTE TELEFÓNICO'
 );
 
 $app_list_strings['region_list']=array (
