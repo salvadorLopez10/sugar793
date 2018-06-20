@@ -138,12 +138,12 @@ class BacklogDashlet extends SugarApi
         $sortBy = $args['data']['sortBy'];
         $sortByDireccion = $args['data']['sortByDireccion'];
 
-         $query = <<<SQL
+        $query = <<<SQL
 SELECT r.name FROM acl_roles r
 INNER JOIN acl_roles_users ru ON ru.role_id = r.id AND ru.deleted = 0
 WHERE ru.user_id = '{$current_user->id}' AND r.name = 'Backlog'
 SQL;
-         $rolResult = $db->getone($query);
+        $rolResult = $db->getone($query);
         if(!empty($rolResult)){
             //Obtiene los equipos que puede ver en caso de ser BO
             $query = <<<SQL
@@ -265,7 +265,7 @@ case lb.equipo when '1' then 1 when '2' then 2 when '3' then 3 when '4' then 4 w
 when 'MTY' then 10 when 'HER' then 11 when 'CHI' then 12 when 'GDL' then 13 when 'QRO' then 14 when 'LEO' then 15
 when 'PUE' then 16 when 'VER' then 17  when 'CUN' then 18 when 'CAN' then 18 when 'MER' then 19 when 'TOL' then 20 when 'CASA' then 21 else 50 end AS ordenEquipo,
 case lb.estatus_de_la_operacion when 'Comprometida' then 1 when 'Cancelada' then 2 when 'Activa' then 3
-when 'Enviada a otro mes' then 4 when 'Enviada a otro mes - Automático' then 5 when 'Cancelada por cliente' then 6 else 10 end as ordenEstatus,
+when 'Enviada a otro mes' then 4 when 'Enviada a otro mes - AutomÃ¡tico' then 5 when 'Cancelada por cliente' then 6 else 10 end as ordenEstatus,
 uc.iniciales_c AS iniciales, IFNULL(blcs.monto_activado_anticipado_c,0) AS monto_anticipado, IFNULL(blcs.ri_activada_anticipada_c,0) AS ri_anticipada,
 IFNULL(monto_disp_vencido_c,0) disp_vencido, acc.idcliente_c idcliente, monto_prospecto_c, monto_credito_c, monto_rechazado_c, monto_sin_solicitud_c, monto_con_solicitud_c,
 ri_prospecto_c, ri_credito_c, ri_rechazada_c, ri_sin_solicitud_c, ri_con_solicitud_c,
@@ -572,12 +572,12 @@ SQL;
         $backlog->description .= "\r\n" . $current_user->first_name . " " . $current_user->last_name . " - " . $todayDate . ": " . $comentarios_de_cancelacion;
 
         if($motivo_de_cancelacion != "Cliente no interesado" && $motivo_de_cancelacion != "No viable"){
-            //Reevaluamos el tipo de operación que tendra el nuevo BL
+            //Reevaluamos el tipo de operaciÃ³n que tendra el nuevo BL
             $currentYear = date("Y");
             $currentDay = date("d");
             $BacklogElaboracion = date("m") + 1;
 
-            //Obtiene el Backlog en revisión
+            //Obtiene el Backlog en revisiÃ³n
             if($currentDay > 20){  //Si ya pasamos del dia 20 ya se esta planeando el BL de 2 meses naturales adelante
                 $BacklogElaboracion += 1;
             }
@@ -613,7 +613,7 @@ SQL;
             $callApi->unifinPutCall($host,$fields);
         }
 
-        //Obtiene el Backlog en revisión
+        //Obtiene el Backlog en revisiÃ³n
         $currentDay = date("d");
         $BacklogElaboracion = date("m") + 1;
 
@@ -664,12 +664,12 @@ SQL;
                 $backlog->description .= $current_user->first_name . " " . $current_user->last_name . " - " . $todayDate . ": " . $comentarios;
             }
 
-            //Evalua el tipo de operación
+            //Evalua el tipo de operaciÃ³n
             $currentYear = date("Y");
             $currentDay = date("d");
             $BacklogElaboracion = date("m") + 1;
 
-            //Obtiene el Backlog en revisión
+            //Obtiene el Backlog en revisiÃ³n
             if($currentDay > 20){  //Si ya pasamos del dia 20 ya se esta planeando el BL de 2 meses naturales adelante
                 $BacklogElaboracion += 1;
             }
@@ -714,6 +714,7 @@ SQL;
         $tipo_operacion = $args['data']['tipo_operacion'];
         $periodo_revision = $args['data']['periodo_revision'];
         $access = $args['data']['access'];
+        $rolAutorizacion = $args['data']['rolAutorizacion'];
         $MesAnterior = $args['data']['MesAnterior'];
         $AnioAnterior = $args['data']['AnioAnterior'];
 
@@ -734,9 +735,10 @@ SQL;
 
                 $currentYear = date("Y");
                 $currentDay = date("d");
+                $currentMonth = date("m");
                 $BacklogElaboracion = date("m") + 1;
 
-                //Obtiene el Backlog en revisión
+                //Obtiene el Backlog en revisiÃ³n
                 if($currentDay > 20){  //Si ya pasamos del dia 20 ya se esta planeando el BL de 2 meses naturales adelante
                     $BacklogElaboracion += 1;
                 }
@@ -744,11 +746,11 @@ SQL;
                     $BacklogElaboracion = $BacklogElaboracion - 12;
                 }
 
-                $GLOBALS['log']->fatal("Mes de Backlog en elaboración: " . print_r($BacklogElaboracion,1));
+                $GLOBALS['log']->fatal("Mes de Backlog en elaboraciÃ³n: " . print_r($BacklogElaboracion,1));
 
-                //En caso de ser Bl de Carga general, asignar el tipo de operación que corresponde
+                //En caso de ser Bl de Carga general, asignar el tipo de operaciÃ³n que corresponde
                 if($backlog->tipo_de_operacion == "Carga General"){
-                    //Evalua el tipo de operación
+                    //Evalua el tipo de operaciÃ³n
                     if ($anio <= $currentYear){
                         if ($mes >= $BacklogElaboracion){
                             $backlog->tipo_de_operacion = 'Original';
@@ -761,17 +763,17 @@ SQL;
                 }
 
                 if($backlog->tipo_de_operacion == "Original" && $backlog->estatus_de_la_operacion == "Comprometida"){
-                    if($periodo_revision == true) {
-                        if($access == "Full_Access") {
+                    if($periodo_revision == true && $backlog->mes == $currentMonth && $backlog->anio == $currentYear) {
+                        if($access == "Full_Access" || $rolAutorizacion=="Direccion") {
                             $backlog->mes = $mes;
                             $backlog->anio = $anio;
                             //CVV se cambia a comprometida para ajustes de eliminar concepto de "Comprometer"
                             $backlog->estatus_de_la_operacion = "Comprometida"; //"Activa";
                         }else{
-                            $response = "Esta Operacion ya esta comprometida y solo podra ser movida por un Director en periodo de revison";
+                            $response = "Esta Operacion ya esta comprometida y solo podra ser movida por un Director en periodo de revision";
                         }
                     }else{ // Si no se esta en periodo de revision
-                        // Si se esta moviendo un BL del BL en elaboración o posterior
+                        // Si se esta moviendo un BL del BL en elaboraciÃ³n o posterior
                         //if ($backlog->mes >= $BacklogElaboracion){
                         if ($anio > $backlog->anio || ($anio==$backlog->anio && $mes >= $backlog->mes)){
                             $backlog->mes = $mes;
@@ -963,9 +965,9 @@ SQL;
         $fp = fopen($csvfile, 'w');
 
         // output the column headings
-        fputcsv($fp, array('ESTATUS', 'MES','EQUIPO', 'ZONA', 'PROMOTOR', 'ID CLIENTE','CLIENTE', 'N° BACKLOG', 'BIEN',  'LINEA DISPONIBLE',
-            'MONTO ORIGINAL', 'RI ORIGINAL', 'DIFERENCIA', 'BACKLOG', 'RENTA INICIAL', 'BACKLOG ACTUAL', 'COLOCACIÓN REAL', 'RI REAL', 'MONTO CANCELADO',
-            'RI CANCELADA',  'TIPO DE OPERACIÓN','ETAPA INICIO MES', 'ETAPA', 'SOLICITUD',
+        fputcsv($fp, array('ESTATUS', 'MES','EQUIPO', 'ZONA', 'PROMOTOR', 'ID CLIENTE','CLIENTE', 'NÂ° BACKLOG', 'BIEN',  'LINEA DISPONIBLE',
+            'MONTO ORIGINAL', 'RI ORIGINAL', 'DIFERENCIA', 'BACKLOG', 'RENTA INICIAL', 'BACKLOG ACTUAL', 'COLOCACIÃ“N REAL', 'RI REAL', 'MONTO CANCELADO',
+            'RI CANCELADA',  'TIPO DE OPERACIÃ“N','ETAPA INICIO MES', 'ETAPA', 'SOLICITUD',
             'PROSPECTO','CREDITO','RECHAZADA','SIN SOLICITUD','CON SOLICITUD','RI PROSPECTO','RI CREDITO','RI RECHAZADA','RI SIN SOLICITUD','RI CON SOLICITUD', 'TASA', 'COMISION', 'DIF RESIDUALES', 'COLOCACION PIPELINE'));
 
         foreach ($args['data']['backlogs'] as $key => $values) {
@@ -990,7 +992,7 @@ SQL;
                             $colValues = $this->removeElement($colValues, "comentado");
                             $colValues = $this->removeElement($colValues, "color");
                             $colValues = $this->removeElement($colValues, "colorDispLinea");
-			    $colValues = $this->removeSpecialCharacters($colValues);
+                            $colValues = $this->removeSpecialCharacters($colValues);
                             fputcsv($fp, $colValues);
                         }
                     }
@@ -1016,7 +1018,7 @@ SQL;
                                 $subColValues = $this->removeElement($subColValues, "comentado");
                                 $subColValues = $this->removeElement($subColValues, "color");
                                 $subColValues = $this->removeElement($subColValues, "colorDispLinea");
-				$subColValues = $this->removeSpecialCharacters($subColValues);
+                                $subColValues = $this->removeSpecialCharacters($subColValues);
                                 fputcsv($fp, $subColValues);
                             }
                         }
@@ -1044,7 +1046,7 @@ SQL;
                                     $childrenColValues = $this->removeElement($childrenColValues, "comentado");
                                     $childrenColValues = $this->removeElement($childrenColValues, "color");
                                     $childrenColValues = $this->removeElement($childrenColValues, "colorDispLinea");
-				    $childrenColValues = $this->removeSpecialCharacters($childrenColValues);
+                                    $childrenColValues = $this->removeSpecialCharacters($childrenColValues);
                                     fputcsv($fp, $childrenColValues);
                                 }
                             }
@@ -1053,12 +1055,12 @@ SQL;
                 }
             }
         }
-		
-		fputcsv($fp,array('', '','', '', '', '', '', '', '', $args['data']['backlogs']['backlogs']['totales']['total_monto_original'],$args['data']['backlogs']['backlogs']['totales']['total_monto_comprometido'],
+
+        fputcsv($fp,array('', '','', '', '', '', '', '', '', $args['data']['backlogs']['backlogs']['totales']['total_monto_original'],$args['data']['backlogs']['backlogs']['totales']['total_monto_comprometido'],
             $args['data']['backlogs']['backlogs']['totales']['total_renta_inicial'],0,$args['data']['backlogs']['backlogs']['totales']['total_monto_final_comprometido'],$args['data']['backlogs']['backlogs']['totales']['total_renta_inicial_final'],
             $args['data']['backlogs']['backlogs']['totales']['total_bl_actual'],$args['data']['backlogs']['backlogs']['totales']['total_monto_real'],$args['data']['backlogs']['backlogs']['totales']['total_renta_real'],
             $args['data']['backlogs']['backlogs']['totales']['total_monto_cancelado'],$args['data']['backlogs']['backlogs']['totales']['total_ri_cancelada'],'','','','','','','',''));
-		
+
         fclose($fp);
 
         return $backlog_doc_name;
@@ -1078,7 +1080,7 @@ SQL;
         }
         return $fields;
     }
-    
+
     public function contarRegistrosSeleccionados($api, $args){
 
         $backlogIds = '';
@@ -1094,18 +1096,18 @@ SQL;
             $backlogIds = "'" . implode("','", $backlogIds). "'";
         }
 
-         global $db;
-         $query = <<<SQL
+        global $db;
+        $query = <<<SQL
 SELECT COUNT(id) AS operaciones, SUM(monto_comprometido) AS monto_comprometido FROM lev_backlog
 WHERE deleted = 0 AND id IN ({$backlogIds})
 SQL;
 
-         $queryResult = $db->query($query);
-         while($row = $db->fetchByAssoc($queryResult))
-         {
+        $queryResult = $db->query($query);
+        while($row = $db->fetchByAssoc($queryResult))
+        {
             $response['operaciones'] = $row['operaciones'];
             $response['monto_comprometido'] = $row['monto_comprometido'];
-         }
+        }
 
         return $response;
     }
@@ -1135,7 +1137,7 @@ SQL;
 
     public function getPromotores($api, $args){
 
-         global $db, $current_user;
+        global $db, $current_user;
         $response = array();
         $access = $args['data']['Access'];
         $equipo = $args['data']['equipo'];
@@ -1144,7 +1146,7 @@ SQL;
             $mes = '1,2,3,4,5,6,7,8,9,10,11,12';
         }
 
-         $query = <<<SQL
+        $query = <<<SQL
 SELECT distinct u.id, user_name, CONCAT(first_name, " ", last_name) AS full_name, equipo_c
 FROM users u
 INNER JOIN users_cstm uc ON uc.id_c = u.id  AND status = 'Active'
@@ -1158,7 +1160,7 @@ SQL;
         }else{
             //Si es BackOffice solo debe ver a los promotores de los equipos que tiene asignados su usuario
             $EquiposVisibles = '';
-$qry = <<<SQL
+            $qry = <<<SQL
 SELECT replace(replace(usr.equipos_c,'^',''),',',''',''') equipos
 FROM acl_roles r
 INNER JOIN acl_roles_users ru ON ru.role_id = r.id AND ru.deleted = 0
@@ -1177,20 +1179,20 @@ SQL;
         }
 
         $query .= " ORDER BY full_name ASC ";
-         $queryResult = $db->query($query);
+        $queryResult = $db->query($query);
 
-         while($row = $db->fetchByAssoc($queryResult))
-         {
-             $response[$row['id']] = $row['full_name'];
+        while($row = $db->fetchByAssoc($queryResult))
+        {
+            $response[$row['id']] = $row['full_name'];
 
-             if($access != "Full_Access") {
-                 $children = $this->getReportsTo($row['id']);
+            if($access != "Full_Access") {
+                $children = $this->getReportsTo($row['id']);
 
-                 foreach ($children as $key => $value) {
-                     $response[$key] = $value;
-                 }
-             }
-         }
+                foreach ($children as $key => $value) {
+                    $response[$key] = $value;
+                }
+            }
+        }
 
         asort($response);
         return $response;
@@ -1230,7 +1232,7 @@ SQL;
         $response = array();
         $access = $args['data']['Access'];
 
-         $query = <<<SQL
+        $query = <<<SQL
 SELECT DISTINCT equipo_c, u.reports_to_id, u.id,
 case equipo_c when '1' then 1 when '2' then 2 when '3' then 3 when '4' then 4 when '5' then 5 when '6' then 6 when '7' then 7 when '8' then 8 when '9' then 9
 when 'MTY' then 10 when 'HER' then 11 when 'CHI' then 12 when 'GDL' then 13 when 'QRO' then 14 when 'QRO2' then 15  when 'LEO' then 16
@@ -1262,24 +1264,24 @@ SQL;
         }
         $query .= "ORDER BY  ordenEquipo";
 
-         $queryResult = $db->query($query);
+        $queryResult = $db->query($query);
 
         //$response[$current_user->equipo_c] = $current_user->equipo_c;
-         while($row = $db->fetchByAssoc($queryResult))
-         {
-             //$response[$row['equipo_c']] = $row['equipo_c'];
-             $response[$row['ordenEquipo']] = $row['equipo_c'];
+        while($row = $db->fetchByAssoc($queryResult))
+        {
+            //$response[$row['equipo_c']] = $row['equipo_c'];
+            $response[$row['ordenEquipo']] = $row['equipo_c'];
 
-             if($access != "Full_Access") {
-                 $children = $this->getEquiposChildren($row['id']);
+            if($access != "Full_Access") {
+                $children = $this->getEquiposChildren($row['id']);
 
-                 if(!empty($children)) {
-                     foreach ($children as $key => $value) {
-                         $response[$key] = $value;
-                     }
-                 }
-             }
-         }
+                if(!empty($children)) {
+                    foreach ($children as $key => $value) {
+                        $response[$key] = $value;
+                    }
+                }
+            }
+        }
         //$GLOBALS['log']->fatal(" Listado de equipos para combo: ". print_r($response,1));
         $resp = array_unique($response);
         return $resp;
@@ -1335,7 +1337,7 @@ SQL;
         foreach($columnas as $i => $val){
             $On_array[$val] = 'OFF';
         }
-        
+
         foreach ($On_array as $key => $index){
             foreach ($columnas_seleccionadas as $key_sel => $index_sel){
                 if($key == $index_sel){
@@ -1344,9 +1346,9 @@ SQL;
             }
         }
 
-       foreach ($On_array as $k => $v){
-           $current_user->setPreference($k,$v,'','Backlog');
-       }
+        foreach ($On_array as $k => $v){
+            $current_user->setPreference($k,$v,'','Backlog');
+        }
     }
 
     public function getColumnas($api, $args){
