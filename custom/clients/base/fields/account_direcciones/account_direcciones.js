@@ -31,6 +31,12 @@
         'change .existingColonia': 'updateExistingDireccionDropdown',
         'change #multi1': 'updateValueIndicadorMultiselect',
         'change select.existingMultiClass': 'updateValueIndicadorExisting',
+        'change #postalInputTemp': 'getInfoAboutCP',
+
+
+        //Nuevos eventos change para re estructura
+        //'change select.newPostalTemp': 'updateExistingDireccionDropdown',
+        'change select.newPostalTemp': 'updateExistingCP',
 
     },
     _flag2Deco: {
@@ -78,10 +84,40 @@
         for (var key in country_list) {
             pais_list_html += '<option value="' + country_list[key].id + '" >' + country_list[key].name + '</option>'
         }
+
+        //Añadiendo opciones para códigos postales
+        var postal_list = app.metadata.getPostalCodes();
+        var postal_list_html = '<option value=""></option>';
+        for (var key in postal_list) {
+            postal_list_html += '<option value="' + postal_list[key].id + '" >' + postal_list[key].name + '</option>'
+        }
+
         this.def.pais_list_html = pais_list_html;
         this.def.estado_html = '<option value="">Seleccionar Estado </option>';
         this.def.municipio_html = '<option value="">Seleccionar Municipio </option>';
         this.def.postal_html = '<option value="">Seleccionar Codigo Postal </option>';
+        this.def.postal_htmlTemp = postal_list_html;
+
+        /*
+        this.def.postal_list_global=postal_list;
+
+        var lista_global_cps=this.def.postal_list_global;
+
+        var newArr=[];
+        for (var key in lista_global_cps) {
+            if (lista_global_cps.hasOwnProperty(key)) {
+                newArr.push(lista_global_cps[key]);
+            }
+        }
+
+        this.def.dataNew=[];
+        for(var i=0;i<newArr.length;i++) {
+            var item = {};
+            item.id = newArr[i].id;
+            item.text = newArr[i].name;
+            this.def.dataNew.push(item);
+        }
+         */
 
         var dir_indicador_list = app.lang.getAppListStrings('dir_Indicador_list');
         var indicador_options = '<option value=""></option>'
@@ -385,6 +421,9 @@
             index = $inputs.index($input),
             dropdown_value = $input.val(),
             primaryRemoved;
+        var codigo_postal_list=app.metadata.getPostalCodes();
+        var paises_list=app.metadata.getCountries();
+        var municipios_list=app.metadata.getMunicipalities();
 
         //update state dropdown when country changes
         if (field_name == 'pais') {
@@ -531,6 +570,16 @@
             });
         }
 
+
+        if (field_name == 'codigopostaltemp'){
+            var id_cp=$('#postalTemp').select2('val');
+            var id_municipio=codigo_postal_list[id_cp].id_municipio;
+            var id_pais=municipios_list[id_municipio].pais_id;
+            var nombre_pais=paises_list[id_pais].name;
+            var id_pais_from_meta=paises_list[id_pais].id;
+
+
+        }
         //*/
         //*
         //update model with new value
@@ -538,6 +587,103 @@
         if ($.inArray(class_name, ['existingPais', 'existingEstado', 'existingMunicipio', 'existingPostal', 'existingIndicador', 'existingCiudad', 'existingColonia']) != -1) {
             this._updateExistingDireccionInModel(index, dropdown_value, field_name);
         }
+
+    },
+
+    getInfoAboutCP: function(evt){
+        //var $inputCP = this.$(evt.currentTarget);
+        //this.$(evt.currentTarget).val()
+
+         var cp=evt.currentTarget.value;
+         var str_length=cp.length;
+         var self = this;
+
+         var pattern = /^\d+$/;
+         var isNumber= pattern.test(cp);
+         if(str_length==5 && isNumber){
+
+            //Limpiado campos select
+            $('select.newPaisTemp').empty();
+            $('select.newEstadoTemp').empty();
+            $('select.newMunicipioTemp').empty();
+            $('select.newCiudadTemp').empty();
+            $('select.newColoniaTemp').empty();
+
+           
+            //LLamada a api custom
+        var strUrl='DireccionesCP/'+cp;
+        $(".loadingIcon").show();
+        $(".loadingIconEstado").show();
+        $(".loadingIconMunicipio").show();
+        $(".loadingIconColonia").show();
+        app.api.call('GET', app.api.buildURL(strUrl), null, {
+                success: _.bind(function (data) {
+
+                    /*
+                    $.each(data.paises, function(key, value) {   
+                       $('select.newPaisTemp')
+                       .append($("<option></option>")
+                        .attr("value",key)
+                        .text(value)); 
+                   });
+                   */
+                    var list_paises=data.paises;
+                    var list_municipios=data.municipios;
+                    var list_estados=data.estados;
+                    var list_colonias=data.colonias;
+
+                    var paises_options = '';
+                    for(var i=0;i<list_paises.length;i++){
+                        //paises_options +='<option value="' + list_paises[i].idPais + '" >' + list_paises[i].namePais + '</option>';
+                        $('select.newPaisTemp').append($("<option>").val(list_paises[i].idPais).html(list_paises[i].namePais));
+                    }
+
+                    for(var i=0;i<list_estados.length;i++){
+                        //paises_options +='<option value="' + list_paises[i].idPais + '" >' + list_paises[i].namePais + '</option>';
+                        $('select.newEstadoTemp').append($("<option>").val(list_estados[i].idEstado).html(list_estados[i].nameEstado));
+                    }
+
+                    for(var i=0;i<list_municipios.length;i++){
+                        //paises_options +='<option value="' + list_paises[i].idPais + '" >' + list_paises[i].namePais + '</option>';
+                        $('select.newMunicipioTemp').append($("<option>").val(list_municipios[i].idMunicipio).html(list_municipios[i].nameMunicipio));
+                    }
+
+                    for(var i=0;i<list_colonias.length;i++){
+                        //paises_options +='<option value="' + list_paises[i].idPais + '" >' + list_paises[i].namePais + '</option>';
+                        $('select.newColoniaTemp').append($("<option>").val(list_colonias[i].idColonia).html(list_colonias[i].nameColonia));
+                    }
+
+                    $(".loadingIcon").hide();
+                    $(".loadingIconEstado").hide();
+                    $(".loadingIconMunicipio").hide();
+                    $(".loadingIconColonia").hide();
+
+                    var ciudades_list = app.metadata.getCities();
+                    $('select.newEstadoTemp').val();
+                    //var ciudad_html = '<option value="xkcd"> Seleccionar Ciudad</option>';
+                    for (city_id in ciudades_list) {
+                        if (ciudades_list[city_id].estado_id == $('select.newEstadoTemp').val()) {
+                            $('select.newCiudadTemp').append($("<option>").val(city_id).html(ciudades_list[city_id].name));
+                            /*
+                            if (city_id == direccion.ciudad) {
+                                ciudad_html += '<option value="' + city_id + '" selected="true">' + city_list[city_id].name + '</option>';
+                            }
+                            else {
+                                ciudad_html += '<option value="' + city_id + '" >' + city_list[city_id].name + '</option>';
+                            }
+                            */
+                            }
+                    }
+                },this)
+            });
+        
+         }else{
+            app.alert.show('invalid_cp', {
+                level: 'error',
+                autoClose: true,
+                messages: 'C\u00F3digo Postal inv\u00E1lido'
+            });
+         }
 
     },
 
@@ -569,6 +715,49 @@
             closeOnSelect: false,
             containerCssClass: 'select2-choices-pills-close'
         });
+
+        var data = [
+            { id: 0, text: 'enhancement' },
+            { id: 1, text: 'bug' },
+            { id: 2, text: 'duplicate' },
+            { id: 3, text: 'invalid' },
+            { id: 4, text: 'wontfix' }
+        ];
+
+
+        //data:{ results: data, text: function(item) { return item.tag; } }
+        /*
+        var lista_global_cps=this.def.postal_list_global;
+
+        var newArr=[];
+        for (var key in lista_global_cps) {
+            if (lista_global_cps.hasOwnProperty(key)) {
+                newArr.push(lista_global_cps[key]);
+            }
+        }
+
+        var dataNew=[];
+        for(var i=0;i<newArr.length;i++){
+            var item={};
+            item.id=newArr[i].id;
+            item.text=newArr[i].name;
+            dataNew.push(item);
+
+        }
+         */
+
+        //TEEEEMP
+        /*
+        $('#postalInputTemp').select2({
+            width:'100%',
+            //minimumResultsForSearch:7,
+            placeholder: 'Ingresa C\u00F3digo Postal',
+            allowClear: true,
+            data:this.def.dataNew
+        });
+         */
+
+        ///////
 
 
         if (this.tplName === 'edit') {
