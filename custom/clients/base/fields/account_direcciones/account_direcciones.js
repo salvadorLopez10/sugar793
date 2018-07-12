@@ -545,7 +545,7 @@
             $selColonia.append($("<option>").val('').html(''));
             var url = app.api.buildURL("dire_Colonia", null, null, {
                 fields: "name",
-                max_num: 50,
+                //max_num: 10,
                 "filter": [
                     {
                         "id": {
