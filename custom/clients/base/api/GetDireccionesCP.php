@@ -53,6 +53,8 @@ class GetDireccionesCP extends SugarApi
     {
 
         $cp=$args['cp'];
+
+
         $query = "SELECT
   cp.id                                                   AS idCP,
   cp.name                                                 AS nameCP,
@@ -137,6 +139,13 @@ WHERE cp.name = '{$cp}'";
         $arrPadre['estados']=$arrNewEstados;
         $arrPadre['colonias']=$arrNewColonias;
 
+        $queryIdCP="SELECT id FROM dire_codigopostal WHERE name='{$cp}' LIMIT 1;";
+        $resultID = $GLOBALS['db']->query($queryIdCP);
+        while ($row = $GLOBALS['db']->fetchByAssoc($resultID)) {
+            $idCP=$row['id'];
+        }
+
+        $arrPadre['idCP']=$idCP;
 
         return $arrPadre;
 
