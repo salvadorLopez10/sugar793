@@ -551,8 +551,8 @@
             zipcode_to_trigger = $input.find(":selected").text();
             zipcode_to_triggerTemp = $input.parent().parent().parent().find('#existingPostalInput').val();
             id_codigo = $input.find(":selected").val();
-            id_codigoTemp = $input.parent().parent().parent().find('#existingPostalInput').val();
-            id_filtro_colonia = id_codigo.substr(0, 9) +""+zipcode_to_triggerTemp;
+            id_codigoTemp = $input.parent().parent().parent().find('#existingPostalHidden').val();
+            id_filtro_colonia = id_codigoTemp.substr(0, 9) +""+zipcode_to_triggerTemp;
 
             $selColonia.append($("<option>").val('').html(''));
             var url = app.api.buildURL("dire_Colonia", null, null, {
