@@ -36,7 +36,7 @@
 
         //Eventos change para actualizar valores de direcciones existentes
 
-        //'change #existingPostalHidden': 'updateExistingDireccion',
+        'change #existingPostalHidden': 'updateExistingDireccionDropdown',
         'change .existingPaisTemp': 'updateExistingDireccionDropdown',
         'change .existingEstadoTemp': 'updateExistingDireccionDropdown',
         'change .existingMunicipioTemp': 'updateExistingDireccionDropdown',
@@ -418,6 +418,8 @@
      */
     updateExistingDireccionDropdown: function (evt) {
         if (!evt) return;
+
+        console.log("LANZANDO DESDE "+this.$(evt.currentTarget).attr('data-field'));
         //get field that changed
         var $input = this.$(evt.currentTarget);
         //get field type
@@ -560,8 +562,13 @@
                 //max_num: 10,
                 "filter": [
                     {
+                        /*
                         "id": {
                             "$starts" : id_filtro_colonia
+                        }
+                         */
+                        "codigo_postal":{
+                            "$equals": zipcode_to_triggerTemp
                         }
 
                     }
@@ -587,7 +594,7 @@
         //update model with new value
         //only update model on existing records
         if ($.inArray(class_name, ['existingPais', 'existingEstado', 'existingMunicipio', 'existingPostal', 'existingIndicador',
-                'existingCiudad', 'existingColonia','existingPaisTemp','existingEstadoTemp','existingMunicipioTemp','existingCiudadTemp','existingColoniaTemp']) != -1) {
+                'existingCiudad', 'existingColonia','existingPaisTemp','existingPostalIdHidden','existingEstadoTemp','existingMunicipioTemp','existingCiudadTemp','existingColoniaTemp']) != -1) {
 
             this._updateExistingDireccionInModel(index, dropdown_value, field_name);
         }
@@ -619,6 +626,7 @@
         $(".loadingIcon").show();
         $(".loadingIconEstado").show();
         $(".loadingIconMunicipio").show();
+        $(".loadingIconCiudad").show();
         $(".loadingIconColonia").show();
         app.api.call('GET', app.api.buildURL(strUrl), null, {
                 success: _.bind(function (data) {
@@ -632,6 +640,7 @@
                         $(".loadingIcon").hide();
                         $(".loadingIconEstado").hide();
                         $(".loadingIconMunicipio").hide();
+                        $(".loadingIconCiudad").hide();
                         $(".loadingIconColonia").hide();
 
                         $('#postalInputTemp').css('border-color', 'red');
@@ -688,6 +697,7 @@
                              */
                         }
                     }
+                    $(".loadingIconCiudad").hide();
                 }
                 },this)
             });
@@ -788,7 +798,6 @@
                             //$('select.existingPaisTemp').append($("<option>").val(list_paises[i].idPais).html(list_paises[i].namePais));
                             $(self.cpEvt.target).parent().parent().find('select.existingPaisTemp').append($("<option>").val(list_paises[i].idPais).html(list_paises[i].namePais));
 
-
                         }
 
                         for (var i = 0; i < list_estados.length; i++) {
@@ -829,14 +838,14 @@
                         }
 
                         //Lanzando eventos change de todos los campos actualizados
-                        /*
+
                         $(self.cpEvt.target).parent().parent().find('#existingPostalHidden').trigger("change");
-                        $(self.cpEvt.target).parent().parent().find('select.existingPaisTemp').trigger("change");
-                        $(self.cpEvt.target).parent().parent().find('select.existingEstadoTemp').change();
-                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(0).find('select.existingMunicipioTemp').change();
-                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(2).find('select.existingColoniaTemp').change();
-                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(1).find('select.existingCiudadTemp').change();
-                         */
+                        $(self.cpEvt.target).parent().parent().find('.existingPaisTemp').trigger("change");
+                        $(self.cpEvt.target).parent().parent().find('.existingEstadoTemp').trigger("change")
+                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(0).find('.existingMunicipioTemp').trigger("change");
+                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(2).find('.existingColoniaTemp').trigger("change");
+                        $(self.cpEvt.target).parent().parent().next('tr').children().eq(1).find('.existingCiudadTemp').trigger("change");
+
                     }
                 },this)
             });
@@ -932,6 +941,9 @@
             this.$el.prepend(direccionsHtml);
 
             $('select.existingIndicador').hide();
+            $('.rowPem').hide();
+            $('.rowCPcc').hide();
+
 
             //Se establece formato multiselect a cada campo select con la clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
@@ -950,6 +962,8 @@
                 $('select.existingMultiClass').eq(i).select2('val',valuesI);
 
             });
+
+
 
             //now populate colonias
             //Because colonias depends on the Zip Code we can't preload the list of colonias because the API calls are asynchronous and so if we request the list of
@@ -1217,7 +1231,7 @@
         var estados_list_html="";
         for(var pos_mun in municipio_list){
 
-            if(municipio_list[pos_mun].name== direccion.municipio_code_label){
+            if(municipio_list[pos_mun].id== direccion.municipio){
                 //Obtener etiqueta del estado
                 var id_estado=municipio_list[pos_mun].estado_id;
                 for(var pos_es in estado_list){
@@ -1299,7 +1313,7 @@
 
 
         //Valida tipo de direccion
-        if ($('.newTipodedireccion').val() == '0') {
+        if ($('.newTipodedireccion').val() == '0' || $('.newTipodedireccion').val() == null) {
             errorMsg = 'Tipo de direccion requerido';
             dirError = true; dirErrorCounter++;
             $('.newTipodedireccion').css('border-color', 'red');
@@ -1511,6 +1525,8 @@
                 .before(direccionFieldHtml);
 
             $('select.existingIndicador').hide();
+            $('.rowPem').hide();
+            $('.rowCPcc').hide();
 
             //Establece formato multiselect a campo select que contenga clase "existingMultiClass"
             $('select.existingMultiClass').each(function(){
